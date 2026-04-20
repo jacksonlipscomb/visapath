@@ -1,0 +1,244 @@
+import { useState, useEffect, useMemo } from 'react'
+import { useParams, Link } from 'react-router-dom'
+import { getRoute, PHASE_LABELS } from '../data/visaRoutes'
+import type { VisaStep } from '../data/visaRoutes'
+import StepCard from '../components/StepCard'
+import ProgressBar from '../components/ProgressBar'
+import Sidebar from '../components/Sidebar'
+import ComingSoon from './ComingSoon'
+import { PURPOSES } from '../data/visaRoutes'
+
+export default function Roadmap() {
+  const { routeId } = useParams<{ routeId: string }>()
+  const route = routeId ? getRoute(routeId) : undefined
+
+  // localStorage key for checked docs
+  const storageKey = `visapath_${routeId}_docs`
+
+  const [checkedDocs, setCheckedDocs] = useState<Set<string>>(() => {
+    try {
+      const raw = localStorage.getItem(storageKey)
+      if (raw) {
+        const arr = JSON.parse(raw) as string[]
+        return new Set(arr)
+      }
+    } catch {
+      // ignore
+    }
+    return new Set()
+  })
+
+  // Persist to localStorage whenever checkedDocs changes
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(Array.from(checkedDocs)))
+  }, [checkedDocs, storageKey])
+
+  function handleDocToggle(docKey: string) {
+    setCheckedDocs((prev) => {
+      const next = new Set(prev)
+      if (next.has(docKey)) {
+        next.delete(docKey)
+      } else {
+        next.add(docKey)
+      }
+      return next
+    })
+  }
+
+  // Calculate total docs
+  const totalDocs = useMemo(() => {
+    if (!route) return 0
+    return route.steps.reduce((sum, step) => sum + step.documents.length, 0)
+  }, [route])
+
+  const checkedCount = checkedDocs.size
+
+  if (!route) {
+    return <ComingSoon />
+  }
+
+  // Group steps by phase
+  const phaseOrder: VisaStep['phase'][] = [
+    'before-applying',
+    'applying',
+    'interview',
+    'pre-departure',
+    'on-arrival',
+    'in-country',
+  ]
+
+  const stepsByPhase: Partial<Record<VisaStep['phase'], VisaStep[]>> = {}
+  for (const step of route.steps) {
+    if (!stepsByPhase[step.phase]) stepsByPhase[step.phase] = []
+    stepsByPhase[step.phase]!.push(step)
+  }
+
+  const purposeMeta = PURPOSES.find((p) => p.value === route.purpose)
+
+  // Running step number
+  let stepCounter = 0
+
+  return (
+    <>
+      <ProgressBar totalDocs={totalDocs} checkedDocs={checkedCount} />
+
+      <main style={{ paddingBottom: '48px' }}>
+        <div className="container" style={{ paddingTop: '24px' }}>
+          {/* Breadcrumb */}
+          <nav className="breadcrumb" style={{ marginBottom: '16px' }}>
+            <Link to="/">VisaPath</Link>
+            <span className="breadcrumb-sep">/</span>
+            <span>
+              {route.origin.flag} {route.origin.name} → {route.destination.flag} {route.destination.name}
+            </span>
+            <span className="breadcrumb-sep">/</span>
+            <span>{route.visaType}</span>
+          </nav>
+
+          {/* Route header */}
+          <div style={{ marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '8px' }}>
+              <span style={{ fontSize: '1.6rem' }}>
+                {route.origin.flag} → {route.destination.flag}
+              </span>
+              <span className="purpose-badge">
+                {purposeMeta?.emoji} {purposeMeta?.label ?? route.purpose}
+              </span>
+            </div>
+
+            <h1
+              style={{
+                fontSize: 'clamp(1.4rem, 4vw, 1.9rem)',
+                fontWeight: 800,
+                color: 'var(--text)',
+                marginBottom: '12px',
+                lineHeight: 1.3,
+              }}
+            >
+              {route.origin.name} → {route.destination.name}: {route.visaType}
+            </h1>
+
+            <p style={{ fontSize: '0.97rem', color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '600px' }}>
+              {route.summary}
+            </p>
+          </div>
+
+          {/* Athlete note */}
+          {route.athleteNote && (
+            <div
+              className="callout-blue"
+              style={{ marginBottom: '20px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}
+            >
+              <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>🏅</span>
+              <div>
+                <div style={{ fontWeight: 700, fontSize: '0.87rem', color: 'var(--accent-dark)', marginBottom: '4px' }}>
+                  Student Athlete Note
+                </div>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text)' }}>{route.athleteNote}</p>
+              </div>
+            </div>
+          )}
+
+          {/* Key stats */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(3, 1fr)',
+              gap: '10px',
+              marginBottom: '28px',
+            }}
+          >
+            <div className="stat-box">
+              <div className="stat-label">Processing Time</div>
+              <div className="stat-value">{route.processingTime}</div>
+            </div>
+            <div className="stat-box">
+              <div className="stat-label">Stay Duration</div>
+              <div className="stat-value">{route.stayDuration}</div>
+            </div>
+            <div className="stat-box">
+              <div className="stat-label">Estimated Cost</div>
+              <div className="stat-value">{route.estimatedCost}</div>
+            </div>
+          </div>
+
+          {/* Two-column layout */}
+          <div className="two-col">
+            {/* Steps */}
+            <div>
+              {phaseOrder.map((phase) => {
+                const steps = stepsByPhase[phase]
+                if (!steps || steps.length === 0) return null
+
+                return (
+                  <section key={phase} style={{ marginBottom: '28px' }}>
+                    {/* Phase header */}
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '10px',
+                        marginBottom: '12px',
+                        paddingBottom: '8px',
+                        borderBottom: '2px solid var(--border)',
+                      }}
+                    >
+                      <span className={`phase-badge phase-${phase}`} style={{ fontSize: '0.78rem' }}>
+                        {PHASE_LABELS[phase]}
+                      </span>
+                    </div>
+
+                    {steps.map((step) => {
+                      stepCounter += 1
+                      return (
+                        <StepCard
+                          key={step.id}
+                          step={step}
+                          stepNumber={stepCounter}
+                          checkedDocs={checkedDocs}
+                          onDocToggle={handleDocToggle}
+                        />
+                      )
+                    })}
+                  </section>
+                )
+              })}
+
+              {/* Completion message */}
+              {checkedCount > 0 && checkedCount === totalDocs && (
+                <div
+                  className="callout-success"
+                  style={{ marginTop: '20px', display: 'flex', gap: '10px', alignItems: 'center' }}
+                >
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="var(--success)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                    <polyline points="22 4 12 14.01 9 11.01" />
+                  </svg>
+                  <div>
+                    <strong>All documents checked!</strong> Good luck with your application. Always verify details with
+                    official sources.
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Sidebar */}
+            <div className="sidebar-sticky">
+              <Sidebar route={route} />
+            </div>
+          </div>
+        </div>
+      </main>
+    </>
+  )
+}

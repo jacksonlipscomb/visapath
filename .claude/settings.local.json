@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(command -v npm)",
+      "Read(//opt/**)",
+      "Read(//usr/local/lib/**)",
+      "Read(//Users/jacksonlipscomb/**)",
+      "Read(//usr/bin/**)",
+      "Bash(source ~/.zshrc)",
+      "Bash(source ~/.bash_profile)",
+      "Bash(env)",
+      "Bash(zsh -i -c \"which npm; which node\")",
+      "Bash(bash -l -c \"which npm; which node\")",
+      "Bash(/usr/local/bin/npm install:*)",
+      "Bash(/usr/local/bin/npm run:*)",
+      "mcp__Claude_Preview__preview_start"
+    ]
+  }
+}

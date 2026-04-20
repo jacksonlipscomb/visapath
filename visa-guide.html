@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visa Guide — Step-by-Step Immigration Instructions</title>
+  <style>
+    /* =========================================================
+       DESIGN TOKENS & RESET
+    ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #f7f6f3;
+      --surface:     #ffffff;
+      --border:      #e4e2dd;
+      --text:        #1a1a1a;
+      --text-muted:  #6b6b6b;
+      --accent:      #3a6ea8;
+      --accent-light:#e8f0f9;
+      --accent-dark: #2a5490;
+      --warn:        #c0392b;
+      --warn-light:  #fdf0ef;
+      --success:     #27ae60;
+      --success-light:#eaf7ef;
+      --radius:      12px;
+      --radius-sm:   8px;
+      --shadow:      0 2px 12px rgba(0,0,0,.07);
+      --shadow-md:   0 4px 24px rgba(0,0,0,.10);
+      --font:        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --mono:        "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    h1, h2, h3, h4 { line-height: 1.3; font-weight: 700; }
+
+    a { color: var(--accent); text-decoration: underline; }
+    a:hover { color: var(--accent-dark); }
+
+    /* =========================================================
+       STICKY PROGRESS BAR
+    ========================================================= */
+    #progress-bar-wrapper {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    #progress-bar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    #progress-bar-inner::-webkit-scrollbar { display: none; }
+
+    .pb-step {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .pb-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .2s;
+      flex-shrink: 0;
+    }
+    .pb-dot.active   { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+    .pb-dot.complete { border-color: var(--success); color: var(--surface); background: var(--success); }
+
+    .pb-connector {
+      width: 20px;
+      height: 2px;
+      background: var(--border);
+      flex-shrink: 0;
+      transition: background .2s;
+    }
+    .pb-connector.complete { background: var(--success); }
+
+    #progress-label {
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       DISCLAIMER BANNER
+    ========================================================= */
+    #disclaimer {
+      background: #fffbe6;
+      border-bottom: 2px solid #f0d060;
+      padding: 12px 16px;
+    }
+    #disclaimer-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    #disclaimer svg { flex-shrink: 0; margin-top: 2px; }
+    #disclaimer p { font-size: 13px; color: #5a4a00; }
+    #disclaimer strong { color: #3a3000; }
+    #disclaimer a { color: #7a5800; }
+
+    /* =========================================================
+       MAIN LAYOUT
+    ========================================================= */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 16px 80px;
+    }
+
+    section { margin-bottom: 56px; }
+
+    /* =========================================================
+       HERO / LANDING SECTION
+    ========================================================= */
+    #hero {
+      text-align: center;
+      padding: 48px 16px 40px;
+    }
+    #hero .tagline {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    #hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      margin-bottom: 12px;
+    }
+    #hero .subtitle {
+      font-size: 17px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+
+    /* Selector card */
+    #selector-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-md);
+      padding: 28px 24px;
+      text-align: left;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    #selector-card h2 { font-size: 16px; margin-bottom: 20px; color: var(--text-muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+
+    .selector-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    @media (max-width: 480px) { .selector-row { grid-template-columns: 1fr; } }
+
+    .selector-group { display: flex; flex-direction: column; gap: 4px; }
+    .selector-group label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .05em; }
+    .selector-group select {
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--text);
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6b6b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+      cursor: pointer;
+      transition: border-color .2s;
+    }
+    .selector-group select:focus { outline: none; border-color: var(--accent); }
+
+    .stay-row { margin-top: 4px; }
+    .stay-options { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .stay-btn {
+      padding: 8px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: var(--bg);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .15s;
+      color: var(--text);
+    }
+    .stay-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    #find-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    #find-btn:hover { background: var(--accent-dark); }
+
+    /* =========================================================
+       VISA CARD
+    ========================================================= */
+    #visa-result { display: none; }
+
+    .visa-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    @media (max-width: 480px) { .visa-card { flex-direction: column; } }
+
+    .visa-badge {
+      background: var(--accent);
+      color: #fff;
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: .02em;
+      flex-shrink: 0;
+      text-align: center;
+      min-width: 72px;
+    }
+    .visa-badge span { display: block; font-size: 11px; font-weight: 500; letter-spacing: .06em; margin-top: 2px; opacity: .85; }
+
+    .visa-card-body h3 { font-size: 20px; margin-bottom: 6px; }
+    .visa-card-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 10px; }
+
+    .callout {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--accent-dark);
+    }
+    .callout strong { color: var(--accent-dark); }
+
+    /* Coming soon card */
+    .coming-soon-card {
+      background: var(--surface);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 48px 24px;
+      text-align: center;
+    }
+    .coming-soon-card .cs-icon { font-size: 40px; margin-bottom: 12px; }
+    .coming-soon-card h3 { font-size: 20px; margin-bottom: 8px; }
+    .coming-soon-card p { font-size: 14px; color: var(--text-muted); max-width: 320px; margin: 0 auto; }
+
+    /* =========================================================
+       STEP CARDS
+    ========================================================= */
+    #steps-section { display: none; }
+
+    #steps-section h2 {
+      font-size: 22px;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: box-shadow .2s;
+    }
+    .step-card:hover { box-shadow: var(--shadow-md); }
+
+    .step-card.complete { border-left: 4px solid var(--success); }
+
+    .step-header {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 20px 20px 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .step-number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 15px;
+      flex-shrink: 0;
+      transition: all .2s;
+    }
+    .step-card.complete .step-number { background: var(--success); color: #fff; }
+
+    .step-title-block { min-width: 0; }
+    .step-title-block h3 { font-size: 17px; font-weight: 700; }
+    .step-title-block .step-meta {
+      display: flex;
+      gap: 12px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2px 8px;
+    }
+
+    .step-check-btn {
+      background: none;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s;
+      flex-shrink: 0;
+    }
+    .step-check-btn:hover { border-color: var(--success); }
+    .step-card.complete .step-check-btn { background: var(--success); border-color: var(--success); }
+
+    .step-body {
+      padding: 0 20px 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    .step-description {
+      font-size: 15px;
+      color: var(--text-muted);
+      padding-top: 14px;
+      margin-bottom: 16px;
+    }
+
+    .you-need-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .doc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .doc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .doc-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .doc-item-text strong { display: block; font-size: 14px; }
+    .doc-item-text span { font-size: 12px; color: var(--text-muted); }
+
+    /* Mistakes collapsible */
+    .mistakes-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--warn-light);
+      border: 1px solid #f5c6c2;
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--warn);
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      transition: background .15s;
+    }
+    .mistakes-toggle:hover { background: #fde8e5; }
+    .mistakes-toggle svg { transition: transform .2s; flex-shrink: 0; }
+    .mistakes-toggle.open svg { transform: rotate(180deg); }
+
+    .mistakes-body {
+      display: none;
+      background: var(--warn-light);
+      border: 1px solid #f5c6c2;
+      border-top: none;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      padding: 12px 14px;
+    }
+    .mistakes-body ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .mistakes-body li {
+      font-size: 13px;
+      color: #7a1f1f;
+      padding-left: 16px;
+      position: relative;
+    }
+    .mistakes-body li::before {
+      content: "×";
+      position: absolute;
+      left: 0;
+      font-weight: 700;
+      color: var(--warn);
+    }
+
+    /* =========================================================
+       UTILITY
+    ========================================================= */
+    .section-intro {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      max-width: 580px;
+    }
+
+    .asterisk-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 16px;
+      padding: 10px 12px;
+      background: var(--bg);
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+
+    footer {
+      text-align: center;
+      padding: 32px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 600px) {
+      .step-header { grid-template-columns: auto 1fr auto; gap: 10px; padding: 14px; }
+      .step-body { padding: 0 14px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- =========================================================
+     DISCLAIMER BANNER
+========================================================= -->
+<div id="disclaimer">
+  <div id="disclaimer-inner">
+    <!-- Warning icon SVG -->
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9 1L1 16h16L9 1z" stroke="#c09000" stroke-width="1.5" stroke-linejoin="round" fill="#f0d060"/>
+      <path d="M9 7v4" stroke="#7a5800" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="9" cy="13" r=".8" fill="#7a5800"/>
+    </svg>
+    <p>
+      <strong>Unofficial guide — always verify with official sources.</strong>
+      This page is for informational purposes only and is not legal advice.
+      Official sources:
+      <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a> &amp;
+      <a href="https://studyinthestates.dhs.gov" target="_blank" rel="noopener">studyinthestates.dhs.gov</a>.
+      Last updated: <strong>April 2026</strong>.
+    </p>
+  </div>
+</div>
+
+<!-- =========================================================
+     STICKY PROGRESS BAR (rendered by JS when steps are shown)
+========================================================= -->
+<div id="progress-bar-wrapper" style="display:none">
+  <div id="progress-bar-inner"></div>
+</div>
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+<main>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="tagline">Visa Guide</div>
+    <h1>Your step-by-step<br/>visa roadmap</h1>
+    <p class="subtitle">Visual, numbered instructions — like IKEA for immigration. No walls of text.</p>
+
+    <div id="selector-card">
+      <h2>Where are you going?</h2>
+      <div class="selector-row">
+        <div class="selector-group">
+          <label for="origin">From</label>
+          <select id="origin">
+            <option value="SE" selected>🇸🇪 Sweden</option>
+            <option value="DE">🇩🇪 Germany</option>
+            <option value="FR">🇫🇷 France</option>
+            <option value="GB">🇬🇧 United Kingdom</option>
+            <option value="JP">🇯🇵 Japan</option>
+            <option value="IN">🇮🇳 India</option>
+            <option value="CN">🇨🇳 China</option>
+            <option value="OTHER">Other</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <label for="dest">To</label>
+          <select id="dest">
+            <option value="US" selected>🇺🇸 United States</option>
+            <option value="CA">🇨🇦 Canada</option>
+            <option value="AU">🇦🇺 Australia</option>
+            <option value="GB">🇬🇧 United Kingdom</option>
+            <option value="OTHER">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="selector-row">
+        <div class="selector-group">
+          <label for="purpose">Purpose</label>
+          <select id="purpose">
+            <option value="student" selected>🎓 Student</option>
+            <option value="student-athlete">🏅 Student Athlete</option>
+            <option value="tourist">🗺️ Tourist</option>
+            <option value="working">💼 Working</option>
+          </select>
+        </div>
+        <div class="selector-group">
+          <label>Length of stay</label>
+          <div class="stay-options">
+            <button class="stay-btn" data-stay="under90">Under 90 days</button>
+            <button class="stay-btn active" data-stay="90to1yr">90d – 1 yr</button>
+            <button class="stay-btn" data-stay="over1yr">Over 1 yr</button>
+          </div>
+        </div>
+      </div>
+      <button id="find-btn">Show my visa path →</button>
+    </div>
+  </section>
+
+  <!-- VISA RECOMMENDATION RESULT -->
+  <section id="visa-result">
+    <h2 style="font-size:18px;margin-bottom:16px;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em;">Your recommended visa</h2>
+    <div id="visa-card-container"></div>
+  </section>
+
+  <!-- STEP-BY-STEP GUIDE -->
+  <section id="steps-section">
+    <h2>Step-by-step guide</h2>
+    <p class="section-intro">Follow these steps in order. Check off each one as you complete it — your progress is tracked on the bar above.</p>
+    <div id="steps-container"></div>
+    <p class="asterisk-note">* Fees marked with an asterisk are approximate as of April 2026. Verify current amounts at <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a> and <a href="https://fmjfee.com" target="_blank" rel="noopener">fmjfee.com</a> before paying.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Unofficial guide. Not legal advice. Verify all requirements at <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a>.</p>
+</footer>
+
+<script>
+/* =========================================================
+   VISA DATA
+   Add new origin+dest+purpose keys here to extend the guide.
+   Key format: "ORIGIN-DEST-PURPOSE"
+========================================================= */
+const VISA_DATA = {
+
+  "SE-US-student": {
+    visa: {
+      code: "F-1",
+      label: "Student Visa",
+      description: "The F-1 is the standard nonimmigrant student visa for full-time academic study in the United States. As a Swedish citizen you are eligible for the Visa Waiver Program for short visits, but for stays over 90 days for academic study you must obtain an F-1 visa before arriving.",
+      athleteNote: "Student athletes also typically use the F-1 visa. If you will compete in NCAA athletics, your athletic department must also complete NCAA eligibility paperwork (Eligibility Center clearance) separately from the visa process.",
+    },
+    // length-of-stay overrides for the visa recommendation text
+    stayNotes: {
+      "under90": "Note: Swedish citizens can enter the US under the Visa Waiver Program (ESTA) for tourism or business up to 90 days — but study requires an F-1 regardless of duration.",
+      "90to1yr": "For a student stay of 90 days to 1 year, the F-1 is the correct visa. Your I-20 will specify your program end date.",
+      "over1yr": "For stays over one year, the F-1 remains the correct choice. You can request a program extension via your DSO if you need more time.",
+    },
+    steps: [
+      {
+        title: "Get accepted & receive your I-20",
+        description: "Apply to a SEVP-certified US school. Once accepted, your Designated School Official (DSO) will issue you Form I-20 — a critical document you will use throughout the entire visa process.",
+        docs: [
+          { icon: "admission", label: "Acceptance letter", sub: "From your US school" },
+          { icon: "form",      label: "Form I-20",         sub: "Issued by DSO — keep every copy" },
+          { icon: "finance",   label: "Financial proof",   sub: "Bank statements showing you can fund your studies" },
+          { icon: "passport",  label: "Passport",          sub: "Valid at least 6 months beyond your intended stay" },
+        ],
+        time: "2–8 weeks (school processing)",
+        cost: "Varies by school",
+        mistakes: [
+          "Applying to a school that is not SEVP-certified — you cannot get an F-1 without an I-20.",
+          "Providing inaccurate financial information to the DSO.",
+          "Starting the SEVIS fee payment before you have your I-20 SEVIS ID.",
+        ],
+      },
+      {
+        title: "Pay the SEVIS I-901 fee",
+        description: "Before applying for your visa, you must pay the SEVIS I-901 fee to the Student and Exchange Visitor Program (SEVP). This registers you in the SEVIS system and must be paid at least 3 business days before your embassy interview.",
+        docs: [
+          { icon: "form",    label: "Form I-20",        sub: "You need the SEVIS ID number from page 1" },
+          { icon: "payment", label: "Credit/debit card", sub: "Payment via fmjfee.com" },
+          { icon: "receipt", label: "I-901 fee receipt", sub: "Print and bring to your interview" },
+        ],
+        time: "15–30 minutes online",
+        cost: "$350 USD (F-1)*",
+        mistakes: [
+          "Paying before you have your I-20 SEVIS number — it will be linked to the wrong record.",
+          "Forgetting to print or save your receipt — the embassy may ask for it.",
+          "Paying too close to your interview date (allow at least 3 business days).",
+        ],
+      },
+      {
+        title: "Complete the DS-160 application",
+        description: "Fill out the Online Nonimmigrant Visa Application (DS-160) at ceac.state.gov. This is the official US government visa application form. Answer all questions honestly and carefully — inconsistencies can cause delays.",
+        docs: [
+          { icon: "passport", label: "Passport",           sub: "Passport number and personal info" },
+          { icon: "photo",    label: "Digital photo",      sub: "Recent, US visa photo standards (51×51 mm, white background)" },
+          { icon: "form",     label: "Form I-20",          sub: "School name, address, program details" },
+          { icon: "work",     label: "Travel history",     sub: "Countries visited in the past 5 years" },
+        ],
+        time: "1–2 hours to complete",
+        cost: "Free (form itself)",
+        mistakes: [
+          "Letting the session time out — save your application ID regularly.",
+          "Uploading a non-compliant photo (incorrect dimensions or background colour).",
+          "Leaving any field blank when 'Does Not Apply' is the correct answer.",
+          "Not printing the DS-160 confirmation barcode page — required at interview.",
+        ],
+      },
+      {
+        title: "Pay the visa application fee (MRV)",
+        description: "Pay the non-refundable Machine Readable Visa (MRV) application fee. For Sweden, this is paid online before scheduling your interview at the US Embassy in Stockholm. Keep your receipt — it contains the transaction number you'll need to book your appointment.",
+        docs: [
+          { icon: "payment", label: "Credit/debit card or bank transfer", sub: "via cgifederal.com (US Embassy Sweden portal)" },
+          { icon: "receipt", label: "MRV fee receipt",                   sub: "Contains your UID/transaction number" },
+        ],
+        time: "10–20 minutes",
+        cost: "$185 USD (F-1)*",
+        mistakes: [
+          "Paying in the wrong currency or through an unofficial third-party site.",
+          "Not recording the transaction/UID number — you cannot book your interview without it.",
+        ],
+      },
+      {
+        title: "Schedule your visa interview in Stockholm",
+        description: "Book your F-1 visa interview at the US Embassy in Stockholm (Dag Hammarskjölds Väg 31, SE-115 89 Stockholm). Appointments can be scheduled via the US Embassy Sweden appointment portal. Wait times vary seasonally — book as early as possible, ideally 2–3 months ahead.",
+        docs: [
+          { icon: "receipt",  label: "MRV fee receipt",       sub: "Transaction/UID number required to book" },
+          { icon: "id",       label: "Passport",               sub: "Passport number for the booking form" },
+          { icon: "barcode",  label: "DS-160 confirmation",    sub: "Barcode page from your completed DS-160" },
+        ],
+        time: "15 minutes to book online; interview itself ~30 min",
+        cost: "No additional fee",
+        mistakes: [
+          "Waiting until the last minute — summer slots fill up months in advance.",
+          "Booking through unofficial 'visa appointment helper' services.",
+          "Forgetting that the US Embassy in Stockholm is the correct location for Swedish residents.",
+        ],
+      },
+      {
+        title: "Attend your visa interview at the US Embassy, Stockholm",
+        description: "Arrive at least 15 minutes early with all your documents. A consular officer will review your application and ask questions about your study plans, funding, and ties to Sweden. Be honest and concise. Most F-1 approvals happen the same day.",
+        docs: [
+          { icon: "passport", label: "Valid passport",             sub: "Original + any old passports with US visas" },
+          { icon: "form",     label: "Form I-20",                  sub: "Original, signed by you and your DSO" },
+          { icon: "barcode",  label: "DS-160 confirmation page",   sub: "Printed barcode page" },
+          { icon: "receipt",  label: "SEVIS I-901 fee receipt",    sub: "Printed" },
+          { icon: "receipt",  label: "MRV fee receipt",            sub: "Proof of fee payment" },
+          { icon: "photo",    label: "Passport photo",             sub: "Two recent US-standard photos" },
+          { icon: "finance",  label: "Financial documents",        sub: "Bank statements, scholarship letters, sponsor letters" },
+          { icon: "admit",    label: "Admission letter",           sub: "From your US school" },
+          { icon: "id",       label: "Swedish personal ID",        sub: "National ID card or driver's licence" },
+          { icon: "ties",     label: "Ties to Sweden",             sub: "Employment letter, property, family — shows intent to return" },
+        ],
+        time: "Allow half a day; interview itself ~10–30 min",
+        cost: "No additional fee (already paid MRV)",
+        mistakes: [
+          "Bringing only one copy of key documents — have originals and photocopies.",
+          "Being vague about your post-graduation plans — officers want to see ties to Sweden.",
+          "Wearing inappropriate clothing or bringing prohibited items (large bags, phones in some areas).",
+          "Assuming approval is automatic — have honest, well-practised answers ready.",
+        ],
+      },
+      {
+        title: "Prepare for entry at the US port of entry",
+        description: "Your visa is not a guarantee of entry — a CBP (Customs and Border Protection) officer at the port of entry makes the final decision. Have your key documents accessible in your carry-on, not in checked luggage.",
+        docs: [
+          { icon: "passport", label: "Passport with F-1 visa",  sub: "Stamped by US Embassy after interview" },
+          { icon: "form",     label: "Form I-20",                sub: "Original, signed — do not pack in checked luggage" },
+          { icon: "finance",  label: "Proof of funds",           sub: "Current bank statement or scholarship letter" },
+          { icon: "school",   label: "School contact info",      sub: "DSO name, email, and school address" },
+          { icon: "admit",    label: "Admission letter",         sub: "Optional but useful" },
+        ],
+        time: "Typically 20–60 min at the border",
+        cost: "No fee at entry",
+        mistakes: [
+          "Packing your I-20 in checked luggage — if it's lost, you may be denied entry.",
+          "Entering more than 30 days before your I-20 program start date.",
+          "Failing to declare items at customs that require declaration.",
+          "Saying you are a 'tourist' when you are on an F-1 — always state your student status.",
+        ],
+      },
+      {
+        title: "Maintain your F-1 status while studying",
+        description: "Once in the US, you must actively maintain your F-1 status throughout your studies. Violations can lead to status termination and potential deportation. Contact your DSO immediately if anything changes.",
+        docs: [
+          { icon: "form",    label: "Form I-20",            sub: "Keep it valid — renew with DSO before expiry" },
+          { icon: "school",  label: "Full-time enrollment", sub: "Must maintain minimum course load each semester" },
+          { icon: "work",    label: "Work authorisation",   sub: "On-campus only (<20 hrs/week) without CPT/OPT approval" },
+          { icon: "id",      label: "Address registration", sub: "Update your US address with DSO within 10 days of moving" },
+        ],
+        time: "Ongoing throughout your programme",
+        cost: "No direct fee (DSO services included by school)",
+        mistakes: [
+          "Dropping below full-time enrolment without a DSO-approved reduced course load.",
+          "Working off-campus without proper authorisation (CPT or OPT).",
+          "Allowing your I-20 to expire without requesting an extension.",
+          "Failing to inform your DSO of a change of address within 10 days.",
+        ],
+      },
+      {
+        title: "Extend or renew if needed",
+        description: "If you need more time to complete your programme, your DSO can request a program extension in SEVIS before your current I-20 end date. If you leave the US and re-enter, you may need a visa renewal stamp from a US embassy abroad if your visa has expired.",
+        docs: [
+          { icon: "form",     label: "Updated Form I-20",    sub: "DSO issues a new I-20 with extended end date" },
+          { icon: "passport", label: "Valid passport",        sub: "Renew before visa stamp expires if re-entering" },
+          { icon: "finance",  label: "Continued funding proof", sub: "For extension request to DSO" },
+        ],
+        time: "DSO extension: 1–2 weeks; Visa renewal abroad: varies by embassy",
+        cost: "Programme extension: typically free via DSO; Visa stamp renewal: $185 MRV fee* + any local fees",
+        mistakes: [
+          "Waiting until after your I-20 end date to request an extension — you must request before it expires.",
+          "Travelling internationally on an expired visa stamp without planning for renewal abroad.",
+          "Assuming your I-94 automatically updates — always verify your record at i94.cbp.dhs.gov.",
+        ],
+      },
+    ],
+  },
+
+  "SE-US-student-athlete": {
+    // Reuses the student path — same visa, just flag the athlete note prominently
+    redirect: "SE-US-student",
+    highlightAthlete: true,
+  },
+
+};
+
+/* =========================================================
+   INLINE SVG ICONS
+   Returns an SVG element string for a given icon key.
+========================================================= */
+function getIcon(key) {
+  const icons = {
+    passport: `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="1" width="14" height="16" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><circle cx="9" cy="8" r="2.5" stroke="#3a6ea8" stroke-width="1.3"/><path d="M5 14h8" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/><path d="M6 5h6" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    form:     `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="1" width="14" height="16" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><path d="M5 6h8M5 9h8M5 12h5" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    finance:  `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="4" width="16" height="11" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><circle cx="9" cy="9.5" r="2" stroke="#3a6ea8" stroke-width="1.3"/><path d="M1 7h16" stroke="#3a6ea8" stroke-width="1.3"/></svg>`,
+    payment:  `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="4" width="16" height="11" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><path d="M1 7h16" stroke="#3a6ea8" stroke-width="1.3"/><rect x="3" y="10" width="4" height="2.5" rx=".5" fill="#3a6ea8"/></svg>`,
+    receipt:  `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 1h14v15l-2.5-1.5L11 16l-2-1.5L7 16l-2.5-1.5L2 16V1z" stroke="#3a6ea8" stroke-width="1.4" stroke-linejoin="round"/><path d="M5 6h8M5 9h8M5 12h5" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    photo:    `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="3" width="16" height="12" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><circle cx="9" cy="9" r="3" stroke="#3a6ea8" stroke-width="1.3"/><circle cx="14" cy="6" r="1" fill="#3a6ea8"/></svg>`,
+    work:     `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="14" height="10" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><path d="M6 6V4a3 3 0 016 0v2" stroke="#3a6ea8" stroke-width="1.4" stroke-linecap="round"/><path d="M2 11h14" stroke="#3a6ea8" stroke-width="1.3"/></svg>`,
+    id:       `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="4" width="16" height="10" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><circle cx="5.5" cy="9" r="2" stroke="#3a6ea8" stroke-width="1.3"/><path d="M10 7h5M10 11h3" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    barcode:  `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 3v12M5 3v12M7 3v12M10 3v12M12 3v12M15 3v12" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/><path d="M8 3v12" stroke="#3a6ea8" stroke-width="2" stroke-linecap="round"/></svg>`,
+    admit:    `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="1" width="14" height="16" rx="2" stroke="#3a6ea8" stroke-width="1.4"/><path d="M5 7h8M5 10h5" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/><path d="M11 13l2 2 3-3" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    school:   `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2L1 6l8 4 8-4-8-4z" stroke="#3a6ea8" stroke-width="1.4" stroke-linejoin="round"/><path d="M5 8v5c0 1.5 4 2.5 4 2.5s4-1 4-2.5V8" stroke="#3a6ea8" stroke-width="1.4" stroke-linecap="round"/><path d="M17 6v4" stroke="#3a6ea8" stroke-width="1.4" stroke-linecap="round"/></svg>`,
+    ties:     `<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a4 4 0 100 8 4 4 0 000-8z" stroke="#3a6ea8" stroke-width="1.4"/><path d="M2 16c0-3 3-5 7-5s7 2 7 5" stroke="#3a6ea8" stroke-width="1.4" stroke-linecap="round"/><path d="M14 6a3 3 0 013 3" stroke="#3a6ea8" stroke-width="1.3" stroke-linecap="round"/></svg>`,
+    check:    `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 7l4 4 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    chevron:  `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    warn:     `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 1L1 12h12L7 1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><path d="M7 5.5v3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><circle cx="7" cy="10" r=".6" fill="currentColor"/></svg>`,
+    time:     `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>`,
+    cost:     `<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="5" stroke="currentColor" stroke-width="1.2"/><path d="M6 3v1M6 8v1M4 6.5h2.5a1 1 0 000-2H5a1 1 0 010-2H7.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>`,
+    admission:`<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 2L3 5v6c0 3 2.5 4.5 6 5.5 3.5-1 6-2.5 6-5.5V5L9 2z" stroke="#3a6ea8" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 9l2 2 4-4" stroke="#27ae60" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  };
+  return icons[key] || icons['form'];
+}
+
+/* =========================================================
+   STATE
+   In-memory only — no localStorage.
+========================================================= */
+const state = {
+  origin: "SE",
+  dest: "US",
+  purpose: "student",
+  stay: "90to1yr",
+  completedSteps: new Set(),
+  currentFlow: null,
+};
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+function renderProgressBar(steps) {
+  const wrapper = document.getElementById("progress-bar-wrapper");
+  const inner = document.getElementById("progress-bar-inner");
+  if (!steps || steps.length === 0) { wrapper.style.display = "none"; return; }
+
+  wrapper.style.display = "block";
+  inner.innerHTML = "";
+
+  const label = document.createElement("span");
+  label.id = "progress-label";
+  updateProgressLabel(steps.length, label);
+
+  steps.forEach((step, i) => {
+    const dot = document.createElement("div");
+    dot.className = "pb-dot";
+    dot.title = step.title;
+    dot.dataset.index = i;
+
+    if (state.completedSteps.has(i)) {
+      dot.classList.add("complete");
+      dot.innerHTML = getIcon("check");
+    } else {
+      dot.textContent = i + 1;
+    }
+
+    dot.addEventListener("click", () => {
+      document.getElementById(`step-${i}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    inner.appendChild(dot);
+
+    if (i < steps.length - 1) {
+      const conn = document.createElement("div");
+      conn.className = "pb-connector" + (state.completedSteps.has(i) ? " complete" : "");
+      inner.appendChild(conn);
+    }
+  });
+
+  inner.appendChild(label);
+}
+
+function updateProgressLabel(total, labelEl) {
+  const el = labelEl || document.getElementById("progress-label");
+  if (!el) return;
+  const done = state.completedSteps.size;
+  el.textContent = `${done} / ${total} done`;
+}
+
+/* =========================================================
+   STEP CARDS RENDERER
+========================================================= */
+function renderSteps(steps) {
+  const container = document.getElementById("steps-container");
+  container.innerHTML = "";
+
+  steps.forEach((step, i) => {
+    const card = document.createElement("div");
+    card.className = "step-card" + (state.completedSteps.has(i) ? " complete" : "");
+    card.id = `step-${i}`;
+
+    // ---- Header (clickable to expand/collapse) ----
+    const header = document.createElement("div");
+    header.className = "step-header";
+    header.addEventListener("click", (e) => {
+      if (e.target.closest(".step-check-btn")) return; // let button handle itself
+      const body = card.querySelector(".step-body");
+      body.style.display = body.style.display === "none" ? "block" : "none";
+    });
+
+    const numEl = document.createElement("div");
+    numEl.className = "step-number";
+    numEl.innerHTML = state.completedSteps.has(i)
+      ? getIcon("check")
+      : String(i + 1);
+
+    const titleBlock = document.createElement("div");
+    titleBlock.className = "step-title-block";
+    titleBlock.innerHTML = `
+      <h3>${step.title}</h3>
+      <div class="step-meta">
+        <span class="meta-chip">${getIcon("time")} ${step.time}</span>
+        <span class="meta-chip">${getIcon("cost")} ${step.cost}</span>
+      </div>`;
+
+    const checkBtn = document.createElement("button");
+    checkBtn.className = "step-check-btn";
+    checkBtn.setAttribute("aria-label", "Mark step complete");
+    checkBtn.innerHTML = state.completedSteps.has(i) ? getIcon("check") : "";
+    checkBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleStep(i, steps);
+    });
+
+    header.appendChild(numEl);
+    header.appendChild(titleBlock);
+    header.appendChild(checkBtn);
+
+    // ---- Body ----
+    const body = document.createElement("div");
+    body.className = "step-body";
+
+    const desc = document.createElement("p");
+    desc.className = "step-description";
+    desc.textContent = step.description;
+    body.appendChild(desc);
+
+    // You need
+    if (step.docs && step.docs.length > 0) {
+      const needLabel = document.createElement("div");
+      needLabel.className = "you-need-label";
+      needLabel.textContent = "You need";
+      body.appendChild(needLabel);
+
+      const docList = document.createElement("ul");
+      docList.className = "doc-list";
+
+      step.docs.forEach(doc => {
+        const li = document.createElement("li");
+        li.className = "doc-item";
+        li.innerHTML = `
+          <div class="doc-icon">${getIcon(doc.icon)}</div>
+          <div class="doc-item-text">
+            <strong>${doc.label}</strong>
+            <span>${doc.sub}</span>
+          </div>`;
+        docList.appendChild(li);
+      });
+
+      body.appendChild(docList);
+    }
+
+    // Common mistakes
+    if (step.mistakes && step.mistakes.length > 0) {
+      const toggleBtn = document.createElement("button");
+      toggleBtn.className = "mistakes-toggle";
+      toggleBtn.innerHTML = `${getIcon("warn")} Common mistakes ${getIcon("chevron")}`;
+
+      const mistakesBody = document.createElement("div");
+      mistakesBody.className = "mistakes-body";
+      const ul = document.createElement("ul");
+      step.mistakes.forEach(m => {
+        const li = document.createElement("li");
+        li.textContent = m;
+        ul.appendChild(li);
+      });
+      mistakesBody.appendChild(ul);
+
+      toggleBtn.addEventListener("click", () => {
+        const isOpen = toggleBtn.classList.toggle("open");
+        mistakesBody.style.display = isOpen ? "block" : "none";
+      });
+
+      body.appendChild(toggleBtn);
+      body.appendChild(mistakesBody);
+    }
+
+    card.appendChild(header);
+    card.appendChild(body);
+    container.appendChild(card);
+  });
+}
+
+/* =========================================================
+   TOGGLE STEP COMPLETE
+========================================================= */
+function toggleStep(index, steps) {
+  if (state.completedSteps.has(index)) {
+    state.completedSteps.delete(index);
+  } else {
+    state.completedSteps.add(index);
+  }
+  renderSteps(steps);
+  renderProgressBar(steps);
+}
+
+/* =========================================================
+   VISA CARD RENDERER
+========================================================= */
+function renderVisaCard(data, stayKey) {
+  const container = document.getElementById("visa-card-container");
+  container.innerHTML = "";
+
+  const visaResult = document.getElementById("visa-result");
+  const stepsSection = document.getElementById("steps-section");
+
+  // Handle redirect (student-athlete → student)
+  let actualData = data;
+  if (data.redirect) {
+    actualData = VISA_DATA[data.redirect];
+  }
+
+  if (!actualData) {
+    // Coming soon
+    visaResult.style.display = "block";
+    stepsSection.style.display = "none";
+    container.innerHTML = `
+      <div class="coming-soon-card">
+        <div class="cs-icon">🌐</div>
+        <h3>Coming soon</h3>
+        <p>We're working on this route. For now, please check the official sources at <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a>.</p>
+      </div>`;
+    renderProgressBar([]);
+    return;
+  }
+
+  visaResult.style.display = "block";
+  stepsSection.style.display = "block";
+
+  const v = actualData.visa;
+  const stayNote = actualData.stayNotes?.[stayKey] || "";
+
+  const card = document.createElement("div");
+  card.className = "visa-card";
+  card.innerHTML = `
+    <div class="visa-badge">${v.code}<span>${v.label}</span></div>
+    <div class="visa-card-body">
+      <h3>${v.code} — ${v.label}</h3>
+      <p>${v.description}</p>
+      ${stayNote ? `<p style="font-size:13px;color:var(--accent-dark);background:var(--accent-light);padding:8px 12px;border-radius:6px;margin-bottom:10px;">${stayNote}</p>` : ""}
+      ${(v.athleteNote && (data.highlightAthlete || state.purpose === "student-athlete"))
+        ? `<div class="callout"><strong>Student Athletes:</strong> ${v.athleteNote}</div>`
+        : (v.athleteNote ? `<div class="callout" style="margin-top:8px"><strong>Student Athletes:</strong> ${v.athleteNote}</div>` : "")}
+    </div>`;
+
+  container.appendChild(card);
+
+  // Render steps
+  state.completedSteps.clear();
+  renderSteps(actualData.steps);
+  renderProgressBar(actualData.steps);
+
+  // Scroll to result
+  setTimeout(() => {
+    visaResult.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 80);
+}
+
+/* =========================================================
+   COMING SOON FALLBACK
+========================================================= */
+function showComingSoon() {
+  const visaResult = document.getElementById("visa-result");
+  const stepsSection = document.getElementById("steps-section");
+  const container = document.getElementById("visa-card-container");
+
+  visaResult.style.display = "block";
+  stepsSection.style.display = "none";
+
+  container.innerHTML = `
+    <div class="coming-soon-card">
+      <div class="cs-icon">🌐</div>
+      <h3>This route is coming soon</h3>
+      <p>We're building out more visa paths. For this combination, please check <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a> for official guidance.</p>
+    </div>`;
+
+  renderProgressBar([]);
+
+  setTimeout(() => {
+    visaResult.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, 80);
+}
+
+/* =========================================================
+   MAIN HANDLER — called when user clicks "Show my visa path"
+========================================================= */
+function handleFind() {
+  state.origin = document.getElementById("origin").value;
+  state.dest   = document.getElementById("dest").value;
+  state.purpose = document.getElementById("purpose").value;
+
+  const key = `${state.origin}-${state.dest}-${state.purpose}`;
+  const data = VISA_DATA[key];
+
+  if (data) {
+    renderVisaCard(data, state.stay);
+  } else {
+    showComingSoon();
+  }
+}
+
+/* =========================================================
+   DOM SETUP ON LOAD
+========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+
+  // Stay buttons
+  document.querySelectorAll(".stay-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".stay-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.stay = btn.dataset.stay;
+    });
+  });
+
+  // Find button
+  document.getElementById("find-btn").addEventListener("click", handleFind);
+
+  // Allow Enter key to trigger find
+  document.getElementById("selector-card").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") handleFind();
+  });
+
+  // Auto-run for default selection (SE → US → Student) on load
+  handleFind();
+});
+</script>
+</body>
+</html>
