@@ -7,6 +7,7 @@ import ProgressBar from '../components/ProgressBar'
 import Sidebar from '../components/Sidebar'
 import ComingSoon from './ComingSoon'
 import { PURPOSES } from '../data/visaRoutes'
+import { generateChecklistPDF } from '../utils/generateChecklistPDF'
 
 export default function Roadmap() {
   const { routeId } = useParams<{ routeId: string }>()
@@ -162,6 +163,37 @@ export default function Roadmap() {
             </div>
           </div>
 
+          {/* Download PDF — Place 1 */}
+          <div style={{ marginBottom: '24px' }}>
+            <button
+              onClick={() => generateChecklistPDF(routeId!)}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '7px',
+                padding: '10px 18px',
+                background: '#0d9488',
+                color: '#fff',
+                border: 'none',
+                borderRadius: 'var(--radius-sm)',
+                fontSize: '0.87rem',
+                fontWeight: 700,
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = '#0f766e')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = '#0d9488')}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download Checklist PDF
+            </button>
+          </div>
+
           {/* Two-column layout */}
           <div className="two-col">
             {/* Steps */}
@@ -234,6 +266,38 @@ export default function Roadmap() {
 
             {/* Sidebar */}
             <div className="sidebar-sticky">
+              {/* Download PDF — Place 2 */}
+              <div className="card" style={{ padding: '16px 20px', marginBottom: '16px' }}>
+                <button
+                  onClick={() => generateChecklistPDF(routeId!)}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '7px',
+                    width: '100%',
+                    padding: '10px 16px',
+                    background: '#0d9488',
+                    color: '#fff',
+                    border: 'none',
+                    borderRadius: 'var(--radius-sm)',
+                    fontSize: '0.87rem',
+                    fontWeight: 700,
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = '#0f766e')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = '#0d9488')}
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                    aria-hidden="true">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
+                  Download Checklist PDF
+                </button>
+              </div>
               <Sidebar route={route} />
             </div>
           </div>

@@ -345,7 +345,9 @@ function makeF1Steps(embassyCity: string, paymentPortalNote: string, extraInterv
       tips: [
         'Never drop below full-time enrolment without getting a Reduced Course Load (RCL) approval from your DSO first.',
         'Working off campus without CPT or OPT authorisation is a serious violation. Do not do it.',
-        'Keep your passport valid. Renew it at the Swedish Embassy or Consulate in the US before it expires.',
+        embassyCity === 'London'
+          ? 'Keep your passport valid. Renew it at the UK Passport Office or a British consulate before it expires.'
+          : 'Keep your passport valid. Renew it at the Swedish Embassy or Consulate in the US before it expires.',
         "Your I-20 has an end date. If you need more time to finish your programme, ask your DSO for an extension before that date — not after.",
       ],
       estimatedTime: 'Ongoing',
