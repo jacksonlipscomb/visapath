@@ -182,7 +182,7 @@ function makeF1Steps(embassyCity: string, paymentPortalNote: string, extraInterv
       id: 4,
       title: 'Pay the MRV visa application fee',
       phase: 'applying',
-      description: `The MRV fee is the visa application fee you pay to the US Embassy. It is $185 and it is not refunded if your visa is denied. ${paymentPortalNote}`,
+      description: `The MRV fee is the visa application fee you pay to the US Embassy. It is $185 and it is not refunded if your visa is denied. ${paymentPortalNote} Payment and scheduling happen in the same portal — complete payment first, then log back in to book your interview slot.`,
       documents: [
         { name: 'Credit/debit card', required: true, description: `Pay via the US Embassy ${embassyCity} appointment portal.` },
         {
@@ -199,8 +199,8 @@ function makeF1Steps(embassyCity: string, paymentPortalNote: string, extraInterv
       estimatedTime: '10–20 minutes',
       estimatedCost: '$185 USD*',
       officialLinks: embassyCity === 'Stockholm'
-        ? [{ label: 'Book Stockholm Appointment', url: 'https://ais.usvisa-info.com/en-se/niv' }]
-        : [{ label: 'Book London Appointment', url: 'https://ais.usvisa-info.com/en-gb/niv' }],
+        ? [{ label: 'Pay MRV fee (USTravelDocs portal)', url: 'https://www.ustraveldocs.com/se/en/' }]
+        : [{ label: 'Pay MRV fee (Visa Appointment Service)', url: 'https://ais.usvisa-info.com/en-gb' }],
     },
     {
       id: 5,
@@ -220,8 +220,8 @@ function makeF1Steps(embassyCity: string, paymentPortalNote: string, extraInterv
       estimatedTime: '15 minutes to book online',
       estimatedCost: 'No additional fee',
       officialLinks: embassyCity === 'Stockholm'
-        ? [{ label: 'Book Stockholm Appointment', url: 'https://ais.usvisa-info.com/en-se/niv' }]
-        : [{ label: 'Book London Appointment', url: 'https://ais.usvisa-info.com/en-gb/niv' }],
+        ? [{ label: 'Schedule your interview (log back into the same portal)', url: 'https://www.ustraveldocs.com/se/en/' }]
+        : [{ label: 'Schedule your interview (log back into the same portal)', url: 'https://ais.usvisa-info.com/en-gb' }],
     },
     {
       id: 6,
