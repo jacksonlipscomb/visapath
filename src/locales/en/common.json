@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "langEn": "EN",
+    "langSv": "SV"
+  },
+  "disclaimer": {
+    "text": "Unofficial guide — always verify with official sources. This page is for informational purposes only and is not legal advice.",
+    "lastUpdated": "Last updated: April 2026"
+  },
+  "landing": {
+    "brandName": "VisaPath",
+    "headline": "Your step-by-step\nvisa roadmap",
+    "subheadline": "Visual, numbered instructions — like IKEA for immigration.",
+    "whereGoing": "Where are you going?",
+    "from": "From",
+    "to": "To",
+    "selectOrigin": "Select origin",
+    "selectDestination": "Select destination",
+    "purposeOfTravel": "Purpose of travel",
+    "comingSoon": "Coming soon for this combination — check back later!",
+    "intendedStay": "Intended stay length",
+    "stayUnder90": "Under 90 days",
+    "stay90to365": "90 days – 1 year",
+    "stayOver1year": "Over 1 year",
+    "stayInfo": "Informational only. For stays over 90 days, a long-stay visa or residence permit is typically required.",
+    "showRoadmap": "Show my roadmap →",
+    "noRoadmap": "No roadmap available for this combination yet.",
+    "popularRoutes": "Popular routes",
+    "footer": "VisaPath — for informational purposes only. Not legal advice."
+  },
+  "roadmap": {
+    "visaPath": "VisaPath",
+    "processingTime": "Processing Time",
+    "stayDuration": "Stay Duration",
+    "estimatedCost": "Estimated Cost",
+    "athleteNote": "Student Athlete Note",
+    "allDocsChecked": "All documents checked! Good luck with your application. Always verify details with official sources."
+  },
+  "stepCard": {
+    "youNeed": "You need",
+    "required": "Required",
+    "optional": "Optional",
+    "whereToGet": "Where to get:",
+    "tips": "Tips",
+    "whatToBring": "What to Bring to Your Interview",
+    "questionsAsked": "Questions you might be asked",
+    "interviewTips": "Interview tips",
+    "cost": "Cost:"
+  },
+  "sidebar": {
+    "officialSources": "Official Sources",
+    "timeline": "Timeline",
+    "startOver": "Start over",
+    "lastUpdated": "Last updated: April 2026",
+    "disclaimer": "This guide is for informational purposes only and is not legal advice. Always verify with official government sources before submitting applications."
+  },
+  "progressBar": {
+    "docsChecked": "{{checked}} of {{total}} documents checked"
+  },
+  "searchableSelect": {
+    "search": "Search...",
+    "noResults": "No results",
+    "select": "Select..."
+  },
+  "comingSoon": {
+    "title": "This route is coming soon",
+    "description": "We're working on adding more visa paths. For now, check the official sources below.",
+    "notifyLabel": "Notify me when this route launches",
+    "notifyPlaceholder": "you@example.com",
+    "notifyButton": "Notify me",
+    "thankYou": "Thanks, we'll let you know!",
+    "backHome": "Back to home"
+  },
+  "phases": {
+    "before-applying": "Before Applying",
+    "applying": "Applying",
+    "interview": "Interview",
+    "pre-departure": "Pre-Departure",
+    "on-arrival": "On Arrival",
+    "in-country": "In Country"
+  },
+  "purposes": {
+    "tourist": "Tourist",
+    "student": "Student",
+    "student-athlete": "Student Athlete",
+    "work": "Work"
+  },
+  "countries": {
+    "SE": "Sweden",
+    "US": "United States",
+    "UK": "United Kingdom",
+    "IN": "India"
+  }
+}

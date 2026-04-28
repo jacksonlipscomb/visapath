@@ -1,0 +1,94 @@
+{
+  "nav": {
+    "langEn": "EN",
+    "langSv": "SV"
+  },
+  "disclaimer": {
+    "text": "Inofficiell guide — kontrollera alltid med officiella källor. Den här sidan är bara för information och är inte juridisk rådgivning.",
+    "lastUpdated": "Senast uppdaterad: april 2026"
+  },
+  "landing": {
+    "brandName": "VisaPath",
+    "headline": "Din steg-för-steg-\nvisaguide",
+    "subheadline": "Visuella, numrerade instruktioner — som IKEA fast för immigration.",
+    "whereGoing": "Vart ska du?",
+    "from": "Från",
+    "to": "Till",
+    "selectOrigin": "Välj ursprungsland",
+    "selectDestination": "Välj destination",
+    "purposeOfTravel": "Resans syfte",
+    "comingSoon": "Den här kombinationen kommer snart — kolla in senare!",
+    "intendedStay": "Planerad vistelsetid",
+    "stayUnder90": "Under 90 dagar",
+    "stay90to365": "90 dagar – 1 år",
+    "stayOver1year": "Mer än 1 år",
+    "stayInfo": "Enbart informativt. Vistelser över 90 dagar kräver i regel ett långtidsvisum eller uppehållstillstånd.",
+    "showRoadmap": "Visa min guide →",
+    "noRoadmap": "Ingen guide finns för den här kombinationen ännu.",
+    "popularRoutes": "Populära rutter",
+    "footer": "VisaPath — enbart för information. Inte juridisk rådgivning."
+  },
+  "roadmap": {
+    "visaPath": "VisaPath",
+    "processingTime": "Handläggningstid",
+    "stayDuration": "Vistelsetid",
+    "estimatedCost": "Ungefärlig kostnad",
+    "athleteNote": "För student-idrottare",
+    "allDocsChecked": "Alla dokument är ikryssade! Lycka till med din ansökan. Kontrollera alltid uppgifterna med officiella källor."
+  },
+  "stepCard": {
+    "youNeed": "Du behöver",
+    "required": "Krävs",
+    "optional": "Valfritt",
+    "whereToGet": "Var du får det:",
+    "tips": "Tips",
+    "whatToBring": "Det här tar du med till intervjun",
+    "questionsAsked": "Frågor du kan få",
+    "interviewTips": "Tips inför intervjun",
+    "cost": "Kostnad:"
+  },
+  "sidebar": {
+    "officialSources": "Officiella källor",
+    "timeline": "Tidslinje",
+    "startOver": "Börja om",
+    "lastUpdated": "Senast uppdaterad: april 2026",
+    "disclaimer": "Den här guiden är bara för information och är inte juridisk rådgivning. Kontrollera alltid med officiella statliga källor innan du skickar in ansökningar."
+  },
+  "progressBar": {
+    "docsChecked": "{{checked}} av {{total}} dokument ikryssade"
+  },
+  "searchableSelect": {
+    "search": "Sök...",
+    "noResults": "Inga resultat",
+    "select": "Välj..."
+  },
+  "comingSoon": {
+    "title": "Den här rutten kommer snart",
+    "description": "Vi jobbar på att lägga till fler visarutter. Kolla de officiella källorna nedan tills dess.",
+    "notifyLabel": "Meddela mig när den här rutten lanseras",
+    "notifyPlaceholder": "du@exempel.se",
+    "notifyButton": "Meddela mig",
+    "thankYou": "Tack, vi hör av oss!",
+    "backHome": "Tillbaka till start"
+  },
+  "phases": {
+    "before-applying": "Innan ansökan",
+    "applying": "Ansökan",
+    "interview": "Intervju",
+    "pre-departure": "Före avresa",
+    "on-arrival": "Vid ankomst",
+    "in-country": "I landet"
+  },
+  "purposes": {
+    "tourist": "Turist",
+    "student": "Student",
+    "student-athlete": "Student-idrottare",
+    "work": "Arbete"
+  },
+  "countries": {
+    "SE": "Sverige",
+    "US": "USA",
+    "UK": "Storbritannien",
+    "IN": "Indien"
+  }
+}

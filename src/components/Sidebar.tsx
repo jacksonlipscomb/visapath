@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import type { VisaRoute } from '../data/visaRoutes'
+import { useTranslatedRoute } from '../hooks/useTranslatedRoute'
 
 type Props = {
   route: VisaRoute
 }
 
 export default function Sidebar({ route }: Props) {
+  const translated = useTranslatedRoute(route) ?? route
   return (
     <aside>
       {/* Official links */}
@@ -26,7 +28,7 @@ export default function Sidebar({ route }: Props) {
           Official Sources
         </h3>
         <ul style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {route.officialLinks.map((link) => (
+          {translated.officialLinks.map((link) => (
             <li key={link.url}>
               <a
                 href={link.url}
@@ -101,7 +103,7 @@ export default function Sidebar({ route }: Props) {
             <polyline points="12 6 12 12 16 14" />
           </svg>
           <p style={{ fontSize: '0.87rem', color: 'var(--text)', lineHeight: 1.5 }}>
-            {route.processingTime}
+            {translated.processingTime}
           </p>
         </div>
       </div>

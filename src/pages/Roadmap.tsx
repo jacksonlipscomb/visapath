@@ -2,6 +2,7 @@ import { useState, useEffect, useMemo } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getRoute, PHASE_LABELS } from '../data/visaRoutes'
 import type { VisaStep } from '../data/visaRoutes'
+import { useTranslatedRoute } from '../hooks/useTranslatedRoute'
 import StepCard from '../components/StepCard'
 import ProgressBar from '../components/ProgressBar'
 import Sidebar from '../components/Sidebar'
@@ -12,6 +13,7 @@ import { generateChecklistPDF } from '../utils/generateChecklistPDF'
 export default function Roadmap() {
   const { routeId } = useParams<{ routeId: string }>()
   const route = routeId ? getRoute(routeId) : undefined
+  const translated = useTranslatedRoute(route)
 
   // localStorage key for checked docs
   const storageKey = `visapath_${routeId}_docs`
@@ -48,13 +50,13 @@ export default function Roadmap() {
 
   // Calculate total docs
   const totalDocs = useMemo(() => {
-    if (!route) return 0
-    return route.steps.reduce((sum, step) => sum + step.documents.length, 0)
-  }, [route])
+    if (!translated) return 0
+    return translated.steps.reduce((sum, step) => sum + step.documents.length, 0)
+  }, [translated])
 
   const checkedCount = checkedDocs.size
 
-  if (!route) {
+  if (!translated) {
     return <ComingSoon />
   }
 
@@ -69,12 +71,12 @@ export default function Roadmap() {
   ]
 
   const stepsByPhase: Partial<Record<VisaStep['phase'], VisaStep[]>> = {}
-  for (const step of route.steps) {
+  for (const step of translated.steps) {
     if (!stepsByPhase[step.phase]) stepsByPhase[step.phase] = []
     stepsByPhase[step.phase]!.push(step)
   }
 
-  const purposeMeta = PURPOSES.find((p) => p.value === route.purpose)
+  const purposeMeta = PURPOSES.find((p) => p.value === translated.purpose)
 
   // Running step number
   let stepCounter = 0
@@ -90,20 +92,20 @@ export default function Roadmap() {
             <Link to="/">VisaPath</Link>
             <span className="breadcrumb-sep">/</span>
             <span>
-              {route.origin.flag} {route.origin.name} → {route.destination.flag} {route.destination.name}
+              {translated.origin.flag} {translated.origin.name} → {translated.destination.flag} {translated.destination.name}
             </span>
             <span className="breadcrumb-sep">/</span>
-            <span>{route.visaType}</span>
+            <span>{translated.visaType}</span>
           </nav>
 
           {/* Route header */}
           <div style={{ marginBottom: '20px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', marginBottom: '8px' }}>
               <span style={{ fontSize: '1.6rem' }}>
-                {route.origin.flag} → {route.destination.flag}
+                {translated.origin.flag} → {translated.destination.flag}
               </span>
               <span className="purpose-badge">
-                {purposeMeta?.emoji} {purposeMeta?.label ?? route.purpose}
+                {purposeMeta?.emoji} {purposeMeta?.label ?? translated.purpose}
               </span>
             </div>
 
@@ -116,16 +118,16 @@ export default function Roadmap() {
                 lineHeight: 1.3,
               }}
             >
-              {route.origin.name} → {route.destination.name}: {route.visaType}
+              {translated.origin.name} → {translated.destination.name}: {translated.visaType}
             </h1>
 
             <p style={{ fontSize: '0.97rem', color: 'var(--text-muted)', lineHeight: 1.65, maxWidth: '600px' }}>
-              {route.summary}
+              {translated.summary}
             </p>
           </div>
 
           {/* Athlete note */}
-          {route.athleteNote && (
+          {translated.athleteNote && (
             <div
               className="callout-blue"
               style={{ marginBottom: '20px', display: 'flex', gap: '10px', alignItems: 'flex-start' }}
@@ -135,7 +137,7 @@ export default function Roadmap() {
                 <div style={{ fontWeight: 700, fontSize: '0.87rem', color: 'var(--accent-dark)', marginBottom: '4px' }}>
                   Student Athlete Note
                 </div>
-                <p style={{ fontSize: '0.9rem', color: 'var(--text)' }}>{route.athleteNote}</p>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text)' }}>{translated.athleteNote}</p>
               </div>
             </div>
           )}
@@ -151,15 +153,15 @@ export default function Roadmap() {
           >
             <div className="stat-box">
               <div className="stat-label">Processing Time</div>
-              <div className="stat-value">{route.processingTime}</div>
+              <div className="stat-value">{translated.processingTime}</div>
             </div>
             <div className="stat-box">
               <div className="stat-label">Stay Duration</div>
-              <div className="stat-value">{route.stayDuration}</div>
+              <div className="stat-value">{translated.stayDuration}</div>
             </div>
             <div className="stat-box">
               <div className="stat-label">Estimated Cost</div>
-              <div className="stat-value">{route.estimatedCost}</div>
+              <div className="stat-value">{translated.estimatedCost}</div>
             </div>
           </div>
 
@@ -298,7 +300,7 @@ export default function Roadmap() {
                   Download Checklist PDF
                 </button>
               </div>
-              <Sidebar route={route} />
+              <Sidebar route={translated} />
             </div>
           </div>
         </div>

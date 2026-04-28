@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 export default function Disclaimer() {
+  const { i18n } = useTranslation()
   return (
     <div
       style={{
@@ -61,6 +64,34 @@ export default function Disclaimer() {
             {' · '}
             <span style={{ color: '#a07020' }}>Last updated: April 2026</span>
           </span>
+          {/* Language toggle */}
+          <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '2px', flexShrink: 0 }}>
+            <button
+              onClick={() => i18n.changeLanguage('en')}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                fontFamily: 'var(--font)', fontSize: '0.78rem', padding: '0 4px',
+                fontWeight: i18n.language === 'en' ? 700 : 400,
+                color: i18n.language === 'en' ? '#7d5a00' : '#a07020',
+                textDecoration: i18n.language === 'en' ? 'underline' : 'none',
+              }}
+            >
+              EN
+            </button>
+            <span style={{ color: '#b7791f', fontSize: '0.75rem' }}>|</span>
+            <button
+              onClick={() => i18n.changeLanguage('sv')}
+              style={{
+                background: 'none', border: 'none', cursor: 'pointer',
+                fontFamily: 'var(--font)', fontSize: '0.78rem', padding: '0 4px',
+                fontWeight: i18n.language === 'sv' ? 700 : 400,
+                color: i18n.language === 'sv' ? '#7d5a00' : '#a07020',
+                textDecoration: i18n.language === 'sv' ? 'underline' : 'none',
+              }}
+            >
+              SV
+            </button>
+          </div>
         </div>
       </div>
     </div>

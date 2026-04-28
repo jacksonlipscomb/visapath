@@ -1,0 +1,2111 @@
+{
+  "ui": {
+    "purposes": {
+      "tourist": "Turist",
+      "student": "Student",
+      "student-athlete": "Studentidrottare",
+      "work": "Arbete"
+    },
+    "phaseLabels": {
+      "before-applying": "Innan du ansöker",
+      "applying": "Ansökan",
+      "interview": "Intervju",
+      "pre-departure": "Före avresa",
+      "on-arrival": "Vid ankomst",
+      "in-country": "I landet"
+    }
+  },
+  "routes": {
+    "se-us-student": {
+      "visaType": "F-1-studentvisum",
+      "processingTime": "3–6 månader totalt (ansök tidigt)",
+      "stayDuration": "Studieprogrammets längd + 60 dagars respitperiod",
+      "estimatedCost": "~$535 USD in myndighetsavgifter (SEVIS $350 + MRV $185)",
+      "summary": "F-1 är USA:s studentvisum för heltidsstudier på akademisk nivå. Svenska medborgare kan besöka USA i upp till 90 dagar utan visum, men om du ska studera längre än så behöver du ett F-1-visum innan du lämnar Sverige.",
+      "athleteNote": "Studentidrottare använder samma F-1-visum som vanliga studenter. Du behöver också godkännande från NCAA Eligibility Center. Din idrottsavdelning hanterar det separat, så börja med det samtidigt som din visumansökan.",
+      "steps": {
+        "1": {
+          "title": "Bli antagen till en SEVP-certifierad skola och få ditt I-20",
+          "description": "Ansök till en amerikansk skola som är certifierad av Student- och utbytesbesöksprogrammet (SEVP). När du har blivit antagen, skolan ger dig ett dokument som heter Form I-20. Du behöver det här formuläret för att ansöka om ditt visum — allt annat bygger på det.",
+          "estimatedTime": "2–8 veckor (depends on skola)",
+          "estimatedCost": "Varierar per skola (ansökningsavgifter)",
+          "tips": [
+            "Alla amerikanska skolor är inte SEVP-certifierade. Kolla listan på sevp.ice.gov innan du ansöker någonstans.",
+            "Ditt I-20 har ett startdatum för programmet. Planera hela din visumtidslinje runt det datumet.",
+            "Be skolan om ditt I-20 så fort du blir antagen. Vissa skolor tar 2–4 veckor på sig att skicka det."
+          ],
+          "documents": [
+            {
+              "name": "Antagningsbrev",
+              "description": "Det officiella erbjudandebrevet från din amerikanska skola."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Skolans internationella kontor utfärdar detta. Det har ditt SEVIS ID-nummer på sida 1. Spara varje kopia du får.",
+              "whereToGet": "Din skolas kontor för internationella studenter"
+            },
+            {
+              "name": "Ekonomiskt underlag",
+              "description": "Bevis på att du har tillräckligt med pengar för att betala studieavgifter och levnadskostnader. Ett aktuellt kontoutdrag, stipendiebrev eller ett brev från den som betalar för dina studier fungerar."
+            },
+            {
+              "name": "Giltigt pass",
+              "description": "Ditt pass måste vara giltigt i minst 6 månader efter att du planerar att lämna USA."
+            }
+          ]
+        },
+        "2": {
+          "title": "Betala SEVIS I-901-avgiften",
+          "description": "Den amerikanska staten tar ut en avgift som heter SEVIS I-901-avgiften. Den registrerar dig i deras spårningssystem för internationella studenter. Du betalar den online på fmjfee.com. Betala minst 3 arbetsdagar före din intervju.",
+          "estimatedTime": "15–30 minuter online",
+          "estimatedCost": "$350 USD* (F-1-kategori)",
+          "tips": [
+            "Vänta tills du har ditt I-20 innan du betalar. Avgiften är kopplad till ditt specifika SEVIS ID.",
+            "Betala minst 3 arbetsdagar före din intervju — det tar tid att behandla betalningen.",
+            "Spara kvittot permanent. Du kan behöva det igen varje gång du återvänder till USA."
+          ],
+          "documents": [
+            {
+              "name": "Form I-20",
+              "description": "Du behöver SEVIS ID-numret som står högst upp på sida 1."
+            },
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Betala på fmjfee.com. Visum, Mastercard och American Express accepteras."
+            },
+            {
+              "name": "I-901-betalningskvitto",
+              "description": "Skriv ut detta eller spara det som PDF. Du måste visa upp det på intervjun."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Betala SEVIS-avgiften här"
+            }
+          ]
+        },
+        "3": {
+          "title": "Fyll i Form DS-160 (onlineansökan för icke-immigrantvisum)",
+          "description": "DS-160 är den amerikanska statens officiella visumansökningsformulär. Du fyller i det online på ceac.state.gov. Det frågar om din bakgrund, resehistorik och studieplaner. Spara ditt ansöknings-ID var 20:e minut — sessionen kan gå ut och du kan förlora ditt arbete.",
+          "estimatedTime": "1–2 timmar att fylla i",
+          "estimatedCost": "Gratis (formulärinlämning)",
+          "tips": [
+            "Skriv ner ditt DS-160-ansöknings-ID efter varje avsnitt. Om sessionen går ut kan du inte få tillbaka det.",
+            "Om en fråga inte gäller dig, skriv 'Gäller inte' och lämna den inte tom.",
+            "Skriv ut DS-160-bekräftelsesidan. Den har en streckkod. Tjänstemannen skannar den på din intervju.",
+            "Ditt namn måste matcha ditt pass exakt. Kontrollera stavningen noggrant.",
+            "Välj USA:s ambassad i Stockholm som intervjuplats."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass",
+              "description": "Du behöver ditt passnummer, utfärdandedatum och utgångsdatum."
+            },
+            {
+              "name": "Visumfoto för USA",
+              "description": "Foto 51×51 mm, vit bakgrund, taget under de senaste 6 månaderna. Du laddar upp det under ansökan."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Du behöver skolans namn, SEVIS ID, programdatum och kontaktuppgifter till din DSO."
+            },
+            {
+              "name": "Resehistorik",
+              "description": "Länder du har besökt under de senaste 5 åren, med ungefärliga datum."
+            },
+            {
+              "name": "Tidigare amerikanska visum",
+              "description": "Visumnummer från gamla pass, om du har haft amerikanska visum tidigare."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Öppna DS-160-ansökan"
+            }
+          ]
+        },
+        "4": {
+          "title": "Betala MRV-visumansökningsavgiften",
+          "description": "MRV-avgiften är visumansökningsavgiften som du betalar till USA:s ambassad. Den är 185 USD och återbetalas inte om ditt visum nekas. För Sverige betalar du online via USA:s ambassads svenska portal (cgifederal.com) innan du bokar din intervju. Betalning och bokning sker i samma portal — slutför betalningen först och logga sedan in igen för att boka din intervjutid.",
+          "estimatedTime": "10–20 minuter",
+          "estimatedCost": "$185 USD*",
+          "tips": [
+            "Betala bara via den officiella portalen för USA:s ambassad i Stockholm. Använd aldrig tredjepartsagenter.",
+            "Skriv ner ditt transaktionsnummer direkt efter betalningen. Utan det kan du inte boka din intervju.",
+            "Avgiften på 185 USD återbetalas inte, även om ditt visum nekas."
+          ],
+          "documents": [
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Betala via bokningsportalen för USA:s ambassad i Stockholm."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Det här kvittot har ett transaktionsnummer. Du behöver numret för att boka din intervju."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Betala MRV-avgift (USTravelDocs-portalen)"
+            }
+          ]
+        },
+        "5": {
+          "title": "Boka din visumintervju på USA:s ambassad i Stockholm",
+          "description": "Boka din F-1-intervju på USA:s ambassad i Stockholm (Dag Hammarskjölds Väg 31, SE-115 89 Stockholm). Tider fylls snabbt under våren och sommaren. Försök boka 2–3 månader i förväg.",
+          "estimatedTime": "15 minuter att boka online",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Sommartider kan fyllas flera månader i förväg. Boka så tidigt du kan.",
+            "Du kan boka om en gång gratis om dina planer ändras.",
+            "Stockholm är rätt ambassad för svenska boende. Boka inte på ett annat lands ambassad."
+          ],
+          "documents": [
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Ditt transaktionsnummer behövs för att logga in i bokningssystemet."
+            },
+            {
+              "name": "DS-160-streckkod",
+              "description": "Ditt DS-160-ansöknings-ID kopplas till din bokning."
+            },
+            {
+              "name": "Passuppgifter",
+              "description": "Ditt passnummer anges i bokningsformuläret."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Boka din intervju (logga in igen i samma portal)"
+            }
+          ]
+        },
+        "6": {
+          "title": "Gå på visumintervjun på USA:s ambassad i Stockholm",
+          "description": "Kom 15 minuter tidigt med alla dina dokument i en genomskinlig mapp. En konsulär tjänsteman frågar om dina studieplaner, hur du betalar för skolan och dina planer på att återvända till Sverige efter examen. Var ärlig och håll svaren korta. De flesta beslut fattas samma dag.",
+          "estimatedTime": "Räkna med en halv dag; intervjun tar oftast 10–30 minuter",
+          "estimatedCost": "Ingen extra avgift (MRV redan betald)",
+          "tips": [
+            "Håll svaren korta. Tjänstemannen träffar många personer. Säg det du behöver säga och sluta där.",
+            "Det viktigaste du behöver visum är att du planerar att åka hem till Sverige efter examen. Ha ett tydligt svar redo.",
+            "Klä dig prydligt. Vårdad vardagsklädsel går bra.",
+            "Ta inte med stora väskor, mat eller laptops — kolla ambassadens webbplats för vad som är tillåtet."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass",
+              "description": "Ta med originalet, plus gamla pass som har tidigare amerikanska visum."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Ta med originalet. Det måste vara signerat av dig och din DSO. Ta inte bara med en kopia."
+            },
+            {
+              "name": "DS-160-confirmation/barcode page",
+              "description": "Utskriven. Tjänstemannen skannar streckkoden."
+            },
+            {
+              "name": "SEVIS I-901-avgiftskvitto",
+              "description": "Utskrivet eller visat på mobilen."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Utskrivet."
+            },
+            {
+              "name": "Två passfoton",
+              "description": "51×51 mm, vit bakgrund."
+            },
+            {
+              "name": "Ekonomiska dokument",
+              "description": "Kontoutdrag, stipendiebrev eller sponsorbrev. Ta med original och kopior."
+            },
+            {
+              "name": "Skolans antagningsbrev",
+              "description": "Det officiella erbjudandebrevet från din amerikanska skola."
+            },
+            {
+              "name": "svenskt personal ID",
+              "description": "Nationellt ID-kort eller körkort — användbart som sekundär legitimation."
+            },
+            {
+              "name": "Evidence of ties to Sverige",
+              "description": "Något som visar att du planerar att åka hem efter studierna. Ett jobberbjudande, egendom eller nära familjemedlemmar hjälper."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Ta också med gamla pass, särskilt om de har tidigare amerikanska visum."
+              },
+              {
+                "item": "Form I-20 (original)",
+                "note": "Måste vara signerat av dig och din DSO. Ta inte bara med en kopia."
+              },
+              {
+                "item": "DS-160-bekräftelsesida",
+                "note": "Den utskrivna sidan med streckkoden. Tjänstemannen skannar den."
+              },
+              {
+                "item": "SEVIS I-901-avgiftskvitto",
+                "note": "Utskrivet eller på mobilen."
+              },
+              {
+                "item": "MRV-betalningskvitto",
+                "note": "Bevis på att du har betalat visumansökningsavgiften."
+              },
+              {
+                "item": "Två passfoton",
+                "note": "51×51 mm, white background, taken recently."
+              },
+              {
+                "item": "Kontoutdrag",
+                "note": "De senaste 3–6 månaderna. Visar att du har råd med studieavgifter och levnadskostnader."
+              },
+              {
+                "item": "Scholarship or funding letter",
+                "note": "Om din skola eller en sponsor betalar, ta med deras officiella brev."
+              },
+              {
+                "item": "Skolans antagningsbrev",
+                "note": "Det officiella erbjudandet från ditt amerikanska universitet."
+              },
+              {
+                "item": "Evidence of ties to hem country",
+                "note": "Något som visar att du planerar att återvända hem efter studierna. Ett jobberbjudande, egendom eller nära familj fungerar."
+              }
+            ],
+            "commonQuestions": [
+              "Varför valde du den här skolan?",
+              "Vad ska du studera?",
+              "Hur betalar du för skola och levnadskostnader?",
+              "Vad planerar du att göra efter examen?",
+              "Har du familj eller vänner i USA?",
+              "Har du besökt USA tidigare?",
+              "Vad heter din DSO och vilka kontaktuppgifter har hen?"
+            ],
+            "tips": [
+              "Håll svaren korta och ärliga. Tjänstemannen ställer samma frågor till många personer varje dag.",
+              "Det viktigaste att visa är att du planerar att åka hem efter examen. Var redo att förklara varför.",
+              "Organisera alla dokument i ordningen de listas ovan innan du åker hemifrån.",
+              "Kom minst 15 minuter tidigt. Du kan inte ta med stora väskor eller laptops in på de flesta ambassader."
+            ]
+          }
+        },
+        "7": {
+          "title": "Anländ till USA:s gränskontroll",
+          "description": "Att ha visumstämpeln i passet garanterar inte att du får komma in. En CBP-tjänsteman vid gränsen fattar det slutliga beslutet. Ha alla dina dokument i handbagaget, inte i incheckat bagage. Du kan anlända upp till 30 dagar före startdatumet på ditt I-20.",
+          "estimatedTime": "20–60 minuter at CBP",
+          "estimatedCost": "Ingen avgift",
+          "tips": [
+            "Säg till CBP-tjänstemannen att du är student på ett F-1-visum. Säg aldrig 'turist'.",
+            "Anländ inte mer än 30 dagar före startdatumet på ditt I-20.",
+            "Kontrollera ditt I-94-register inom 48 timmar efter ankomst. Du gör det online på i94.cbp.dhs.gov.",
+            "Ha alltid ditt I-20 i handbagaget varje gång du reser internationellt."
+          ],
+          "documents": [
+            {
+              "name": "Pass with F-1-visum stamp",
+              "description": "Visumstämpeln du fick efter att din intervju blev godkänd."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Original. Lägg aldrig detta i incheckat bagage."
+            },
+            {
+              "name": "Bevis på pengar",
+              "description": "Ett aktuellt kontoutdrag eller stipendiebrev."
+            },
+            {
+              "name": "Skola contact details",
+              "description": "Din DSO:s namn, telefonnummer, e-post och skolans adress."
+            },
+            {
+              "name": "Återvända flight or onward resa plans",
+              "description": "Visar att du tänker lämna landet efter dina studier."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Kontrollera ditt I-94-register"
+            }
+          ]
+        },
+        "8": {
+          "title": "Behåll din F-1-status under hela studietiden",
+          "description": "Du måste aktivt hålla din F-1-status i gott skick. Att bryta mot reglerna, även av misstag, kan avsluta din status. Om något ändras i din situation, kontakta din DSO direkt.",
+          "estimatedTime": "Löpande",
+          "estimatedCost": "Inga myndighetsavgifter för att behålla status",
+          "tips": [
+            "Gå aldrig under heltidsstudier utan att först få Reduced Course Load (RCL) godkänd av din DSO.",
+            "Att arbeta utanför campus utan CPT eller OPT-tillstånd är ett allvarligt regelbrott. Gör det inte.",
+            "Håll ditt pass giltigt. Förnya det på Sveriges ambassad eller konsulat i USA innan det går ut.",
+            "Ditt I-20 har ett slutdatum. Om du behöver mer tid för att slutföra programmet, be din DSO om en förlängning före det datumet, inte efter."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt Form I-20",
+              "description": "Måste hållas aktuellt. Om ditt program förlängs uppdaterar din DSO det."
+            },
+            {
+              "name": "Bekräftelse på heltidsregistrering",
+              "description": "Du måste läsa minst det minsta antalet poäng varje termin."
+            },
+            {
+              "name": "Arbetstillståndsdokument",
+              "description": "Du får bara arbeta på campus (mindre än 20 timmar i veckan) om inte din DSO godkänner CPT eller OPT."
+            },
+            {
+              "name": "Aktuell amerikansk adress registrerad",
+              "description": "Meddela din DSO inom 10 dagar varje gång du flyttar."
+            }
+          ]
+        }
+      }
+    },
+    "se-us-student-athlete": {
+      "visaType": "F-1-studentvisum",
+      "processingTime": "3–6 månader totalt (ansök tidigt)",
+      "stayDuration": "Studieprogrammets längd + 60 dagars respitperiod",
+      "estimatedCost": "~$535 USD in myndighetsavgifter (SEVIS $350 + MRV $185)",
+      "summary": "Studentidrottare använder samma F-1-visum som vanliga studenter. svenska medborgare behöver F-1-för akademiska vistelser längre än 90 dagar. NCAA-idrottare behöver också godkännande från Eligibility Center, så börja den processen samtidigt som din visumansökan.",
+      "athleteNote": "Studentidrottare använder samma F-1-visum men måste också få godkännande från NCAA Eligibility Center. Din idrottsavdelning hanterar detta separat, så börja behörighetsprocessen samtidigt som din visumansökan.",
+      "_note": "Stegen är identiska med se-us-student. Se den rutten för alla stegtexter."
+    },
+    "se-us-tourist": {
+      "visaType": "ESTA (programmet för viseringsundantag)",
+      "processingTime": "Vanligtvis 72 timmar för ESTA-godkännande; räkna med 1 vecka",
+      "stayDuration": "Upp till 90 dagar per besök",
+      "estimatedCost": "~$21 USD (ESTA-avgift)",
+      "summary": "Svenska medborgare kan resa till USA utan visum genom programmet för viseringsundantag. Du behöver bara ansöka om ESTA — elektroniskt system för resetillstånd — online innan du reser. ESTA är giltigt i 2 år och låter dig göra flera resor, varje resa upp till 90 dagar.",
+      "steps": {
+        "1": {
+          "title": "Check ESTA eligibility",
+          "description": "Se till att du uppfyller kraven för programmet för viseringsundantag innan du ansöker. Svenska medborgare uppfyller vanligtvis kraven. Men om du tidigare har rest till vissa länder — till exempel Kuba, Iran, Irak, Libyen, Nordkorea, Somalia, Sudan, Syrien eller Jemen efter 2011 — behöver du ett B-2-visum i stället för ESTA.",
+          "estimatedTime": "30 minuter för att kontrollera behörighet",
+          "estimatedCost": "Gratis (behörighetskontroll)",
+          "tips": [
+            "Om du har dubbelt medborgarskap med ett land på den begränsade listan, kolla resa.state.gov innan du ansöker om ESTA.",
+            "Varje resenär behöver sitt eget ESTA, även barn.",
+            "ESTA är bara för turism, affärer eller transit. Det täcker inte studier eller arbete."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt svenskt pass",
+              "description": "Måste vara ett e-pass (det har ett chip). Måste vara giltigt under hela resan."
+            },
+            {
+              "name": "Resa history records",
+              "description": "Om du har rest till begränsade länder, kontrollera om du behöver ett B-2-visum i stället."
+            }
+          ]
+        },
+        "2": {
+          "title": "Ansök om ESTA på esta.cbp.dhs.gov",
+          "description": "Fyll i ESTA-ansökan på den officiella amerikanska myndighetswebbplatsen, esta.cbp.dhs.gov. Använd ingen annan webbplats — många kopiesidor tar 60–90 USD för samma sak. Den riktiga avgiften är bara 21 USD. De flesta godkännanden kommer inom några minuter. Ansök minst 72 timmar före ditt flyg.",
+          "estimatedTime": "20–30 minuter",
+          "estimatedCost": "$21 USD",
+          "tips": [
+            "Använd bara esta.cbp.dhs.gov. Många falska sidor tar 60–90 USD för samma tjänst.",
+            "Ditt ESTA är giltigt i 2 år från godkännandet eller tills ditt pass går ut, beroende på vad som händer först.",
+            "Varje resa är begränsad till 90 dagar. Du kan inte förlänga en VWP-vistelse eller byta till studentvisum medan du är i USA.",
+            "Spara eller skriv ut ditt ESTA-godkännande. Vissa flygbolag ber om att få se det vid incheckning."
+          ],
+          "documents": [
+            {
+              "name": "svenskt e-Pass",
+              "description": "Du behöver ditt passnummer och dina personuppgifter. Det måste ha ett chip."
+            },
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Avgiften är 21 USD. Visum, Mastercard och PayPal accepteras."
+            },
+            {
+              "name": "USA resa details",
+              "description": "Den första adressen där du ska bo i USA och dina flyguppgifter om du har dem."
+            },
+            {
+              "name": "Nödkontakt",
+              "description": "Ett namn och telefonnummer."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Ansök om ESTA"
+            }
+          ]
+        },
+        "3": {
+          "title": "Anländ till USA:s gränskontroll",
+          "description": "Visa upp ditt pass och fyll i den elektroniska tulldeklarationen vid CBP-tjänstemannens disk. Med ESTA finns inget pappersformulär för I-94 att fylla i. Systemet skapar ditt inreseregister automatiskt.",
+          "estimatedTime": "20–60 minuter at CBP",
+          "estimatedCost": "Ingen avgift vid inresa",
+          "tips": [
+            "Kontrollera ditt I-94-inreseregister inom 48 timmar på i94.cbp.dhs.gov.",
+            "Tjänstemannen kan fråga om dina planer, var du ska bo och hur mycket pengar du har. Håll svaren korta.",
+            "Du får inte arbeta eller studera på ESTA. Var ärlig om dina planer."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt svenskt pass med ESTA-godkännande"
+            },
+            {
+              "name": "CBP Mobile or paper customs declaration"
+            },
+            {
+              "name": "Returflygsuppgifter",
+              "description": "Visar att du planerar att lämna landet inom 90 dagar."
+            },
+            {
+              "name": "Hotell-/boendebekräftelse"
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Kontrollera ditt I-94-register"
+            }
+          ]
+        },
+        "4": {
+          "title": "Följ VWP-reglerna under din vistelse",
+          "description": "Du kan inte förlänga en ESTA/VWP-vistelse, och du kan inte byta till en annan visumkategori (som ett studentvisum) från insidan av USA. Om dina planer ändras, måste du lämna USA och ansöka om rätt visum innan du kommer tillbaka.",
+          "estimatedTime": "Up to 90 dagar",
+          "estimatedCost": "Inga avgifter",
+          "tips": [
+            "90 dagar är den absoluta gränsen. Om du stannar för länge blir du avstängd från programmet för viseringsundantag och det kan skada framtida amerikanska visumansökningar.",
+            "Om du bestämmer dig för att du vill studera eller arbeta, lämna USA först och ansök om rätt visum.",
+            "Om du har en verklig nödsituation och behöver stanna längre, kontakta en amerikansk immigrationsadvokat."
+          ],
+          "documents": [
+            {
+              "name": "Pass",
+              "description": "Förvara det på ett säkert ställe."
+            },
+            {
+              "name": "I-94 electronic record",
+              "description": "Kontrollera det på i94.cbp.dhs.gov. Det visar exakt hur länge du får stanna."
+            }
+          ]
+        }
+      }
+    },
+    "se-us-work": {
+      "visaType": "H-1B-visum för specialistyrke",
+      "processingTime": "6–12 månader (lotteri i mars, därefter visumstämpling)",
+      "stayDuration": "3 år (kan förnyas upp till 6 år)",
+      "estimatedCost": "$3,000–$6,000+ USD (mestadels betalt av arbetsgivaren)",
+      "summary": "H-1B är det huvudsakliga arbetsvisumet för kvalificerade jobb som tech, ingenjörsroller, finans och sjukvård. Du kan inte ansöka om det själv, utan en amerikansk arbetsgivare måste sponsra dig. Det finns fler sökande än platser varje år, så USCIS använder ett lotteri i mars. Även efter att USCIS godkänner din ansökan behöver svenska medborgare fortfarande få en visumstämpel på USA:s ambassad i Stockholm.",
+      "steps": {
+        "1": {
+          "title": "Skaffa en amerikansk arbetsgivare som vill sponsra H-1B",
+          "description": "Du kan inte ansöka om H-1B-själv. En amerikansk arbetsgivare måste vara din sponsor. De lämnar in pappersarbetet och betalar de flesta avgifterna. Börja leta efter ett sponsrande jobb 12–18 månader innan du vill börja arbeta.",
+          "estimatedTime": "Månader av jobbsökande",
+          "estimatedCost": "Ingen direkt kostnad för dig (arbetsgivaren betalar)",
+          "tips": [
+            "H-1B-är för specialistjobb, vanligtvis sådana som kräver minst en kandidatexamen inom ett specifikt ämne.",
+            "Arbetsgivare måste enligt lag betala grundavgifterna. Kontrollera vad din arbetsgivare täcker innan du accepterar ett erbjudande.",
+            "Om du är på praktisk arbetsträning (OPT) efter en amerikansk examen, använd den tiden för att hitta en H-1B-sponsor.",
+            "Universitet, ideella organisationer och vissa forskningsorganisationer är undantagna från lotteriet. De kan lämna in när som helst under året."
+          ],
+          "documents": [
+            {
+              "name": "Jobberbjudande",
+              "description": "Anger din jobbtitel, lön och att arbetsgivaren kommer att sponsra din H-1B."
+            },
+            {
+              "name": "Examensbevis och betygsutdrag",
+              "description": "Du behöver minst en kandidatexamen inom ett område som hör ihop med jobbet."
+            },
+            {
+              "name": "Professional credentials/licences",
+              "description": "Särskilt om du arbetar inom sjukvård, ingenjörsyrken eller ett annat licensierat område."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "USCIS H-1B-Info"
+            }
+          ]
+        },
+        "2": {
+          "title": "Arbetsgivaren lämnar in H-1B-lotteriregistrering (mars)",
+          "description": "Varje mars öppnar USCIS ett registreringsfönster där arbetsgivare anmäler sina sponsrade kandidater till H-1B-lotteriet. Din arbetsgivare lämnar in en registrering för din räkning. Om du blir vald, ungefär 20–30 % chans för de flesta, kan arbetsgivaren sedan lämna in din fullständiga ansökan.",
+          "estimatedTime": "2 veckor for registration (March 1–18 window)",
+          "estimatedCost": "$215 USD registration avgift (betalas av arbetsgivaren)",
+          "tips": [
+            "Om du har en amerikansk masterexamen, be arbetsgivaren registrera dig för masterkvoten. Det ger dig två chanser i lotteriet.",
+            "Lotteriet är slumpmässigt. Det är inte garanterat att du blir vald, även om du försöker i flera år.",
+            "Om du inte blir vald finns andra alternativ, till exempel arbetsgivare som är undantagna från taket, L-1-visum för interna företagsöverföringar eller O-1-visum för personer med extraordinära färdigheter."
+          ],
+          "documents": [
+            {
+              "name": "Employer EIN",
+              "description": "Din arbetsgivares skatte-ID-nummer. De använder det för att registrera."
+            },
+            {
+              "name": "Your pass details",
+              "description": "Ditt namn exakt som det står i passet."
+            },
+            {
+              "name": "Degree verification",
+              "description": "Din utbildningsnivå påverkar vilket lotteri du går in i. Om du har en amerikansk masterexamen hamnar du i en andra pool som ger dig bättre chans."
+            }
+          ]
+        },
+        "3": {
+          "title": "Arbetsgivaren lämnar in full H-1B-petition (I-129) till USCIS",
+          "description": "Om du väljs i lotteriet lämnar din arbetsgivare in Form I-129 till USCIS, vanligtvis i april. Arbetsgivaren kan betala för snabbare handläggning (2 805 USD för 15 dagars handläggning). Standardhandläggning tar 3–6 månader.",
+          "estimatedTime": "3–6 månader standard; 15 dagar premium",
+          "estimatedCost": "$730–$2,805+ USD (ansökan + premium, mestadels betalt av arbetsgivaren)",
+          "tips": [
+            "Be din arbetsgivare om kopior av allt de skickar till USCIS. Du behöver det på din visumintervju.",
+            "Om du är utanför USA när din petition godkänns behöver du få din visumstämpel på USA:s ambassad i Stockholm.",
+            "Premiumhandläggning (2 805 USD) kan vara värt att överväga om ditt startdatum närmar sig snabbt."
+          ],
+          "documents": [
+            {
+              "name": "Form I-129",
+              "description": "Din arbetsgivare lämnar in detta. Du tillhandahåller stödjande dokument."
+            },
+            {
+              "name": "Labor Condition Ansökan (LCA)",
+              "description": "Din arbetsgivare får detta från USA:s arbetsmarknadsdepartement. Det intygar att de betalar dig gällande nivå för ditt jobb."
+            },
+            {
+              "name": "Examensbevis",
+              "description": "Officiella betygsutdrag och ditt diplom."
+            },
+            {
+              "name": "Expert opinion letter",
+              "description": "Om din examen är från utanför USA kan du behöva en bedömning av meriter från en NACES-ackrediterad tjänst."
+            },
+            {
+              "name": "Pass copy"
+            },
+            {
+              "name": "Current visum status dokument",
+              "description": "Om du redan är i USA: ditt I-94, nuvarande visum och så vidare."
+            }
+          ]
+        },
+        "4": {
+          "title": "Ansök om H-1B-visumstämpel på USA:s ambassad i Stockholm",
+          "description": "Efter att USCIS godkänner din I-129 behöver du få en faktisk visumstämpel i passet. Detta gör du på USA:s ambassad i Stockholm. Fyll i Form DS-160, betala MRV-avgiften på 185 USD och gå på intervju.",
+          "estimatedTime": "2–6 veckor post-USCIS approval",
+          "estimatedCost": "$185 USD MRV-avgift",
+          "tips": [
+            "Intervjun är ganska enkel. Var redo att beskriva ditt jobb på ett enkelt sätt och förklara dina kvalifikationer.",
+            "Boka din tid i Stockholm tidigt, eftersom handläggningstider varierar.",
+            "Om din petition godkändes medan du var i USA på ett annat visum kan du kanske byta status utan att åka till Stockholm. Fråga din arbetsgivares immigrationsadvokat."
+          ],
+          "documents": [
+            {
+              "name": "USCIS-godkännandebesked (Form I-797)",
+              "description": "Det ursprungliga godkännandebrevet från USCIS. Detta är ditt viktigaste dokument."
+            },
+            {
+              "name": "Giltigt pass"
+            },
+            {
+              "name": "Form DS-160",
+              "description": "Filled in at ceac.state.gov."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "185 USD betalt via USA:s ambassads svenska portal."
+            },
+            {
+              "name": "Anställningserbjudande"
+            },
+            {
+              "name": "LCA approval notice"
+            },
+            {
+              "name": "Examensbevis"
+            },
+            {
+              "name": "Pay stubs or contract",
+              "description": "Bevis på att ditt jobb kvalificerar som ett specialistyrke på rätt lönenivå."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Öppna DS-160-ansökan"
+            },
+            {
+              "label": "Boka Stockholmstid"
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Giltigt och inte på väg att gå ut snart."
+              },
+              {
+                "item": "USCIS-godkännandebesked (Form I-797)",
+                "note": "Det ursprungliga godkännandebrevet från USCIS. Detta är ditt viktigaste dokument."
+              },
+              {
+                "item": "DS-160-bekräftelsesida",
+                "note": "Utskriven streckkodssida."
+              },
+              {
+                "item": "MRV-avgiftskvitto",
+                "note": "Bevis på betalning av avgiften på 185 USD."
+              },
+              {
+                "item": "Två passfoton",
+                "note": "51×51 mm, vit bakgrund."
+              },
+              {
+                "item": "Jobberbjudande",
+                "note": "På företagets brevpapper, med din titel, lön och startdatum."
+              },
+              {
+                "item": "Labor Condition Ansökan (LCA)",
+                "note": "Din arbetsgivare får detta från USA:s arbetsmarknadsdepartement. Be om en kopia."
+              },
+              {
+                "item": "Examensbevis och betygsutdrag",
+                "note": "Från varje universitet du har gått på."
+              },
+              {
+                "item": "Pay stubs or employment contract",
+                "note": "Bevis på din förväntade lön."
+              }
+            ],
+            "commonQuestions": [
+              "Vad kommer du att göra i ditt jobb?",
+              "Hur länge har du arbetat inom detta område?",
+              "Vad heter din arbetsgivare och vad gör de?",
+              "Var kommer du att vara baserad i USA?",
+              "Vad är din lön?"
+            ],
+            "tips": [
+              "H-1B-intervjuer på ambassaden i Stockholm är vanligtvis enkla. Var redo att beskriva ditt jobb på ett enkelt sätt.",
+              "Ta med original och kopior av allt.",
+              "Din arbetsgivares immigrationsadvokat kan säga exakt vilka dokument du ska ta med, så fråga dem."
+            ]
+          }
+        },
+        "5": {
+          "title": "Res in i USA på H-1B",
+          "description": "Res till USA med ditt pass med H-1B-visumstämpel och ditt USCIS-godkännandebesked. Du får bara arbeta för arbetsgivaren som sponsrade dig. Du får inte frilansa eller arbeta för andra arbetsgivare om de inte lämnar in en separat petition.",
+          "estimatedTime": "Standardhandläggning hos CBP",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Ditt I-94 ska visa 'H-1B'-status och de datum som din petition täcker.",
+            "Du får bara arbeta för arbetsgivaren som sponsrade dig. Om du byter jobb måste din nya arbetsgivare lämna in en ny H-1B-petition.",
+            "Håll koll på när din petition går ut. Din arbetsgivare behöver ansöka om förlängning 6 månader innan den löper ut."
+          ],
+          "documents": [
+            {
+              "name": "Pass with H-1B-visum stamp"
+            },
+            {
+              "name": "Form I-797 USCIS approval notice",
+              "description": "Ha originalet i handbagaget."
+            },
+            {
+              "name": "Anställningserbjudande"
+            }
+          ]
+        },
+        "6": {
+          "title": "Behåll H-1B-status och planera för förlängning eller uppehållskort",
+          "description": "Din H-1B-är kopplad till din arbetsgivare. Om du byter jobb lämnar din nya arbetsgivare in en ny petition. Du får först 3 år, som kan förnyas upp till 6 år. Många H-1B-innehavare ansöker så småningom om uppehållskort genom sin arbetsgivare, så börja den diskussionen tidigt.",
+          "estimatedTime": "3-år initial period, renewable",
+          "estimatedCost": "Extension fees similar to initial petition (mestadels betalt av arbetsgivaren)",
+          "tips": [
+            "Om din arbetsgivare sponsrar dig för uppehållskort kan du vara berättigad till H-1B-förlängningar bortom 6 år.",
+            "När du reser utomlands, se till att din H-1B-visumstämpel fortfarande är giltig. Utan giltig stämpel kan du inte resa in igen.",
+            "Om du förlorar jobbet har du en respitperiod på 60 dagar för att hitta en ny H-1B-sponsor eller lämna USA."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt H-1B-approval notice",
+              "description": "Håll koll på utgångsdatumen."
+            },
+            {
+              "name": "Pay stubs",
+              "description": "Bevis på att din arbetsgivare betalar dig den överenskomna lönen."
+            },
+            {
+              "name": "Updated LCA",
+              "description": "Din arbetsgivare behöver uppdatera detta om din roll, plats eller lön ändras betydligt."
+            }
+          ]
+        }
+      }
+    },
+    "us-se-student": {
+      "visaType": "Studentuppehållstillstånd",
+      "processingTime": "1–4 månader (Migrationsverket)",
+      "stayDuration": "Programmets längd (kan förlängas)",
+      "estimatedCost": "~1,000 SEK (≈$95 USD) ansökningsavgift",
+      "summary": "Amerikanska medborgare kan besöka Sverige i upp till 90 dagar utan visum. Men om du ska studera längre än så behöver du ett studentuppehållstillstånd från Migrationsverket. Ansök minst 3 månader innan ditt program börjar.",
+      "steps": {
+        "1": {
+          "title": "Ansök till ett svenskt universitet och få ditt antagningsbesked",
+          "description": "Ansök via universityadmissions.se, which covers most svenskt universities, eller ansök direkt till skolan. De flesta program som ges på engelska finns på universityadmissions.se. När du blir antagen får du ett officiellt antagningsbesked — du behöver det för att ansöka om uppehållstillstånd.",
+          "estimatedTime": "1–3 månader (universitet review)",
+          "estimatedCost": "900 SEK ansökningsavgift (≈$85 USD)",
+          "tips": [
+            "Ansökningsdeadline för höstterminen är oftast 15 januari. Kontrollera i god tid.",
+            "Svenska universitet vill ha officiella betygsutdrag — hämta dem från din skola tidigt.",
+            "Vissa program kräver GRE eller GMAT. Kontrollera kraven för varje program du ansöker till.",
+            "universityadmissions.se hanterar de flesta universitet, men vissa, som KTH och Chalmers, har också egna portaler."
+          ],
+          "documents": [
+            {
+              "name": "Completed universitet ansökan",
+              "description": "Via universityadmissions.se eller direkt till skolan."
+            },
+            {
+              "name": "Akademiska betygsutdrag och examensbevis",
+              "description": "Översatta till engelska eller svenska om de inte redan är det."
+            },
+            {
+              "name": "English proficiency bevis",
+              "description": "TOEFL, IELTS eller motsvarande test."
+            },
+            {
+              "name": "Ansökan avgift kvitto",
+              "description": "900 SEK för ansökningar via universityadmissions.se."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Ansök till svenska universitet"
+            }
+          ]
+        },
+        "2": {
+          "title": "Confirm ekonomiskt means",
+          "description": "Migrationsverket vill se att du kan försörja dig medan du studerar utan att behöva arbeta olagligt. Du behöver visum ungefär 10,400 SEK per månad (about $980 USD) för hela programmets längd.",
+          "estimatedTime": "Gather dokument while awaiting admission",
+          "estimatedCost": "No avgift (dokumentsamling)",
+          "tips": [
+            "Kravet är ungefär 10,400 SEK per månad. Multiplicera det med programmets längd för att veta hur mycket du behöver.",
+            "Ett stipendiebrev från universitetet kan täcka hela kravet.",
+            "Svenska studielån (CSN) är för EU-boende. Som amerikansk medborgare kvalificerar du dig inte."
+          ],
+          "documents": [
+            {
+              "name": "Kontoutdrag",
+              "description": "Visar att du har tillräckligt med pengar för hela din tid i Sverige."
+            },
+            {
+              "name": "Stipendiedokumentation",
+              "description": "Ett officiellt brev från universitetet eller stipendieorganet som bekräftar hur mycket de betalar dig."
+            },
+            {
+              "name": "Parental/sponsor support letter",
+              "description": "Med kontoutdrag från personen som försörjer dig."
+            },
+            {
+              "name": "Student loan approval",
+              "description": "Till exempel godkännande från USA Federal Student Aid eller en privat långivare."
+            }
+          ]
+        },
+        "3": {
+          "title": "Submit residence permit ansökan to Migrationsverket",
+          "description": "Ansök om ditt studentuppehållstillstånd online på migrationsverket.se. Om du redan är i Sverige, ansök innan din 90-dagars Schengenvistelse tar slut. Det bästa är att ansöka från USA innan du reser.",
+          "estimatedTime": "1–4 månader handläggning",
+          "estimatedCost": "1,000 SEK (≈$95 USD)",
+          "tips": [
+            "Ansök så fort du får ditt antagningsbesked. Handläggning tar 1–4 månader.",
+            "Om du kommer till Sverige innan ditt tillstånd är godkänt kan du stanna på din 90-dagars Schengenrätt medan du väntar, men stanna inte längre än tillåtet.",
+            "Följ din ansökan med referensnumret som Migrationsverket ger dig.",
+            "Du kan behöva besöka ett svenskt konsulat i USA för att lämna fingeravtryck och foto. Kontrollera migrationsverket.se för aktuella krav."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt amerikanskt pass",
+              "description": "Måste vara giltigt minst 3 månader efter programmets slutdatum."
+            },
+            {
+              "name": "Universitet admission letter",
+              "description": "Det officiella antagningsbrevet från ditt svenska universitet."
+            },
+            {
+              "name": "Bevis of ekonomiskt means",
+              "description": "Kontoutdrag, stipendiebrev eller sponsordokumentation."
+            },
+            {
+              "name": "Passfoto",
+              "description": "Laddas upp digitalt till Migrationsverkets portal."
+            },
+            {
+              "name": "Ansökan avgift",
+              "description": "1,000 SEK — about $95 USD — betalas online."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Ansök hos Migrationsverket"
+            }
+          ]
+        },
+        "4": {
+          "title": "Provide biometrics at a svenskt consulate or in Sverige",
+          "description": "Migrationsverket behöver dina fingeravtryck och ett digitalt foto till ditt uppehållstillståndskort. Om du ansöker från USA gör du detta på ett svenskt konsulat. Om du redan är i Sverige, går du till ett av Migrationsverkets servicecenter.",
+          "estimatedTime": "1–2 timmar at consulate",
+          "estimatedCost": "No additional avgift (included in ansökningsavgift)",
+          "tips": [
+            "Boka din biometrisk tid så fort du skickar in ansökan. Väntetider på konsulat varierar.",
+            "Svenska konsulat i USA finns i Washington DC, New York, Los Angeles, Chicago, Houston och Minneapolis.",
+            "Alla som är 6 år eller äldre behöver lämna biometri."
+          ],
+          "documents": [
+            {
+              "name": "Ansökan reference number",
+              "description": "Från din onlineansökan."
+            },
+            {
+              "name": "Giltigt amerikanskt pass"
+            },
+            {
+              "name": "Migrationsverket tid confirmation"
+            }
+          ]
+        },
+        "5": {
+          "title": "Få ditt uppehållstillståndskort och res till Sverige",
+          "description": "Migrationsverket skickar ditt uppehållstillståndskort (uppehållstillståndskort) till din svenska adress eller till konsulatet. När du har det kan du resa. Om du stannar längre än 1 år ska du registrera dig hos Skatteverket efter att du anlänt.",
+          "estimatedTime": "Standard gränspassage",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Kontrollera att ditt tillstånd täcker hela din studieperiod. Om ditt program är längre än kortet behöver du förlänga.",
+            "Om du stannar längre än 12 månader, registrera dig hos Skatteverket för att få ett personnummer.",
+            "Personnumret ger tillgång till svensk sjukvård, bank och mer. Skaffa det så snart du kan."
+          ],
+          "documents": [
+            {
+              "name": "Residence permit card",
+              "description": "Det fysiska kortet. Visum det vid svenska gränsen."
+            },
+            {
+              "name": "USA pass"
+            },
+            {
+              "name": "Admission letter",
+              "description": "Bra att ha om svensk gränskontroll ställer frågor."
+            }
+          ]
+        },
+        "6": {
+          "title": "Studera i Sverige och behåll ditt uppehållstillstånd",
+          "description": "Fortsätt vara heltidsregistrerad och fortsätt kunna visum att du kan försörja dig. Om du behöver mer tid för att bli klar, ansök om förlängning 3 månader innan ditt tillstånd går ut.",
+          "estimatedTime": "Duration of programme",
+          "estimatedCost": "Extension: 1,000 SEK",
+          "tips": [
+            "Kontrollera Migrationsverkets aktuella regler om arbete under studier — reglerna har ändrats de senaste åren.",
+            "Ansök om förlängning minst 3 månader innan ditt tillstånd går ut. Vänta inte till sista veckan.",
+            "Efter 5 år i Sverige kan du vara berättigad till permanent uppehållstillstånd. Håll koll på hur länge du har varit här."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt residence permit card",
+              "description": "Förnya det innan det går ut på migrationsverket.se."
+            },
+            {
+              "name": "Enrolment verification",
+              "description": "Ditt universitet ger dig detta varje termin."
+            },
+            {
+              "name": "Updated ekonomiskt bevis",
+              "description": "Behövs när du ansöker om förlängning."
+            }
+          ]
+        }
+      }
+    },
+    "us-se-tourist": {
+      "visaType": "Visumfri inresa (Schengenavtalet)",
+      "processingTime": "Ingen ansökan krävs",
+      "stayDuration": "Up to 90 dagar in any 180-day period (hela Schengenområdet)",
+      "estimatedCost": "$0 (no visum avgift)",
+      "summary": "Amerikanska medborgare behöver inte visum för att besöka Sverige or any other Schengen country. Du kan stanna upp till 90 dagar under en 180-dagarsperiod i hela 29-country Schengen Zone — inte bara Sverige. Från 2025 behöver du ETIAS-resetillstånd innan du reser. Det är en enkel onlineansökan, inte ett visum.",
+      "steps": {
+        "1": {
+          "title": "Ansök om ETIAS (EU:s system för reseinformation och resetillstånd)",
+          "description": "Sedan 2025 behöver amerikanska medborgare ETIAS innan de reser in i Schengenområdet. ETIAS är inte ett visum — det är en onlinekontroll före resan, liknande USA:s ESTA-system. Ansök på den officiella ETIAS-webbplatsen minst 96 timmar (4 dagar) innan du flyger.",
+          "estimatedTime": "20–30 minuter to apply; approval typically within minuter to 96 timmar",
+          "estimatedCost": "€7 EUR (≈$7.50 USD)",
+          "tips": [
+            "ETIAS är giltigt i 3 år eller tills ditt pass går ut, beroende på vad som händer först.",
+            "Om ditt ETIAS nekas, kan du ansöka om Schengenvisum på ett svenskt konsulat i stället. Avslag är ovanliga för amerikanska medborgare.",
+            "Ett ETIAS täcker hela Schengenområdet. Du behöver inte ett separat för varje land.",
+            "Använd inte tredjepartswebbplatser för ETIAS. De tar mer betalt för samma sak."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt amerikanskt pass",
+              "description": "Måste vara giltigt i minst 3 månader efter att du planerar att lämna Schengenområdet."
+            },
+            {
+              "name": "Email address",
+              "description": "Du får ditt ETIAS-godkännande via e-post."
+            },
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Avgiften är 7 EUR. Gratis om du är under 18 eller över 70."
+            },
+            {
+              "name": "Resa itinerary",
+              "description": "Det första Schengenlandet du reser in i och dina boendeuppgifter."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Ansök om ETIAS"
+            }
+          ]
+        },
+        "2": {
+          "title": "Anländ till Sverige och gå igenom passkontroll",
+          "description": "Vid passkontrollen, visar du ditt amerikanska pass med ditt ETIAS. Tjänstemannen stämplar ditt pass och noterar ditt inresedatum. Det startar din 90-dagarsklocka. Kom ihåg — de 90 dagarna räknas i hela Schengenområdet, inte bara de dagar du är i Sverige.",
+          "estimatedTime": "Standard passkontroll",
+          "estimatedCost": "Ingen avgift",
+          "tips": [
+            "90-dagarsgränsen nollställs efter 90 dagar utanför hela Schengenområdet — inte bara Sverige.",
+            "Inresa sker enligt gränstjänstemannens bedömning. Ha information om boende och pengar redo att förklara.",
+            "Om du flög in i ett annat Schengenland först, började dina 90 dagar där, inte när du kom till Sverige."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt amerikanskt pass",
+              "description": "Med ditt ETIAS-godkännande kopplat till det."
+            },
+            {
+              "name": "ETIAS authorisation",
+              "description": "Din bekräftelse via e-post eller referensnummer."
+            },
+            {
+              "name": "Returflygbiljett",
+              "description": "Visar att du planerar att lämna landet inom 90 dagar."
+            },
+            {
+              "name": "Accommodation bevis",
+              "description": "Hotellbokning eller brev från den du ska bo hos."
+            },
+            {
+              "name": "Bevis på pengar",
+              "description": "Kreditkort eller kontoutdrag."
+            }
+          ]
+        },
+        "3": {
+          "title": "Följ Schengenregeln 90/180 dagar",
+          "description": "Du får vara högst 90 dagar under ett rullande 180-dagarsfönster i alla Schengenländer tillsammans. Håll noga koll på dina dagar. Om du stannar för länge kan du få böter, bli utvisad och eventuellt förbjudas från framtida besök.",
+          "estimatedTime": "Up to 90 dagar per 180-dagarsperiod",
+          "estimatedCost": "Inga avgifter",
+          "tips": [
+            "Använd den officiella Schengen Calculator på ec.europa.eu för att kontrollera hur många dagar du har kvar.",
+            "Schengenländer inkluderar: Austria, Belgium, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Italy, Latvia, Liechtenstein, Lithuania, Luxembourg, Malta, Netherlands, Norway, Poland, Portugal, Slovakia, Slovenia, Spain, Sverige, Switzerland, och fler.",
+            "Om du vill stanna längre än 90 dagar, behöver du lämna Schengenområdet i 90 dagar först, eller ansöka om svenskt uppehållstillstånd innan ditt nuvarande besök tar slut."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass med inresestämpel"
+            },
+            {
+              "name": "ETIAS-bekräftelse"
+            }
+          ]
+        }
+      }
+    },
+    "uk-us-student": {
+      "visaType": "F-1-studentvisum",
+      "processingTime": "3–6 månader totalt",
+      "stayDuration": "Studieprogrammets längd + 60 dagars respitperiod",
+      "estimatedCost": "~$535 USD in myndighetsavgifter (SEVIS $350 + MRV $185)",
+      "summary": "Brittiska medborgare kan besöka USA kortare perioder utan visum, men alla akademiska studier kräver ett F-1-visum. Processen är nästan samma som för svenska medborgare, förutom att din intervju är på USA:s ambassad i London (33 Nine Elms Lane, London SW11 7US).",
+      "steps": {
+        "1": {
+          "_ref": "Same as se-us-student step 1, identical text."
+        },
+        "2": {
+          "_ref": "Same as se-us-student step 2, identical text."
+        },
+        "3": {
+          "title": "Fyll i Form DS-160 (onlineansökan för icke-immigrantvisum)",
+          "description": "DS-160 är den amerikanska statens officiella visumansökningsformulär. Du fyller i det online på ceac.state.gov. Det frågar om din bakgrund, resehistorik och studieplaner. Spara ditt ansöknings-ID var 20:e minut — sessionen kan gå ut och du kan förlora ditt arbete.",
+          "estimatedTime": "1–2 timmar att fylla i",
+          "estimatedCost": "Gratis (formulärinlämning)",
+          "tips": [
+            "Skriv ner ditt DS-160-ansöknings-ID efter varje avsnitt. Om sessionen går ut kan du inte få tillbaka det.",
+            "Om en fråga inte gäller dig, skriv 'Gäller inte' och lämna den inte tom.",
+            "Skriv ut DS-160-bekräftelsesidan. Den har en streckkod. Tjänstemannen skannar den på din intervju.",
+            "Ditt namn måste matcha ditt pass exakt. Kontrollera stavningen noggrant.",
+            "Välj USA:s ambassad i London som intervjuplats."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass",
+              "description": "Du behöver ditt passnummer, utfärdandedatum och utgångsdatum."
+            },
+            {
+              "name": "Visumfoto för USA",
+              "description": "Foto 51×51 mm, vit bakgrund, taget under de senaste 6 månaderna. Du laddar upp det under ansökan."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Du behöver skolans namn, SEVIS ID, programdatum och kontaktuppgifter till din DSO."
+            },
+            {
+              "name": "Resehistorik",
+              "description": "Länder du har besökt under de senaste 5 åren, med ungefärliga datum."
+            },
+            {
+              "name": "Tidigare amerikanska visum",
+              "description": "Visumnummer från gamla pass, om du har haft amerikanska visum tidigare."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Öppna DS-160-ansökan"
+            }
+          ]
+        },
+        "4": {
+          "title": "Betala MRV-visumansökningsavgiften",
+          "description": "MRV-avgiften är visumansökningsavgiften som du betalar till USA:s ambassad. Den är 185 USD och återbetalas inte om ditt visum nekas. I Storbritannien betalas MRV-avgifter via USA:s ambassads brittiska bokningsportal innan du bokar din intervju. Betalning och bokning sker i samma portal, så slutför betalningen först och logga sedan in igen för att boka din intervjutid.",
+          "estimatedTime": "10–20 minuter",
+          "estimatedCost": "$185 USD*",
+          "tips": [
+            "Betala bara via den officiella portalen för USA:s ambassad i London. Använd aldrig tredjepartsagenter.",
+            "Skriv ner ditt transaktionsnummer direkt efter betalningen. Utan det kan du inte boka din intervju.",
+            "Avgiften på 185 USD återbetalas inte, även om ditt visum nekas."
+          ],
+          "documents": [
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Betala via bokningsportalen för USA:s ambassad i London."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Det här kvittot har ett transaktionsnummer. Du behöver numret för att boka din intervju."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Betala MRV-avgift (visumbokningstjänsten)"
+            }
+          ]
+        },
+        "5": {
+          "title": "Boka din visumintervju på USA:s ambassad i London",
+          "description": "Boka din F-1-intervju på USA:s ambassad i London (33 Nine Elms Lane, London SW11 7US). Tider fylls snabbt under våren och sommaren. Försök boka 2–3 månader i förväg.",
+          "estimatedTime": "15 minuter att boka online",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Sommartider kan fyllas flera månader i förväg. Boka så tidigt du kan.",
+            "Du kan boka om en gång gratis om dina planer ändras.",
+            "London är rätt ambassad för brittiska boende. Boka inte på ett annat lands ambassad."
+          ],
+          "documents": [
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Ditt transaktionsnummer behövs för att logga in i bokningssystemet."
+            },
+            {
+              "name": "DS-160-streckkod",
+              "description": "Ditt DS-160-ansöknings-ID kopplas till din bokning."
+            },
+            {
+              "name": "Passuppgifter",
+              "description": "Ditt passnummer anges i bokningsformuläret."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Boka din intervju (logga in igen i samma portal)"
+            }
+          ]
+        },
+        "6": {
+          "title": "Gå på visumintervjun på USA:s ambassad i London",
+          "description": "Kom 15 minuter tidigt med alla dina dokument i en genomskinlig mapp. En konsulär tjänsteman frågar om dina studieplaner, hur du betalar för skolan och dina planer på att återvända till Storbritannien efter examen. Var ärlig och håll svaren korta. De flesta beslut fattas samma dag.",
+          "estimatedTime": "Räkna med en halv dag; intervjun tar oftast 10–30 minuter",
+          "estimatedCost": "Ingen extra avgift (MRV redan betald)",
+          "tips": [
+            "Håll svaren korta. Tjänstemannen träffar många personer. Säg det du behöver säga och sluta där.",
+            "Det viktigaste du behöver visum är att du planerar att åka hem till Storbritannien efter examen. Ha ett tydligt svar redo.",
+            "Klä dig prydligt. Vårdad vardagsklädsel går bra.",
+            "Ta inte med stora väskor, mat eller laptops — kolla ambassadens webbplats för vad som är tillåtet.",
+            "Brittiska sökande får ofta frågor om planer efter studierna och om de tänker arbeta i Storbritannien efter examen. Ha ett tydligt och ärligt svar redo om dina planer på att återvända till Storbritannien."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass",
+              "description": "Ta med originalet, plus gamla pass som har tidigare amerikanska visum."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Ta med originalet. Det måste vara signerat av dig och din DSO. Ta inte bara med en kopia."
+            },
+            {
+              "name": "DS-160-confirmation/barcode page",
+              "description": "Utskriven. Tjänstemannen skannar streckkoden."
+            },
+            {
+              "name": "SEVIS I-901-avgiftskvitto",
+              "description": "Utskrivet eller visat på mobilen."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Utskrivet."
+            },
+            {
+              "name": "Två passfoton",
+              "description": "51×51 mm, vit bakgrund."
+            },
+            {
+              "name": "Ekonomiska dokument",
+              "description": "Kontoutdrag, stipendiebrev eller sponsorbrev. Ta med original och kopior."
+            },
+            {
+              "name": "Skolans antagningsbrev",
+              "description": "Det officiella erbjudandebrevet från din amerikanska skola."
+            },
+            {
+              "name": "Storbritannien personal ID",
+              "description": "Nationellt ID-kort eller körkort — användbart som sekundär legitimation."
+            },
+            {
+              "name": "Bevis på anknytning till Storbritannien",
+              "description": "Något som visar att du planerar att åka hem efter studierna. Ett jobberbjudande, egendom eller nära familjemedlemmar hjälper."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Ta också med gamla pass, särskilt om de har tidigare amerikanska visum."
+              },
+              {
+                "item": "Form I-20 (original)",
+                "note": "Måste vara signerat av dig och din DSO. Ta inte bara med en kopia."
+              },
+              {
+                "item": "DS-160-bekräftelsesida",
+                "note": "Den utskrivna sidan med streckkoden. Tjänstemannen skannar den."
+              },
+              {
+                "item": "SEVIS I-901-avgiftskvitto",
+                "note": "Utskrivet eller på mobilen."
+              },
+              {
+                "item": "MRV-betalningskvitto",
+                "note": "Bevis på att du har betalat visumansökningsavgiften."
+              },
+              {
+                "item": "Två passfoton",
+                "note": "51×51 mm, white background, taken recently."
+              },
+              {
+                "item": "Kontoutdrag",
+                "note": "De senaste 3–6 månaderna. Visar att du har råd med studieavgifter och levnadskostnader."
+              },
+              {
+                "item": "Scholarship or funding letter",
+                "note": "Om din skola eller en sponsor betalar, ta med deras officiella brev."
+              },
+              {
+                "item": "Skolans antagningsbrev",
+                "note": "Det officiella erbjudandet från ditt amerikanska universitet."
+              },
+              {
+                "item": "Evidence of ties to hem country",
+                "note": "Något som visar att du planerar att återvända hem efter studierna. Ett jobberbjudande, egendom eller nära familj fungerar."
+              }
+            ],
+            "commonQuestions": [
+              "Varför valde du den här skolan?",
+              "Vad ska du studera?",
+              "Hur betalar du för skola och levnadskostnader?",
+              "Vad planerar du att göra efter examen?",
+              "Har du familj eller vänner i USA?",
+              "Har du besökt USA tidigare?",
+              "Vad heter din DSO och vilka kontaktuppgifter har hen?"
+            ],
+            "tips": [
+              "Håll svaren korta och ärliga. Tjänstemannen ställer samma frågor till många personer varje dag.",
+              "Det viktigaste att visa är att du planerar att åka hem efter examen. Var redo att förklara varför.",
+              "Organisera alla dokument i ordningen de listas ovan innan du åker hemifrån.",
+              "Kom minst 15 minuter tidigt. Du kan inte ta med stora väskor eller laptops in på de flesta ambassader."
+            ]
+          }
+        },
+        "7": {
+          "_ref": "Same as se-us-student step 7, identical text."
+        },
+        "8": {
+          "title": "Behåll din F-1-status under hela studietiden",
+          "description": "Du måste aktivt hålla din F-1-status i gott skick. Att bryta mot reglerna, även av misstag, kan avsluta din status. Om något ändras i din situation, kontakta din DSO direkt.",
+          "estimatedTime": "Löpande",
+          "estimatedCost": "Inga myndighetsavgifter för att behålla status",
+          "tips": [
+            "Gå aldrig under heltidsstudier utan att först få Reduced Course Load (RCL) godkänd av din DSO.",
+            "Att arbeta utanför campus utan CPT eller OPT-tillstånd är ett allvarligt regelbrott. Gör det inte.",
+            "Håll ditt pass giltigt. Förnya det hos Storbritannien Pass Office eller ett brittiskt konsulat innan det går ut.",
+            "Ditt I-20 har ett slutdatum. Om du behöver mer tid för att slutföra programmet, be din DSO om en förlängning före det datumet, inte efter."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt Form I-20",
+              "description": "Måste hållas aktuellt. Om ditt program förlängs uppdaterar din DSO det."
+            },
+            {
+              "name": "Bekräftelse på heltidsregistrering",
+              "description": "Du måste läsa minst det minsta antalet poäng varje termin."
+            },
+            {
+              "name": "Arbetstillståndsdokument",
+              "description": "Du får bara arbeta på campus (mindre än 20 timmar i veckan) om inte din DSO godkänner CPT eller OPT."
+            },
+            {
+              "name": "Aktuell amerikansk adress registrerad",
+              "description": "Meddela din DSO inom 10 dagar varje gång du flyttar."
+            }
+          ]
+        }
+      }
+    },
+    "uk-us-tourist": {
+      "visaType": "ESTA (programmet för viseringsundantag)",
+      "processingTime": "Vanligtvis direkt till 72 timmar",
+      "stayDuration": "Upp till 90 dagar per besök",
+      "estimatedCost": "~$21 USD",
+      "summary": "Brittiska medborgare kan resa till USA utan visum genom programmet för viseringsundantag. Du behöver bara ansöka om ESTA innan du reser at esta.cbp.dhs.gov. ESTA är giltigt i 2 år och låter dig göra flera resor, där varje resa är begränsad till 90 dagar.",
+      "steps": {
+        "1": {
+          "title": "Check ESTA eligibility",
+          "description": "Se till att du uppfyller kraven för programmet för viseringsundantag. Brittiska medborgare uppfyller vanligtvis kraven. Men om du har rest till vissa länder, till exempel Kuba, Iran, Irak, Libyen, Nordkorea, Somalia, Sudan, Syrien eller Jemen efter 2011, eller om du tidigare har fått visum nekat, behöver du ett B-2-visum i stället för ESTA.",
+          "estimatedTime": "30 minuter för att kontrollera behörighet",
+          "estimatedCost": "Gratis (behörighetskontroll)",
+          "tips": [
+            "Om du har dubbelt medborgarskap med ett begränsat land, kolla resa.state.gov innan du ansöker om ESTA.",
+            "Varje resenär behöver sitt eget ESTA, även barn.",
+            "ESTA is for tourism, business, or transit only. Det täcker inte arbete eller studier.",
+            "VWP-begränsningar gäller även om du besökte de länderna av en helt oskyldig anledning."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt brittiskt pass",
+              "description": "Måste vara ett e-pass (det har ett chip). Måste vara giltigt under hela resan."
+            },
+            {
+              "name": "Resa history records",
+              "description": "Om du har varit i VWP-begränsade länder kan du behöva ett B-2-visum i stället."
+            }
+          ]
+        },
+        "2": {
+          "title": "Ansök om ESTA på esta.cbp.dhs.gov",
+          "description": "Fyll i ESTA-ansökan på den officiella CBP-webbplatsen, esta.cbp.dhs.gov. Använd ingen annan webbplats — många falska sidor tar 60–90 USD för samma sak. Den riktiga avgiften är 21 USD. De flesta godkännanden kommer inom några minuter. Ansök minst 72 timmar före ditt flyg.",
+          "estimatedTime": "20–30 minuter",
+          "estimatedCost": "$21 USD",
+          "tips": [
+            "Använd bara esta.cbp.dhs.gov. Många kopiesidor tar 60–90 USD för exakt samma tjänst.",
+            "Ditt ESTA är giltigt i 2 år från godkännandet eller tills ditt pass går ut, beroende på vad som händer först.",
+            "Varje resa är begränsad till 90 dagar. Du kan inte förlänga en VWP-vistelse eller byta till studentvisum medan du är i USA.",
+            "Spara eller skriv ut ditt ESTA-godkännande. Vissa flygbolag ber om att få se det vid incheckning."
+          ],
+          "documents": [
+            {
+              "name": "Storbritannien e-Pass",
+              "description": "Du behöver ditt passnummer och dina personuppgifter. Det måste ha ett chip."
+            },
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Avgiften är 21 USD. Visum, Mastercard och PayPal accepteras."
+            },
+            {
+              "name": "USA resa details",
+              "description": "Den första adressen där du ska bo i USA och dina flyguppgifter om du har dem."
+            },
+            {
+              "name": "Nödkontakt",
+              "description": "Ett namn och telefonnummer."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Ansök om ESTA"
+            }
+          ]
+        },
+        "3": {
+          "title": "Anländ till USA:s gränskontroll",
+          "description": "Visum ditt pass och den elektroniska tulldeklarationen vid CBP-tjänstemannens disk. Med ESTA finns inget pappersformulär för I-94 att fylla i — systemet skapar ditt inreseregister automatiskt.",
+          "estimatedTime": "20–60 minuter at CBP",
+          "estimatedCost": "Ingen avgift vid inresa",
+          "tips": [
+            "Kontrollera ditt I-94-inreseregister inom 48 timmar på i94.cbp.dhs.gov.",
+            "Tjänstemannen kan fråga om dina planer, var du ska bo och hur mycket pengar du har. Håll svaren korta.",
+            "Du får inte arbeta eller studera på ESTA. Var ärlig om dina planer."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt Storbritannien pass with ESTA approval"
+            },
+            {
+              "name": "CBP Mobile or paper customs declaration"
+            },
+            {
+              "name": "Returflygsuppgifter",
+              "description": "Visar att du planerar att lämna landet inom 90 dagar."
+            },
+            {
+              "name": "Hotell-/boendebekräftelse"
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Kontrollera ditt I-94-register"
+            }
+          ]
+        },
+        "4": {
+          "title": "Följ VWP-reglerna under din vistelse",
+          "description": "Du kan inte förlänga en ESTA/VWP-vistelse, och du kan inte byta till en annan visumkategori från insidan av USA. Om dina planer ändras, lämna USA och ansök om rätt visum innan du kommer tillbaka.",
+          "estimatedTime": "Up to 90 dagar",
+          "estimatedCost": "Inga avgifter",
+          "tips": [
+            "90 dagar är den absoluta gränsen. Om du stannar för länge blir du avstängd från programmet för viseringsundantag och det kan skada framtida amerikanska visumansökningar.",
+            "Om du bestämmer dig för att du vill studera eller arbeta, lämna USA först och ansök om rätt visum.",
+            "Om du har en verklig nödsituation och behöver stanna längre, kontakta en amerikansk immigrationsadvokat."
+          ],
+          "documents": [
+            {
+              "name": "Pass",
+              "description": "Förvara det på ett säkert ställe."
+            },
+            {
+              "name": "I-94 electronic record",
+              "description": "Kontrollera det på i94.cbp.dhs.gov. Det visar exakt hur länge du får stanna."
+            }
+          ]
+        }
+      }
+    },
+    "in-us-student": {
+      "visaType": "F-1-studentvisum",
+      "processingTime": "4–8 månader totalt (räkna med extra tid för OFC-tid)",
+      "stayDuration": "Studieprogrammets längd + 60 dagars respitperiod",
+      "estimatedCost": "~$535 USD in myndighetsavgifter + potential OFC avgift",
+      "summary": "Indiska medborgare kan inte använda programmet för viseringsundantag och måste skaffa ett F-1-studentvisum via USA:s ambassad eller konsulat i Indien. Det finns ett extra steg jämfört med brittiska eller svenska sökande: en tid på ett extern servicecentral (OFC) för fingeravtryck och foto, som sker före huvudintervjun. Väntetider på indiska konsulat kan vara 3–6 månader, så börja tidigt.",
+      "steps": {
+        "1": {
+          "title": "Bli antagen till en SEVP-certifierad skola och få ditt I-20",
+          "description": "Ansök till en amerikansk skola som är certifierad av Student- och utbytesbesöksprogrammet (SEVP). När du har blivit antagen ger skolan dig Form I-20. Du behöver detta dokument för att ansöka om ditt visum, och allt annat bygger på det.",
+          "estimatedTime": "2–8 veckor (depends on skola)",
+          "estimatedCost": "Varierar per skola (ansökningsavgifter)",
+          "tips": [
+            "Alla amerikanska skolor är inte SEVP-certifierade. Kolla listan på sevp.ice.gov innan du ansöker.",
+            "Ditt I-20 har ett startdatum för programmet. Planera hela din tidslinje runt det datumet.",
+            "Be om ditt I-20 så fort du blir antagen. Vissa skolor tar 2–4 veckor på sig att utfärda det.",
+            "Indiska sökande bör starta hela processen 8–12 månader före planerat startdatum. Konsulatens väntetider är långa."
+          ],
+          "documents": [
+            {
+              "name": "Antagningsbrev",
+              "description": "Det officiella erbjudandebrevet från din amerikanska skola."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Utfärdas av skolans internationella kontor. Det har ditt SEVIS ID-nummer på sida 1. Spara varje kopia.",
+              "whereToGet": "Din skolas kontor för internationella studenter"
+            },
+            {
+              "name": "Ekonomiskt underlag",
+              "description": "Visum att du har råd med studieavgifter och levnadskostnader. Ett kontoutdrag, stipendiebrev eller brev från den som sponsrar dig fungerar."
+            },
+            {
+              "name": "Giltigt pass",
+              "description": "Måste vara giltigt i minst 6 månader efter att du planerar att lämna USA."
+            }
+          ]
+        },
+        "2": {
+          "title": "Betala SEVIS I-901-avgiften",
+          "description": "Den amerikanska staten tar ut en SEVIS I-901-avgift för att registrera dig i deras spårningssystem för internationella studenter. Betala den online på fmjfee.com. Betala minst 3 arbetsdagar före din intervju.",
+          "estimatedTime": "15–30 minuter online",
+          "estimatedCost": "$350 USD* (F-1-kategori)",
+          "tips": [
+            "Vänta tills du har ditt I-20 innan du betalar. Avgiften är kopplad till ditt specifika SEVIS ID.",
+            "Betala minst 3 arbetsdagar före din intervju.",
+            "Spara kvittot permanent. Du kan behöva det varje gång du återvänder till USA."
+          ],
+          "documents": [
+            {
+              "name": "Form I-20",
+              "description": "Du behöver SEVIS ID-numret högst upp på sida 1."
+            },
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Betala på fmjfee.com. Visum, Mastercard och American Express accepteras."
+            },
+            {
+              "name": "I-901-betalningskvitto",
+              "description": "Skriv ut detta eller spara det som PDF. Du måste visa upp det på intervjun."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Betala SEVIS-avgiften här"
+            }
+          ]
+        },
+        "3": {
+          "title": "Fyll i Form DS-160 (onlineansökan för icke-immigrantvisum)",
+          "description": "DS-160 är den amerikanska statens officiella visumansökningsformulär. Fyll i det online på ceac.state.gov. Spara ditt ansöknings-ID var 20:e minut — sessionen kan gå ut.",
+          "estimatedTime": "1–2 timmar att fylla i",
+          "estimatedCost": "Gratis (formulärinlämning)",
+          "tips": [
+            "Skriv ner ditt DS-160-ansöknings-ID efter varje avsnitt. Du kan inte få tillbaka det om sessionen går ut.",
+            "Om en fråga inte gäller dig, skriv 'Gäller inte' och lämna den inte tom.",
+            "Skriv ut DS-160-bekräftelsesidan. Den har en streckkod som tjänstemannen skannar på intervjun.",
+            "Ditt namn måste matcha ditt pass exakt.",
+            "Välj det amerikanska konsulatet i Indien där du vill intervjuas: Chennai, Hyderabad, Kolkata, Mumbai, or New Delhi. Välj det som ligger närmast där du bor."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt pass",
+              "description": "Ditt passnummer, utfärdandedatum och utgångsdatum."
+            },
+            {
+              "name": "Visumfoto för USA",
+              "description": "51×51 mm, vit bakgrund, taget under de senaste 6 månaderna. Du laddar upp det under ansökan."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Din skolas namn, SEVIS ID, programdatum och kontaktuppgifter till din DSO."
+            },
+            {
+              "name": "Resehistorik",
+              "description": "Länder du har besökt under de senaste 5 åren med ungefärliga datum."
+            },
+            {
+              "name": "Tidigare amerikanska visum",
+              "description": "Visumnummer från gamla pass, om du har haft amerikanska visum tidigare."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Öppna DS-160-ansökan"
+            }
+          ]
+        },
+        "4": {
+          "title": "Betala MRV-visumansökningsavgiften",
+          "description": "MRV-avgiften är visumansökningsavgiften på 185 USD. För Indien betalar du online via ustraveldocs.com/in innan du bokar dina tider.",
+          "estimatedTime": "10–20 minuter",
+          "estimatedCost": "$185 USD*",
+          "tips": [
+            "Betala bara via den officiella portalen ustraveldocs.com/in. Använd aldrig tredjepartsagenter.",
+            "Skriv ner ditt transaktionsnummer direkt efter betalningen. Utan det kan du inte boka dina tider.",
+            "Avgiften på 185 USD återbetalas inte, även om ditt visum nekas."
+          ],
+          "documents": [
+            {
+              "name": "Kredit-/betalkort",
+              "description": "Betala på ustraveldocs.com/in."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Detta har ett transaktionsnummer som du behöver för att boka din intervju."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Boka tid i Indien"
+            }
+          ]
+        },
+        "5": {
+          "title": "Boka både OFC-biometri OCH konsulära intervjutider",
+          "description": "Indiska sökande behöver boka två separata tider: (1) en tid på ett extern servicecentral (OFC) för fingeravtryck och foto, och (2) huvudintervjun på konsulatet. Boka båda via ustraveldocs.com/in.",
+          "estimatedTime": "15–30 minuter att boka online; wait times for tider can be 3–6 månader",
+          "estimatedCost": "No additional avgift for scheduling",
+          "tips": [
+            "Boka OFC-tiden först — den måste ske före konsulatintervjun.",
+            "Väntetider på indiska konsulat är bland de längsta i världen. Kolla ustraveldocs.com/in ofta efter avbokningar.",
+            "Konsulaten i New Delhi, Mumbai och Chennai har vanligtvis kortare väntetider än Kolkata eller Hyderabad.",
+            "Spara ditt bokningsbekräftelsenummer noggrant."
+          ],
+          "documents": [
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Ditt transaktionsnummer för att komma åt bokningsportalen."
+            },
+            {
+              "name": "DS-160-streckkodssida",
+              "description": "För att koppla din DS-160-ansökan till din tid."
+            },
+            {
+              "name": "Passuppgifter"
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Boka tid i Indien"
+            }
+          ]
+        },
+        "6": {
+          "title": "Gå på OFC-biometritiden",
+          "description": "På din OFC-tid tar personalen dina fingeravtryck och ett digitalt foto. Detta är ett snabbt, obligatoriskt steg före huvudintervjun. Ta med exakt de dokument som listas — annars släpps du inte in.",
+          "estimatedTime": "30–60 minuter totalt (including wait)",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "OFC är bara fingeravtryck och foto — inga intervjufrågor.",
+            "Det tar ungefär 10–20 minuter. Kom i tid.",
+            "OFC ligger på en annan adress än konsulatet. Dubbelkolla vart du ska."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt indiskt pass"
+            },
+            {
+              "name": "Bekräftelse av OFC-tid",
+              "description": "Utskrivet eller på mobilen."
+            },
+            {
+              "name": "DS-160-streckkodssida"
+            },
+            {
+              "name": "MRV-avgiftskvitto"
+            },
+            {
+              "name": "Passfoto",
+              "description": "51×51 mm, vit bakgrund."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Samma pass som du använde för att ansöka."
+              },
+              {
+                "item": "Bekräftelse av OFC-tid",
+                "note": "Utskriven eller sparad på mobilen."
+              },
+              {
+                "item": "DS-160-streckkodssida",
+                "note": "Den utskrivna bekräftelsesidan från din DS-160-ansökan."
+              },
+              {
+                "item": "MRV-avgiftskvitto",
+                "note": "Bevis på att du har betalat visumavgiften."
+              },
+              {
+                "item": "One pass photo",
+                "note": "Amerikansk visumstandard: 51×51 mm, vit bakgrund."
+              }
+            ],
+            "tips": [
+              "OFC-tiden är bara fingeravtryck och foto. Det är inga intervjufrågor.",
+              "Det tar ungefär 15–20 minuter. Kom i tid, annars kan du behöva boka om.",
+              "The OFC is på en annan plats än konsulatet. Dubbelkolla adressen innan du går."
+            ]
+          }
+        },
+        "7": {
+          "title": "Gå på visumintervjun på USA:s konsulat i Indien",
+          "description": "Gå till ditt valda amerikanska konsulat — Chennai, Hyderabad, Kolkata, Mumbai, or New Delhi. Indiska F-1-sökande får ofta mer detaljerade frågor än sökande från andra länder, särskilt om sina planer på att återvända till Indien efter examen. Förbered ärliga och tydliga svar.",
+          "estimatedTime": "Räkna med en hel dag; intervjun tar oftast 15–45 minuter",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Indiska sökande får mer detaljerade frågor om sina planer på att återvända till Indien. Ha stabila och ärliga svar redo.",
+            "Ta med dina officiella akademiska betygsutdrag och testresultat som TOEFL och GRE/GMAT. Tjänstemän frågar ofta om din akademiska bakgrund.",
+            "Om du får frågor om långsiktiga planer, säg tydligt att du planerar att återvända till Indien efter examen.",
+            "Avslagsfrekvensen för indiska F-1-sökande är högre än för många andra nationaliteter. Förberedelse är viktig."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt indiskt pass",
+              "description": "Original, plus any old passports with previous USA visas."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Original, signerat av både dig och din DSO."
+            },
+            {
+              "name": "DS-160-confirmation/barcode page",
+              "description": "Utskrivet."
+            },
+            {
+              "name": "SEVIS I-901-avgiftskvitto",
+              "description": "Utskrivet eller på mobilen."
+            },
+            {
+              "name": "MRV-avgiftskvitto",
+              "description": "Utskrivet."
+            },
+            {
+              "name": "Två passfoton",
+              "description": "51×51 mm, vit bakgrund."
+            },
+            {
+              "name": "Ekonomiska dokument",
+              "description": "Kontoutdrag, stipendiebrev eller sponsorbrev, original och kopior."
+            },
+            {
+              "name": "Skolans antagningsbrev",
+              "description": "Det officiella erbjudandebrevet från ditt amerikanska universitet."
+            },
+            {
+              "name": "Bekräftelse av OFC-tid",
+              "description": "Ta med den för dina egna uppgifter."
+            },
+            {
+              "name": "Egendom/familjeanknytning i Indien",
+              "description": "Dokument eller bevis som visar starka skäl att återvända till Indien efter studierna."
+            },
+            {
+              "name": "Intyg om ekonomiskt stöd",
+              "description": "Din förälders eller sponsors kontoutdrag och inkomstbevis, om en familjemedlem betalar."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Plus gamla pass with previous USA visas."
+              },
+              {
+                "item": "Form I-20 (original)",
+                "note": "Signerat av dig och din DSO."
+              },
+              {
+                "item": "DS-160-bekräftelsesida",
+                "note": "Utskriven streckkodssida."
+              },
+              {
+                "item": "SEVIS I-901-avgiftskvitto",
+                "note": "Utskrivet eller på mobilen."
+              },
+              {
+                "item": "MRV-avgiftskvitto",
+                "note": "Bevis of visum avgift payment."
+              },
+              {
+                "item": "Två passfoton",
+                "note": "51×51 mm, vit bakgrund."
+              },
+              {
+                "item": "Officiella betygsutdrag",
+                "note": "Från varje universitet eller college du har gått på."
+              },
+              {
+                "item": "Testresultat",
+                "note": "TOEFL, GRE, GMAT — vad din skola krävde."
+              },
+              {
+                "item": "Kontoutdrag (dina eller familjens)",
+                "note": "Senaste 6 månaderna. Måste visum tillräckligt för studieavgifter och levnadskostnader."
+              },
+              {
+                "item": "Inkomstbevis för din sponsor",
+                "note": "Din förälders eller sponsors lönespecifikationer, inkomstdeklarationer och Form 16."
+              },
+              {
+                "item": "Bevis på anknytning till Indien",
+                "note": "Egendomsdokument, brev från familj eller något som visar starka skäl att återvända till Indien efter studierna."
+              },
+              {
+                "item": "Skolans antagningsbrev",
+                "note": "Officiellt erbjudandebrev från ditt amerikanska universitet."
+              }
+            ],
+            "commonQuestions": [
+              "Varför valde du den här skolan och det här programmet?",
+              "Vad ska du göra efter examen?",
+              "Vem betalar för dina studier?",
+              "Har du familjemedlemmar i USA?",
+              "Har du ansökt till andra skolor?",
+              "Vad heter din DSO?",
+              "Varför vill du studera i USA i stället för i Indien?",
+              "Vad arbetar din pappa/mamma med?"
+            ],
+            "tips": [
+              "indiskt F-1-applicants face more detailed questioning than most other nationalities. Förbered dig ordentligt.",
+              "Tjänstemannen vill vara säker på att du återvänder till Indien efter studierna. Ha ett tydligt och ärligt svar redo.",
+              "Ta med original och kopior av allt. Håll dem organiserade i en mapp.",
+              "Klä dig professionellt. Första intrycket spelar roll.",
+              "Om ditt svar är 'jag vet inte', säg det ärligt i stället för att hitta på något."
+            ]
+          }
+        },
+        "8": {
+          "title": "Anländ till USA:s gränskontroll",
+          "description": "Att ha visumstämpeln i passet garanterar inte inresa. En CBP-tjänsteman vid gränsen fattar det slutliga beslutet. Ha alla dina dokument i handbagaget. Du kan anlända upp till 30 dagar före startdatumet på ditt I-20.",
+          "estimatedTime": "20–60 minuter at CBP",
+          "estimatedCost": "Ingen avgift",
+          "tips": [
+            "Säg till CBP-tjänstemannen att du är student på ett F-1-visum. Säg aldrig 'turist'.",
+            "Anländ inte mer än 30 dagar före startdatumet på ditt I-20.",
+            "Kontrollera ditt I-94-register inom 48 timmar efter ankomst på i94.cbp.dhs.gov.",
+            "Ha alltid ditt I-20 i handbagaget varje gång du reser internationellt."
+          ],
+          "documents": [
+            {
+              "name": "Pass with F-1-visum stamp",
+              "description": "Visumstämpeln du fick efter att din intervju blev godkänd."
+            },
+            {
+              "name": "Form I-20",
+              "description": "Original. Lägg aldrig detta i incheckat bagage."
+            },
+            {
+              "name": "Bevis på pengar",
+              "description": "Ett aktuellt kontoutdrag eller stipendiebrev."
+            },
+            {
+              "name": "Skola contact details",
+              "description": "Din DSO:s namn, telefon, e-post och skolans adress."
+            },
+            {
+              "name": "Återvända flight or onward resa plans",
+              "description": "Visar att du tänker lämna landet efter dina studier."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Kontrollera ditt I-94-register"
+            }
+          ]
+        },
+        "9": {
+          "title": "Behåll din F-1-status under hela studietiden",
+          "description": "Du måste aktivt hålla din F-1-status i gott skick. Att bryta mot reglerna, även av misstag, kan avsluta din status. Kontakta din DSO direkt om något i din situation ändras.",
+          "estimatedTime": "Löpande",
+          "estimatedCost": "Inga myndighetsavgifter för att behålla status",
+          "tips": [
+            "Gå aldrig under heltidsstudier utan att först få Reduced Course Load (RCL) godkänd av din DSO.",
+            "Att arbeta utanför campus utan CPT eller OPT-tillstånd är ett allvarligt regelbrott. Gör det inte.",
+            "Håll ditt pass giltigt. Förnya det på det indiska konsulatet i USA innan det går ut.",
+            "Ditt I-20 har ett slutdatum. Om du behöver mer tid, be din DSO om en förlängning före det datumet, inte efter.",
+            "Börja planera för CPT och OPT tidigt. OPT ger dig upp till 12 månaders arbetstillstånd efter examen, och 36 månader om du är inom ett STEM-område."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt Form I-20",
+              "description": "Måste hållas aktuellt. Om ditt program förlängs uppdaterar din DSO det."
+            },
+            {
+              "name": "Bekräftelse på heltidsregistrering",
+              "description": "Du måste läsa minst det minsta antalet poäng varje termin."
+            },
+            {
+              "name": "Arbetstillståndsdokument",
+              "description": "Du får bara arbeta på campus (mindre än 20 timmar i veckan) om inte din DSO godkänner CPT eller OPT."
+            },
+            {
+              "name": "Aktuell amerikansk adress registrerad",
+              "description": "Meddela din DSO inom 10 dagar varje gång du flyttar."
+            }
+          ]
+        }
+      }
+    },
+    "in-us-tourist": {
+      "visaType": "B-2-turistvisum",
+      "processingTime": "2–6 månader (inklusive väntetid för intervju)",
+      "stayDuration": "Upp till 6 månader (at CBP officer's discretion)",
+      "estimatedCost": "~$185 USD (MRV-avgift)",
+      "summary": "Indiska medborgare kan inte använda USA:s program för viseringsundantag och måste ansöka om ett B-2-turistvisum. Du fyller i ett DS-160-formulär, betalar avgiften på 185 USD och går på en personlig intervju på ett amerikanskt konsulat i Indien. Själva visumet kan vara giltigt i upp till 10 år med flera inresor, men varje enskild vistelse begränsas av CBP-tjänstemannen vid gränsen, vanligtvis upp till 6 månader.",
+      "steps": {
+        "1": {
+          "title": "Complete Form DS-160-online",
+          "description": "Fyll i onlineansökan för icke-immigrantvisum (DS-160) på ceac.state.gov. Välj det amerikanska konsulatet i Indien som ligger närmast dig som intervjuplats. Var korrekt om dina reseplaner, din ekonomi och anledningen till ditt besök.",
+          "estimatedTime": "1–2 timmar",
+          "estimatedCost": "Gratis",
+          "tips": [
+            "Var tydlig och specifik om varför du besöker landet — turism, familjebesök, medicinsk behandling och så vidare.",
+            "Om du besöker familj, ha deras kontaktuppgifter och immigrationsstatus redo.",
+            "Spara ditt DS-160-ansöknings-ID regelbundet — sessioner går ut."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt indiskt pass"
+            },
+            {
+              "name": "Digitalt passfoto",
+              "description": "51×51 mm, vit bakgrund."
+            },
+            {
+              "name": "Resa itinerary",
+              "description": "Ungefärliga resedatum och de amerikanska adresser där du ska bo."
+            },
+            {
+              "name": "Employment/ekonomiskt details",
+              "description": "Brev från din arbetsgivare, kontoutdrag och inkomstbevis."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Öppna DS-160-ansökan"
+            }
+          ]
+        },
+        "2": {
+          "title": "Betala MRV-avgiften och boka OFC + konsulära tider",
+          "description": "Betala MRV-avgiften på 185 USD på ustraveldocs.com/in, och boka sedan din OFC-tid för fingeravtryck och din konsulatintervju. Väntetider på indiska konsulat kan vara flera månader. Kolla ofta efter avbokningar.",
+          "estimatedTime": "30 minuter för att betala och boka; vänta veckor till månader på tid",
+          "estimatedCost": "$185 USD",
+          "tips": [
+            "Kolla ustraveldocs.com/in för aktuella väntetider på varje konsulat innan du väljer var du ska intervjuas.",
+            "Kolla regelbundet efter avbokningar — tider öppnas hela tiden.",
+            "New Delhi och Mumbai är vanligtvis mest upptagna. Chennai och Hyderabad kan ha kortare väntetider."
+          ],
+          "documents": [
+            {
+              "name": "Kredit-/betalkort",
+              "description": "För att betala MRV-avgiften."
+            },
+            {
+              "name": "MRV-avgift kvitto/transaction number",
+              "description": "För att boka dina tider."
+            },
+            {
+              "name": "DS-160-streckkodssida"
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Boka tid i Indien"
+            }
+          ]
+        },
+        "3": {
+          "title": "Gå på OFC-biometritiden",
+          "description": "Gå till din OFC-tid för fingeravtryck och foto. Detta måste ske före din konsulatintervju. Ta med allt på listan — annars behandlar de dig inte.",
+          "estimatedTime": "30–60 minuter",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "OFC är bara fingeravtryck och foto — inga frågor.",
+            "Takes about 15 minuter. Kom i tid."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt indiskt pass"
+            },
+            {
+              "name": "Bekräftelse av OFC-tid"
+            },
+            {
+              "name": "DS-160-streckkodssida"
+            },
+            {
+              "name": "MRV-avgiftskvitto"
+            },
+            {
+              "name": "Passfoto",
+              "description": "51×51 mm, vit bakgrund."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Samma som du använde för att ansöka."
+              },
+              {
+                "item": "Bekräftelse av OFC-tid",
+                "note": "Utskrivet eller på mobilen."
+              },
+              {
+                "item": "DS-160-streckkodssida",
+                "note": "Utskrivet."
+              },
+              {
+                "item": "MRV-avgiftskvitto",
+                "note": "Bevis på betalning."
+              },
+              {
+                "item": "One pass photo",
+                "note": "51×51 mm, vit bakgrund."
+              }
+            ],
+            "tips": [
+              "Detta är bara fingeravtryck och foto, inga frågor.",
+              "Takes about 15 minuter. Kom i tid."
+            ]
+          }
+        },
+        "4": {
+          "title": "Gå på B-2-visumintervju på USA:s konsulat",
+          "description": "Gå på din bokade intervju på ett amerikanskt konsulat i Indien. Tjänstemannen tittar på din anknytning till Indien, din ekonomi och om du verkligen tänker återvända hem efter besöket. Var förberedd med en tydlig och ärlig berättelse om din resa.",
+          "estimatedTime": "Räkna med en hel dag; intervjun tar oftast 10–30 minuter",
+          "estimatedCost": "Ingen extra avgift",
+          "tips": [
+            "Den största faktorn för godkännande är att bevisa att du har starka skäl att återvända till Indien. Det är främst detta tjänstemannen bedömer.",
+            "Ett stabilt jobb med godkänd ledighet, egendom i Indien och nära familjeband stärker ditt fall betydligt.",
+            "Håll svaren korta och raka. Om tjänstemannen vill ha mer detaljer frågar de.",
+            "Ta med originaldokument plus en uppsättning kopior.",
+            "Klä dig professionellt."
+          ],
+          "documents": [
+            {
+              "name": "Giltigt indiskt pass",
+              "description": "Plus gamla pass — särskilt sådana med amerikanska eller andra länders visum."
+            },
+            {
+              "name": "DS-160-streckkodssida",
+              "description": "Utskrivet."
+            },
+            {
+              "name": "MRV-avgiftskvitto"
+            },
+            {
+              "name": "Bekräftelse av OFC-tid"
+            },
+            {
+              "name": "Två passfoton"
+            },
+            {
+              "name": "Kontoutdrag",
+              "description": "Senaste 6 månaderna. Visar att du har råd med resan."
+            },
+            {
+              "name": "Inkomstbevis",
+              "description": "Lönespecifikationer, inkomstdeklarationer (ITR), Form 16."
+            },
+            {
+              "name": "Anställningsbrev",
+              "description": "På företagets brevpapper, med din jobbtitel, lön och bekräftelse på att ledigheten är godkänd."
+            },
+            {
+              "name": "Egendoms- eller tillgångsdokument",
+              "description": "Dokument på bostadsägande, markdokument — visar att du har starka skäl att återvända."
+            },
+            {
+              "name": "Familjeanknytning",
+              "description": "Make/maka, barn eller nära familj som bor i Indien."
+            },
+            {
+              "name": "Tidigare resebevis",
+              "description": "Gamla pass med visumstämplar som visar att du har rest ansvarsfullt tidigare."
+            },
+            {
+              "name": "Amerikansk resplan",
+              "description": "Hotellbokningar, platser du planerar att besöka, returflyg."
+            }
+          ],
+          "interviewPrep": {
+            "whatToBring": [
+              {
+                "item": "Pass (original)",
+                "note": "Plus gamla pass — särskilt sådana med amerikanska eller andra länders visum."
+              },
+              {
+                "item": "DS-160-bekräftelsesida",
+                "note": "Utskriven streckkodssida."
+              },
+              {
+                "item": "MRV-avgiftskvitto",
+                "note": "Bevis på betalning."
+              },
+              {
+                "item": "Två passfoton",
+                "note": "51×51 mm, vit bakgrund."
+              },
+              {
+                "item": "Kontoutdrag",
+                "note": "Senaste 6 månaderna. Visar att du har råd med resan."
+              },
+              {
+                "item": "Lönespecifikationer",
+                "note": "De senaste 3 månaderna från din arbetsgivare."
+              },
+              {
+                "item": "inkomstdeklarationer (ITR)",
+                "note": "De senaste 2 åren."
+              },
+              {
+                "item": "Anställningsbrev",
+                "note": "På företagets brevpapper. Måste ange din jobbtitel, lön och att din ledighet är godkänd."
+              },
+              {
+                "item": "Fastighets- eller tillgångsdokument",
+                "note": "Dokument på bostadsägande eller mark som visar att du har skäl att återvända till Indien."
+              },
+              {
+                "item": "Amerikansk resplan",
+                "note": "Hotellbokningar, platser du planerar att besöka, returflyg."
+              },
+              {
+                "item": "Brev från kontakt i USA",
+                "note": "Om du besöker familj eller vänner hjälper ett brev från dem med deras adress och immigrationsstatus."
+              }
+            ],
+            "commonQuestions": [
+              "Vad är syftet med ditt besök i USA?",
+              "Hur länge planerar du att stanna?",
+              "Vem ska du besöka eller bo hos?",
+              "Vad arbetar du med?",
+              "Vem betalar för den här resan?",
+              "Har du varit i USA tidigare?",
+              "Har du familjemedlemmar som bor i USA?",
+              "Vad ska du göra när du återvänder till Indien?"
+            ],
+            "tips": [
+              "Tjänstemannens huvudfråga är: kommer den här personen att åka tillbaka till Indien? Allt du tar med bör hjälpa till att svara ja.",
+              "Ett stabilt jobb med godkänd ledighet, egendom i Indien och familjeband är den starkaste bevisningen.",
+              "Håll svaren korta och raka. Om tjänstemannen vill ha mer detaljer frågar de.",
+              "Ta med original av allt, plus en uppsättning kopior.",
+              "Klä dig professionellt."
+            ]
+          }
+        },
+        "5": {
+          "title": "Res in i USA som B-2-turist",
+          "description": "En CBP-tjänsteman vid USA:s gräns kontrollerar ditt B-2-visum, pass och reseplaner. De bestämmer hur länge du får stanna — vanligtvis upp till 6 månader. Kontrollera ditt I-94-register inom 48 timmar för att se exakt datum då du måste lämna landet.",
+          "estimatedTime": "30–90 minuter vid CBP",
+          "estimatedCost": "Ingen avgift vid inresa",
+          "tips": [
+            "Ett B-2-visum garanterar inte inresa. CBP-tjänstemannen har sista ordet.",
+            "Kontrollera ditt I-94 på i94.cbp.dhs.gov inom 48 timmar efter inresa för att se ditt tillåtna vistelsedatum.",
+            "Arbeta eller studera inte på ett B-2-visum. Det är bara för turister och besökare.",
+            "Om du vill stanna längre än tjänstemannen tillät, lämna in Form I-539 till USCIS innan ditt I-94-datum går ut."
+          ],
+          "documents": [
+            {
+              "name": "Pass med B-2-visumstämpel"
+            },
+            {
+              "name": "Returflygbiljett",
+              "description": "Starkt rekommenderat — visar att du planerar att lämna landet."
+            },
+            {
+              "name": "Hotellbokningar och resplan"
+            },
+            {
+              "name": "Bevis på pengar",
+              "description": "Kreditkort, kontanter eller kontoutdrag."
+            },
+            {
+              "name": "CBP tulldeklaration",
+              "description": "Fyll i den på planet eller vid kiosken."
+            }
+          ],
+          "officialLinks": [
+            {
+              "label": "Kontrollera ditt I-94-register"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
