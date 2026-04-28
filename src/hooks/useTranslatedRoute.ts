@@ -6,14 +6,14 @@ export function useTranslatedRoute(route: VisaRoute | undefined): VisaRoute | un
 
   if (!route || i18n.language !== 'sv') return route
 
-  const r = route.id
+  const r = `routes.${route.id}`
 
   function ts(key: string, fallback: string): string {
     return t(key, { defaultValue: fallback }) as string
   }
 
-  function translateStep(step: VisaStep, stepIndex: number): VisaStep {
-    const sp = `${r}.steps.${stepIndex}`
+  function translateStep(step: VisaStep): VisaStep {
+    const sp = `${r}.steps.${step.id}`
 
     const documents: DocumentItem[] = step.documents.map((doc, di) => ({
       ...doc,
@@ -71,6 +71,6 @@ export function useTranslatedRoute(route: VisaRoute | undefined): VisaRoute | un
     ...(route.athleteNote !== undefined && {
       athleteNote: ts(`${r}.athleteNote`, route.athleteNote),
     }),
-    steps: route.steps.map((step, i) => translateStep(step, i)),
+    steps: route.steps.map((step) => translateStep(step)),
   }
 }
