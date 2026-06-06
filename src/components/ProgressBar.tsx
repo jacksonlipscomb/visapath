@@ -13,7 +13,7 @@ export default function ProgressBar({ totalDocs, checkedDocs }: Props) {
         borderBottom: '1px solid var(--border)',
         padding: '10px 0',
         position: 'sticky',
-        top: '48px', // below the disclaimer
+        top: 'var(--nav-height)', // below the navbar
         zIndex: 90,
         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
       }}
