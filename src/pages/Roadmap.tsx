@@ -165,20 +165,20 @@ export default function Roadmap() {
             </div>
           </div>
 
-          {/* Download PDF — Place 1 */}
-          <div style={{ marginBottom: '24px' }}>
+          {/* Download PDF */}
+          <div style={{ marginBottom: 'var(--space-6)' }}>
             <button
               onClick={() => generateChecklistPDF(routeId!)}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '7px',
-                padding: '10px 18px',
+                gap: 'var(--space-2)',
+                padding: 'var(--space-3) var(--space-4)',
                 background: 'var(--accent)',
                 color: '#fff',
                 border: 'none',
                 borderRadius: 'var(--radius-sm)',
-                fontSize: '0.87rem',
+                fontSize: 'var(--text-sm)',
                 fontWeight: 700,
                 cursor: 'pointer',
               }}
@@ -206,18 +206,18 @@ export default function Roadmap() {
 
                 return (
                   <section key={phase} style={{ marginBottom: '28px' }}>
-                    {/* Phase header */}
+                    {/* Phase header — subtle divider */}
                     <div
                       style={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '10px',
-                        marginBottom: '12px',
-                        paddingBottom: '8px',
-                        borderBottom: '2px solid var(--border)',
+                        marginBottom: 'var(--space-3)',
+                        paddingBottom: 'var(--space-2)',
+                        borderBottom: '1px solid var(--border)',
                       }}
                     >
-                      <span className={`phase-badge phase-${phase}`} style={{ fontSize: '0.78rem' }}>
+                      <span className={`phase-badge phase-${phase}`} style={{ fontSize: 'var(--text-xs)' }}>
                         {PHASE_LABELS[phase]}
                       </span>
                     </div>
@@ -268,38 +268,6 @@ export default function Roadmap() {
 
             {/* Sidebar */}
             <div className="sidebar-sticky">
-              {/* Download PDF — Place 2 */}
-              <div className="card" style={{ padding: '16px 20px', marginBottom: '16px' }}>
-                <button
-                  onClick={() => generateChecklistPDF(routeId!)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '7px',
-                    width: '100%',
-                    padding: '10px 16px',
-                    background: 'var(--accent)',
-                    color: '#fff',
-                    border: 'none',
-                    borderRadius: 'var(--radius-sm)',
-                    fontSize: '0.87rem',
-                    fontWeight: 700,
-                    cursor: 'pointer',
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-dark)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
-                >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                    aria-hidden="true">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                    <polyline points="7 10 12 15 17 10" />
-                    <line x1="12" y1="15" x2="12" y2="3" />
-                  </svg>
-                  Download Checklist PDF
-                </button>
-              </div>
               <Sidebar route={translated} />
             </div>
           </div>
