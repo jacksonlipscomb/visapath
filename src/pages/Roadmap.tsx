@@ -146,9 +146,9 @@ export default function Roadmap() {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '10px',
-              marginBottom: '28px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(96px, 1fr))',
+              gap: 'var(--space-2)',
+              marginBottom: 'var(--space-6)',
             }}
           >
             <div className="stat-box">

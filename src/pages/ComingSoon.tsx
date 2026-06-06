@@ -74,6 +74,7 @@ export default function ComingSoon() {
                 id="notify-email"
                 type="email"
                 className="form-input"
+                style={{ flex: 1, minWidth: 0 }}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"

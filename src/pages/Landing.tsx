@@ -101,15 +101,7 @@ export default function Landing() {
           </h2>
 
           {/* Country selectors */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr auto 1fr',
-              gap: 'var(--space-3)',
-              alignItems: 'end',
-              marginBottom: 'var(--space-5)',
-            }}
-          >
+          <div className="route-selector" style={{ marginBottom: 'var(--space-5)' }}>
             <SearchableSelect
               label="From"
               options={originOptions}
@@ -118,15 +110,7 @@ export default function Landing() {
               placeholder="Select origin"
             />
 
-            <div
-              style={{
-                fontSize: 'var(--text-xl)',
-                color: 'var(--text-muted)',
-                paddingBottom: 'var(--space-2)',
-                textAlign: 'center',
-                alignSelf: 'end',
-              }}
-            >
+            <div className="route-selector__arrow" aria-hidden="true">
               →
             </div>
 
