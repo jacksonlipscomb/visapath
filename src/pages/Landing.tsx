@@ -160,7 +160,7 @@ export default function Landing() {
                 <div
                   style={{
                     padding: '12px 16px',
-                    background: '#f9f9f7',
+                    background: 'var(--neutral)',
                     border: '1px dashed var(--border)',
                     borderRadius: 'var(--radius-sm)',
                     color: 'var(--text-muted)',
@@ -186,7 +186,7 @@ export default function Landing() {
                           padding: '8px 16px',
                           borderRadius: '999px',
                           border: active ? '2px solid var(--accent)' : '2px solid var(--border)',
-                          background: active ? 'var(--accent-light)' : available ? 'var(--surface)' : '#f0f0ee',
+                          background: active ? 'var(--accent-light)' : available ? 'var(--surface)' : 'var(--neutral)',
                           color: active ? 'var(--accent-dark)' : available ? 'var(--text)' : 'var(--text-muted)',
                           fontWeight: active ? 700 : 500,
                           fontSize: '0.9rem',

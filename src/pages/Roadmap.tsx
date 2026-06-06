@@ -174,7 +174,7 @@ export default function Roadmap() {
                 alignItems: 'center',
                 gap: '7px',
                 padding: '10px 18px',
-                background: '#0d9488',
+                background: 'var(--accent)',
                 color: '#fff',
                 border: 'none',
                 borderRadius: 'var(--radius-sm)',
@@ -182,8 +182,8 @@ export default function Roadmap() {
                 fontWeight: 700,
                 cursor: 'pointer',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = '#0f766e')}
-              onMouseLeave={(e) => (e.currentTarget.style.background = '#0d9488')}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-dark)')}
+              onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
             >
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
@@ -279,7 +279,7 @@ export default function Roadmap() {
                     gap: '7px',
                     width: '100%',
                     padding: '10px 16px',
-                    background: '#0d9488',
+                    background: 'var(--accent)',
                     color: '#fff',
                     border: 'none',
                     borderRadius: 'var(--radius-sm)',
@@ -287,8 +287,8 @@ export default function Roadmap() {
                     fontWeight: 700,
                     cursor: 'pointer',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = '#0f766e')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = '#0d9488')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-dark)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                     stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
