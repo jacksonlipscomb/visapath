@@ -4,7 +4,7 @@ export type Country = {
   flag: string
 }
 
-export type Purpose = 'tourist' | 'student' | 'student-athlete' | 'work'
+export type Purpose = 'tourist' | 'student' | 'work'
 
 export type DocumentItem = {
   name: string
@@ -55,7 +55,6 @@ export const COUNTRIES: Country[] = [
 export const PURPOSES: { value: Purpose; label: string; emoji: string }[] = [
   { value: 'tourist', label: 'Tourist', emoji: '🗺️' },
   { value: 'student', label: 'Student', emoji: '🎓' },
-  { value: 'student-athlete', label: 'Student Athlete', emoji: '🏅' },
   { value: 'work', label: 'Work', emoji: '💼' },
 ]
 
@@ -391,33 +390,7 @@ export const VISA_ROUTES: VisaRoute[] = [
     ),
   },
 
-  // ── Route 2: SE → US Student-Athlete ────────────────────────────────
-  {
-    id: 'se-us-student-athlete',
-    origin: SE,
-    destination: US,
-    purpose: 'student-athlete',
-    visaType: 'F-1 Student Visa',
-    processingTime: '3–6 months total (apply early)',
-    stayDuration: 'Duration of study programme + 60-day grace period',
-    estimatedCost: '~$535 USD in government fees (SEVIS $350 + MRV $185)',
-    summary:
-      'Student athletes use the same F-1 visa as regular students. Swedish citizens need an F-1 for academic stays longer than 90 days. NCAA athletes also need Eligibility Center clearance — start that process at the same time as your visa application.',
-    athleteNote:
-      'Student athletes use the same F-1 visa but must also obtain NCAA Eligibility Center clearance. Your athletic department handles this separately — start the eligibility process simultaneously with your visa application.',
-    officialLinks: [
-      { label: 'US Student Visas — travel.state.gov', url: 'https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html' },
-      { label: 'Study in the States — studyinthestates.dhs.gov', url: 'https://studyinthestates.dhs.gov' },
-      { label: 'SEVIS I-901 Fee — fmjfee.com', url: 'https://www.fmjfee.com' },
-      { label: 'NCAA Eligibility Center — eligibilitycenter.org', url: 'https://www.eligibilitycenter.org' },
-    ],
-    steps: makeF1Steps(
-      'Stockholm',
-      'For Sweden, pay online through the US Embassy Sweden portal (cgifederal.com) before scheduling your interview.',
-    ),
-  },
-
-  // ── Route 3: SE → US Tourist ─────────────────────────────────────────
+  // ── Route 2: SE → US Tourist ─────────────────────────────────────────
   {
     id: 'se-us-tourist',
     origin: SE,

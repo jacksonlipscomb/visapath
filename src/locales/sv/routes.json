@@ -3,7 +3,6 @@
     "purposes": {
       "tourist": "Turist",
       "student": "Student",
-      "student-athlete": "Studentidrottare",
       "work": "Arbete"
     },
     "phaseLabels": {
@@ -363,15 +362,6 @@
           ]
         }
       }
-    },
-    "se-us-student-athlete": {
-      "visaType": "F-1-studentvisum",
-      "processingTime": "3–6 månader totalt (ansök tidigt)",
-      "stayDuration": "Studieprogrammets längd + 60 dagars respitperiod",
-      "estimatedCost": "~$535 USD in myndighetsavgifter (SEVIS $350 + MRV $185)",
-      "summary": "Studentidrottare använder samma F-1-visum som vanliga studenter. svenska medborgare behöver F-1-för akademiska vistelser längre än 90 dagar. NCAA-idrottare behöver också godkännande från Eligibility Center, så börja den processen samtidigt som din visumansökan.",
-      "athleteNote": "Studentidrottare använder samma F-1-visum men måste också få godkännande från NCAA Eligibility Center. Din idrottsavdelning hanterar detta separat, så börja behörighetsprocessen samtidigt som din visumansökan.",
-      "_note": "Stegen är identiska med se-us-student. Se den rutten för alla stegtexter."
     },
     "se-us-tourist": {
       "visaType": "ESTA (programmet för viseringsundantag)",

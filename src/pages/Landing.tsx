@@ -23,11 +23,12 @@ export default function Landing() {
 
   const noPurposesAvailable = originCode && destCode && availablePurposes.length === 0
 
-  // Find the route id
-  const selectedRouteId =
+  // Find the matched route (and its id) for the current selection
+  const selectedRoute =
     originCode && destCode && selectedPurpose
-      ? getRoutesForPair(originCode, destCode).find((r) => r.purpose === selectedPurpose)?.id ?? null
+      ? getRoutesForPair(originCode, destCode).find((r) => r.purpose === selectedPurpose) ?? null
       : null
+  const selectedRouteId = selectedRoute?.id ?? null
 
   function handleOriginChange(code: string) {
     setOriginCode(code)
@@ -193,6 +194,19 @@ export default function Landing() {
                 </div>
               )}
             </div>
+          )}
+
+          {/* Visa type preview — subtle, muted */}
+          {selectedRoute && (
+            <p
+              style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--text-muted)',
+                marginBottom: 'var(--space-4)',
+              }}
+            >
+              You'll likely need the <span style={{ color: 'var(--text)', fontWeight: 600 }}>{selectedRoute.visaType}</span>.
+            </p>
           )}
 
           {/* CTA */}
