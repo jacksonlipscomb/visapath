@@ -90,7 +90,7 @@ All in [src/data/visaRoutes.ts](src/data/visaRoutes.ts).
 - `DocumentItem` — `{ name, required, description?, whereToGet? }`
 - `VisaStep` — `{ id, title, phase, description, documents[], tips?, estimatedTime?, estimatedCost?, officialLinks?, interviewPrep? }`
   - `phase` is one of six values: `before-applying`, `applying`, `interview`, `pre-departure`, `on-arrival`, `in-country`.
-- `VisaRoute` — `{ id, origin, destination, purpose, visaType, processingTime, stayDuration, estimatedCost, summary, athleteNote?, officialLinks[], steps[] }`
+- `VisaRoute` — `{ id, origin, destination, purpose, visaType, processingTime, stayDuration, estimatedCost, summary, lastUpdated, athleteNote?, officialLinks[], steps[] }`
 
 **Constants**
 - `COUNTRIES` — Sweden (SE), United States (US), United Kingdom (UK), India (IN)

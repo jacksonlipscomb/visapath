@@ -19,7 +19,7 @@ export default function Disclaimer() {
           <a href="https://studyinthestates.dhs.gov" target="_blank" rel="noopener noreferrer">
             studyinthestates.dhs.gov
           </a>
-          . Last updated: April 2026.
+          .
         </p>
       </div>
     </div>

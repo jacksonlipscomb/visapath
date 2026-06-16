@@ -6,6 +6,18 @@ type Props = {
   route: VisaRoute
 }
 
+// Format an ISO 'YYYY-MM' (e.g. '2026-03') as 'March 2026'. UTC-anchored to
+// avoid month-boundary off-by-one. Module-level so it isn't recreated per render.
+function formatLastUpdated(iso: string): string {
+  const [year, month] = iso.split('-').map(Number)
+  if (!year || !month) return iso
+  return new Intl.DateTimeFormat('en-US', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(Date.UTC(year, month - 1, 1)))
+}
+
 export default function Sidebar({ route }: Props) {
   const translated = useTranslatedRoute(route) ?? route
   return (
@@ -146,7 +158,7 @@ export default function Sidebar({ route }: Props) {
         <hr className="divider" style={{ margin: '0 0 14px 0' }} />
 
         <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: '8px' }}>
-          Last updated: April 2026
+          Last updated: {formatLastUpdated(translated.lastUpdated)}
         </p>
 
         <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', lineHeight: 1.5 }}>
