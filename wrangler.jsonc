@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "visapath",
+  "compatibility_date": "2026-06-15",
+  "assets": {
+    // Vite build output
+    "directory": "./dist",
+    // Serve index.html for unmatched paths so client-side routes
+    // (e.g. /roadmap/:routeId) resolve on direct navigation/bookmark
+    "not_found_handling": "single-page-application"
+  }
+}
