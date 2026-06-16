@@ -13,7 +13,7 @@ export default function ProgressBar({ totalDocs, checkedDocs }: Props) {
         borderBottom: '1px solid var(--border)',
         padding: '10px 0',
         position: 'sticky',
-        top: '48px', // below the disclaimer
+        top: 'var(--nav-height)', // below the navbar
         zIndex: 90,
         boxShadow: '0 2px 8px rgba(0,0,0,0.06)',
       }}
@@ -35,7 +35,7 @@ export default function ProgressBar({ totalDocs, checkedDocs }: Props) {
             style={{
               flex: 1,
               height: '8px',
-              background: '#e4e2dd',
+              background: 'var(--border)',
               borderRadius: '999px',
               overflow: 'hidden',
             }}
@@ -44,14 +44,7 @@ export default function ProgressBar({ totalDocs, checkedDocs }: Props) {
               style={{
                 width: `${pct}%`,
                 height: '100%',
-                background:
-                  pct === 100
-                    ? 'var(--success)'
-                    : pct > 60
-                    ? 'var(--accent)'
-                    : pct > 30
-                    ? '#f59e0b'
-                    : 'var(--accent)',
+                background: pct === 100 ? 'var(--success)' : 'var(--accent)',
                 borderRadius: '999px',
                 transition: 'width 0.3s ease',
               }}

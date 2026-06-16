@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SearchableSelect from '../components/SearchableSelect'
-import PopularRoutes from '../components/PopularRoutes'
-import { COUNTRIES, PURPOSES, getAllRoutes, getRoutesForPair } from '../data/visaRoutes'
+import { COUNTRIES, PURPOSES, getRoutesForPair } from '../data/visaRoutes'
 import type { Purpose } from '../data/visaRoutes'
 
 export default function Landing() {
@@ -24,11 +23,12 @@ export default function Landing() {
 
   const noPurposesAvailable = originCode && destCode && availablePurposes.length === 0
 
-  // Find the route id
-  const selectedRouteId =
+  // Find the matched route (and its id) for the current selection
+  const selectedRoute =
     originCode && destCode && selectedPurpose
-      ? getRoutesForPair(originCode, destCode).find((r) => r.purpose === selectedPurpose)?.id ?? null
+      ? getRoutesForPair(originCode, destCode).find((r) => r.purpose === selectedPurpose) ?? null
       : null
+  const selectedRouteId = selectedRoute?.id ?? null
 
   function handleOriginChange(code: string) {
     setOriginCode(code)
@@ -53,75 +53,55 @@ export default function Landing() {
   return (
     <main>
       {/* Hero */}
-      <div
-        style={{
-          background: 'linear-gradient(160deg, var(--accent-light) 0%, var(--bg) 60%)',
-          padding: '48px 0 32px',
-        }}
-      >
-        <div className="container">
-          <p
-            style={{
-              fontSize: '0.75rem',
-              fontWeight: 700,
-              color: 'var(--accent)',
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              marginBottom: '10px',
-            }}
-          >
-            VisaPath
-          </p>
-          <h1
-            style={{
-              fontSize: 'clamp(1.8rem, 5vw, 2.6rem)',
-              fontWeight: 800,
-              color: 'var(--text)',
-              marginBottom: '12px',
-              lineHeight: 1.2,
-            }}
-          >
-            Your step-by-step<br />visa roadmap
-          </h1>
-          <p
-            style={{
-              fontSize: '1.05rem',
-              color: 'var(--text-muted)',
-              maxWidth: '460px',
-              lineHeight: 1.6,
-            }}
-          >
-            Visual, numbered instructions — like IKEA for immigration.
-          </p>
-        </div>
+      <div className="container" style={{ textAlign: 'center', padding: 'var(--space-8) 16px var(--space-6)' }}>
+        <p
+          style={{
+            fontSize: 'var(--text-xs)',
+            fontWeight: 700,
+            color: 'var(--accent)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.14em',
+            marginBottom: 'var(--space-4)',
+          }}
+        >
+          Visa & entry requirements, made simple
+        </p>
+        <h1
+          style={{
+            fontSize: 'var(--text-3xl)',
+            fontWeight: 800,
+            color: 'var(--text)',
+            marginBottom: 'var(--space-4)',
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em',
+          }}
+        >
+          Your step-by-step
+          <br />
+          visa roadmap
+        </h1>
+        <p
+          style={{
+            fontSize: 'var(--text-lg)',
+            color: 'var(--text-muted)',
+            maxWidth: '480px',
+            margin: '0 auto',
+            lineHeight: 1.6,
+          }}
+        >
+          Pick where you're coming from and where you're going. We'll show you every step, in order.
+        </p>
       </div>
 
       {/* Selector card */}
-      <div className="container">
-        <div
-          className="card"
-          style={{
-            padding: '28px',
-            marginTop: '-16px',
-            marginBottom: '0',
-            position: 'relative',
-            zIndex: 10,
-          }}
-        >
-          <h2 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '20px', color: 'var(--text)' }}>
+      <div className="container" style={{ maxWidth: '560px' }}>
+        <div className="card" style={{ padding: 'var(--space-6)', marginBottom: 'var(--space-8)' }}>
+          <h2 style={{ fontSize: 'var(--text-base)', fontWeight: 700, marginBottom: 'var(--space-5)', color: 'var(--text)' }}>
             Where are you going?
           </h2>
 
           {/* Country selectors */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr auto 1fr',
-              gap: '12px',
-              alignItems: 'end',
-              marginBottom: '20px',
-            }}
-          >
+          <div className="route-selector" style={{ marginBottom: 'var(--space-5)' }}>
             <SearchableSelect
               label="From"
               options={originOptions}
@@ -130,15 +110,7 @@ export default function Landing() {
               placeholder="Select origin"
             />
 
-            <div
-              style={{
-                fontSize: '1.4rem',
-                color: 'var(--text-muted)',
-                paddingBottom: '8px',
-                textAlign: 'center',
-                alignSelf: 'end',
-              }}
-            >
+            <div className="route-selector__arrow" aria-hidden="true">
               →
             </div>
 
@@ -153,24 +125,24 @@ export default function Landing() {
 
           {/* Purpose pills */}
           {originCode && destCode && (
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: 'var(--space-5)' }}>
               <div className="form-label">Purpose of travel</div>
 
               {noPurposesAvailable ? (
                 <div
                   style={{
-                    padding: '12px 16px',
-                    background: '#f9f9f7',
+                    padding: 'var(--space-3) var(--space-4)',
+                    background: 'var(--neutral)',
                     border: '1px dashed var(--border)',
                     borderRadius: 'var(--radius-sm)',
                     color: 'var(--text-muted)',
-                    fontSize: '0.9rem',
+                    fontSize: 'var(--text-sm)',
                   }}
                 >
                   Coming soon for this combination — check back later!
                 </div>
               ) : (
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
                   {PURPOSES.map((p) => {
                     const available = availablePurposes.includes(p.value)
                     const active = selectedPurpose === p.value
@@ -182,14 +154,14 @@ export default function Landing() {
                         style={{
                           display: 'flex',
                           alignItems: 'center',
-                          gap: '6px',
-                          padding: '8px 16px',
+                          gap: 'var(--space-2)',
+                          padding: 'var(--space-2) var(--space-4)',
                           borderRadius: '999px',
                           border: active ? '2px solid var(--accent)' : '2px solid var(--border)',
-                          background: active ? 'var(--accent-light)' : available ? 'var(--surface)' : '#f0f0ee',
+                          background: active ? 'var(--accent-light)' : available ? 'var(--surface)' : 'var(--neutral)',
                           color: active ? 'var(--accent-dark)' : available ? 'var(--text)' : 'var(--text-muted)',
                           fontWeight: active ? 700 : 500,
-                          fontSize: '0.9rem',
+                          fontSize: 'var(--text-sm)',
                           cursor: available ? 'pointer' : 'not-allowed',
                           opacity: available ? 1 : 0.45,
                           transition: 'all 0.12s ease',
@@ -208,72 +180,30 @@ export default function Landing() {
             </div>
           )}
 
-          {/* Stay duration toggle (informational) */}
-          {originCode && destCode && selectedPurpose === 'tourist' && (
-            <div style={{ marginBottom: '20px' }}>
-              <div className="form-label">Intended stay length</div>
-              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-                {['Under 90 days', '90 days – 1 year', 'Over 1 year'].map((label) => (
-                  <span
-                    key={label}
-                    style={{
-                      padding: '6px 14px',
-                      borderRadius: '999px',
-                      border: '1.5px solid var(--border)',
-                      background: label === 'Under 90 days' ? 'var(--accent-light)' : 'var(--surface)',
-                      color: label === 'Under 90 days' ? 'var(--accent-dark)' : 'var(--text-muted)',
-                      fontSize: '0.82rem',
-                      fontWeight: label === 'Under 90 days' ? 700 : 400,
-                      cursor: 'default',
-                    }}
-                  >
-                    {label}
-                  </span>
-                ))}
-              </div>
-              <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '6px' }}>
-                Informational only. For stays over 90 days, a long-stay visa or residence permit is typically required.
-              </p>
-            </div>
+          {/* Visa type preview — subtle, muted */}
+          {selectedRoute && (
+            <p
+              style={{
+                fontSize: 'var(--text-sm)',
+                color: 'var(--text-muted)',
+                marginBottom: 'var(--space-4)',
+              }}
+            >
+              You'll likely need the <span style={{ color: 'var(--text)', fontWeight: 600 }}>{selectedRoute.visaType}</span>.
+            </p>
           )}
 
           {/* CTA */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <button
-              className="btn-primary"
-              onClick={handleShowRoadmap}
-              disabled={!canShowRoadmap}
-              style={{ fontSize: '1rem' }}
-            >
-              Show my roadmap →
-            </button>
-            {!canShowRoadmap && originCode && destCode && selectedPurpose && (
-              <span style={{ fontSize: '0.85rem', color: 'var(--warn)' }}>
-                No roadmap available for this combination yet.
-              </span>
-            )}
-          </div>
+          <button
+            className="btn-primary"
+            onClick={handleShowRoadmap}
+            disabled={!canShowRoadmap}
+            style={{ fontSize: 'var(--text-base)', width: '100%', justifyContent: 'center' }}
+          >
+            Show my roadmap →
+          </button>
         </div>
-
-        {/* Popular routes */}
-        <PopularRoutes routes={getAllRoutes()} />
       </div>
-
-      {/* Footer */}
-      <footer
-        style={{
-          borderTop: '1px solid var(--border)',
-          padding: '24px 0',
-          marginTop: '16px',
-          background: 'var(--surface)',
-        }}
-      >
-        <div className="container" style={{ textAlign: 'center' }}>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            VisaPath — for informational purposes only. Not legal advice.
-          </p>
-        </div>
-      </footer>
     </main>
   )
 }

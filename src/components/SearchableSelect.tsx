@@ -89,7 +89,7 @@ export default function SearchableSelect({ label, options, value, onChange, plac
           display: 'flex',
           alignItems: 'center',
           gap: '8px',
-          boxShadow: open ? '0 0 0 3px rgba(58,110,168,0.12)' : 'none',
+          boxShadow: open ? '0 0 0 3px rgba(14,165,233,0.15)' : 'none',
           transition: 'border-color 0.15s',
         }}
       >
@@ -178,7 +178,7 @@ export default function SearchableSelect({ label, options, value, onChange, plac
                       idx === highlightIdx
                         ? 'var(--accent-light)'
                         : opt.code === value
-                        ? '#f0f4fa'
+                        ? 'var(--accent-light)'
                         : 'transparent',
                     fontWeight: opt.code === value ? 600 : 400,
                     transition: 'background 0.1s',

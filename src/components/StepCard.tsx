@@ -123,7 +123,7 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
             <span className={phaseClass}>{PHASE_LABELS[step.phase]}</span>
             {step.estimatedTime && (
               <span style={{
-                fontSize: '0.72rem', background: '#f3f4f6', color: 'var(--text-muted)',
+                fontSize: '0.72rem', background: 'var(--neutral)', color: 'var(--text-muted)',
                 padding: '2px 8px', borderRadius: '20px', fontWeight: 600,
               }}>
                 {step.estimatedTime}
@@ -161,15 +161,15 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
                   style={{
                     display: 'inline-flex', alignItems: 'center', gap: '6px',
                     padding: '9px 16px',
-                    background: '#0d9488',
+                    background: 'var(--accent)',
                     color: '#fff',
                     borderRadius: 'var(--radius-sm)',
                     fontSize: '0.85rem', fontWeight: 700,
                     textDecoration: 'none',
                     transition: 'background 0.15s',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = '#0f766e')}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = '#0d9488')}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = 'var(--accent-dark)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = 'var(--accent)')}
                 >
                   <ExternalLinkIcon />
                   {link.label}
@@ -253,23 +253,23 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
           {/* ── Interview Prep ── */}
           {step.interviewPrep && (
             <div style={{
-              border: '2px solid #e0f2fe',
+              border: '1px solid var(--border)',
               borderRadius: 'var(--radius-sm)',
               overflow: 'hidden',
               marginBottom: '16px',
             }}>
               {/* Section header */}
               <div style={{
-                background: '#f0f9ff',
+                background: 'var(--accent-light)',
                 padding: '12px 16px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
-                borderBottom: '1px solid #e0f2fe',
+                borderBottom: '1px solid var(--border)',
               }}>
-                <span style={{ color: '#0369a1' }}><BagIcon /></span>
+                <span style={{ color: 'var(--accent-dark)' }}><BagIcon /></span>
                 <span style={{
-                  fontWeight: 700, fontSize: '0.9rem', color: '#0369a1',
+                  fontWeight: 700, fontSize: '0.9rem', color: 'var(--accent-dark)',
                   textTransform: 'uppercase', letterSpacing: '0.05em',
                 }}>
                   What to Bring to Your Interview
@@ -284,8 +284,8 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
                   return (
                     <label key={item.item} className="doc-checkbox" style={{
                       padding: '10px 16px',
-                      background: isChecked ? '#f0fdf4' : 'transparent',
-                      borderBottom: '1px solid #f0f9ff',
+                      background: isChecked ? 'var(--success-light)' : 'transparent',
+                      borderBottom: '1px solid var(--border)',
                       transition: 'background 0.15s',
                     }}>
                       <input type="checkbox" checked={isChecked} onChange={() => onDocToggle(itemKey)} />
@@ -306,14 +306,14 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
 
               {/* Common questions — collapsible */}
               {step.interviewPrep.commonQuestions && step.interviewPrep.commonQuestions.length > 0 && (
-                <div style={{ borderTop: '1px solid #e0f2fe' }}>
+                <div style={{ borderTop: '1px solid var(--border)' }}>
                   <button
                     onClick={() => setQuestionsOpen((v) => !v)}
                     style={{
-                      width: '100%', background: '#f0f9ff', border: 'none',
+                      width: '100%', background: 'var(--accent-light)', border: 'none',
                       padding: '10px 16px', display: 'flex', alignItems: 'center',
                       justifyContent: 'space-between', cursor: 'pointer',
-                      fontWeight: 600, fontSize: '0.85rem', color: '#0369a1',
+                      fontWeight: 600, fontSize: '0.85rem', color: 'var(--accent-dark)',
                     }}
                   >
                     <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -344,13 +344,13 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
               {/* Interview tips */}
               {step.interviewPrep.tips && step.interviewPrep.tips.length > 0 && (
                 <div style={{
-                  borderTop: '1px solid #e0f2fe',
-                  background: '#f0f9ff',
+                  borderTop: '1px solid var(--border)',
+                  background: 'var(--accent-light)',
                   padding: '12px 16px',
                 }}>
                   <div style={{
                     display: 'flex', alignItems: 'center', gap: '6px',
-                    marginBottom: '8px', fontWeight: 700, fontSize: '0.82rem', color: '#0369a1',
+                    marginBottom: '8px', fontWeight: 700, fontSize: '0.82rem', color: 'var(--accent-dark)',
                   }}>
                     <LightbulbIcon />
                     Interview tips
@@ -358,7 +358,7 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
                   <ul style={{ paddingLeft: '16px', margin: 0 }}>
                     {step.interviewPrep.tips.map((tip, i) => (
                       <li key={i} style={{
-                        fontSize: '0.85rem', color: '#0c4a6e',
+                        fontSize: '0.85rem', color: 'var(--navy)',
                         marginBottom: i < step.interviewPrep!.tips!.length - 1 ? '5px' : 0,
                         listStyleType: 'disc',
                       }}>
@@ -375,8 +375,8 @@ export default function StepCard({ step, stepNumber, checkedDocs, onDocToggle }:
           {step.estimatedCost && (
             <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
               <span style={{
-                fontSize: '0.78rem', background: '#fef3c7', color: '#92400e',
-                border: '1px solid #fcd34d', padding: '3px 10px',
+                fontSize: '0.78rem', background: 'var(--neutral)', color: 'var(--navy)',
+                border: '1px solid var(--border)', padding: '3px 10px',
                 borderRadius: '20px', fontWeight: 600,
               }}>
                 Cost: {step.estimatedCost}
