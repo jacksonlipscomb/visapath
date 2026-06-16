@@ -34,9 +34,6 @@ Verified against [package.json](package.json).
 ├── visa-guide.html             Legacy standalone single-file HTML prototype (NOT part of the React app)
 ├── future-paths/               Empty placeholder directory (untracked) for future route work
 ├── CLAUDE.md                   Project instructions for Claude Code (untracked)
-├── .github/
-│   └── workflows/
-│       └── deploy.yml          Legacy GitHub Pages deploy workflow (see Build & deploy)
 └── src/
     ├── main.tsx                React entry; mounts <App/> inside <HashRouter>, imports i18n + index.css
     ├── App.tsx                 Renders <Navbar/>, the <Routes>, and the global <Disclaimer/> footnote
@@ -117,15 +114,13 @@ All in [src/data/visaRoutes.ts](src/data/visaRoutes.ts).
 
 Scripts ([package.json](package.json)): `dev` (vite), `build` (`tsc && vite build`), `preview` (vite preview).
 
-- **Cloudflare (current):** [wrangler.jsonc](wrangler.jsonc) serves the Vite output `./dist` as static assets with `not_found_handling: "single-page-application"`. Vite `base` is `/` so assets resolve at the site root.
-- **GitHub Pages (legacy):** [.github/workflows/deploy.yml](.github/workflows/deploy.yml) still builds `main` and publishes `dist` to Pages. See Maintenance notes — this conflicts with `base: '/'`.
+- **Cloudflare (single deploy path):** [wrangler.jsonc](wrangler.jsonc) serves the Vite output `./dist` as static assets with `not_found_handling: "single-page-application"`. Vite `base` is `/` so assets resolve at the site root.
 
 ## Maintenance notes
 
 Housekeeping, not product features:
 
 - **CLAUDE.md stack drift:** CLAUDE.md lists Framer Motion and Lucide, but they are not installed.
-- **GitHub Pages base conflict:** `base: '/'` (needed for Cloudflare's root serving) breaks the legacy GitHub Pages workflow, which serves under `/visapath/`. If Pages is retired, delete [.github/workflows/deploy.yml](.github/workflows/deploy.yml); otherwise `base` must be made environment-aware.
 - **Email-notify is a stub:** the [ComingSoon.tsx](src/pages/ComingSoon.tsx) signup form sets a success state but does not send anywhere — wire it to a real endpoint.
 - **Clean URLs:** switching `HashRouter` → `BrowserRouter` would give `/roadmap/...` (the Cloudflare SPA fallback already supports it).
 - **Translation export:** `src/locales/export-for-translation.json` is a non-runtime artifact and can drift from live data — regenerate when needed.
