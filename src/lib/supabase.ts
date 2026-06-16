@@ -1,17 +1,24 @@
-import { createClient, type SupabaseClient } from '@supabase/supabase-js'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 const url = import.meta.env.VITE_SUPABASE_URL
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY
 
-/** True only when both env vars are present, so the app can degrade gracefully. */
+/** Synchronous, SDK-free check so the UI can degrade gracefully without loading Supabase. */
 export const isSupabaseConfigured = Boolean(url && publishableKey)
 
+let clientPromise: Promise<SupabaseClient | null> | null = null
+
 /**
- * The Supabase client, or `null` when env vars are missing. We never call
- * createClient() with empty values (that would throw / produce a broken client).
- * Consumers must null-check (the AuthContext does this and surfaces a clear
- * "Auth is not configured" error).
+ * Lazily import the Supabase SDK and create the client (memoized), so the SDK is
+ * code-split out of the initial bundle and only loaded once auth actually runs.
+ * Resolves to `null` when env vars are missing (callers must null-check).
  */
-export const supabase: SupabaseClient | null = isSupabaseConfigured
-  ? createClient(url as string, publishableKey as string)
-  : null
+export function getSupabase(): Promise<SupabaseClient | null> {
+  if (!isSupabaseConfigured) return Promise.resolve(null)
+  if (!clientPromise) {
+    clientPromise = import('@supabase/supabase-js').then(({ createClient }) =>
+      createClient(url as string, publishableKey as string)
+    )
+  }
+  return clientPromise
+}

@@ -61,7 +61,7 @@ export default function Navbar() {
                   <span className="nav-email" title={user.email}>
                     {user.email}
                   </span>
-                  <button className="lang-btn" onClick={() => signOut()}>
+                  <button className="lang-btn" onClick={() => void signOut()}>
                     Log out
                   </button>
                 </>

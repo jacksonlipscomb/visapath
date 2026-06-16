@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react'
 import type { Session, User } from '@supabase/supabase-js'
-import { supabase, isSupabaseConfigured } from '../lib/supabase'
+import { getSupabase, isSupabaseConfigured } from '../lib/supabase'
 
 type AuthResult = { error: string | null }
 
@@ -10,8 +10,8 @@ type AuthContextValue = {
   loading: boolean
   error: string | null // initialization/session error
   isConfigured: boolean
-  justSignedIn: boolean // returned from a verification link this load
-  authError: string | null // error reported by a verification return
+  justSignedIn: boolean // returned from a verification link AND a session was established
+  authError: string | null // verification-return or sign-out error
   signUp: (email: string, password: string) => Promise<AuthResult>
   signIn: (email: string, password: string) => Promise<AuthResult>
   signOut: () => Promise<AuthResult>
@@ -61,11 +61,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [authError, setAuthError] = useState<string | null>(null)
 
   useEffect(() => {
-    if (!supabase) {
+    if (!isSupabaseConfigured) {
       setLoading(false)
       return
     }
-    let mounted = true
+    let active = true
+    let subscription: { unsubscribe: () => void } | null = null
 
     // Capture verification-return state before cleaning the URL.
     const params = new URL(window.location.href).searchParams
@@ -75,42 +76,60 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setAuthError(returnedError)
       cleanAuthParamsFromUrl()
     } else if (returnedCode) {
-      setJustSignedIn(true)
+      // Don't claim success yet — only once a real session exists (below).
       cleanAuthParamsFromUrl()
     }
 
-    supabase.auth
-      .getSession()
-      .then(({ data, error: sessErr }) => {
-        if (!mounted) return
-        if (sessErr) setError(sessErr.message)
-        setSession(data.session)
-        setUser(data.session?.user ?? null)
+    getSupabase()
+      .then((client) => {
+        if (!active || !client) {
+          if (active) setLoading(false)
+          return
+        }
+
+        const sub = client.auth.onAuthStateChange((event, nextSession) => {
+          if (!active) return
+          setSession(nextSession)
+          setUser(nextSession?.user ?? null)
+          // Success notice only on a genuine sign-in following a verification code.
+          if (event === 'SIGNED_IN' && returnedCode) setJustSignedIn(true)
+        })
+        subscription = sub.data.subscription
+
+        client.auth
+          .getSession()
+          .then(({ data, error: sessErr }) => {
+            if (!active) return
+            if (sessErr) setError(sessErr.message)
+            setSession(data.session)
+            setUser(data.session?.user ?? null)
+            // Covers the race where the code exchange completed before we subscribed.
+            if (returnedCode && data.session) setJustSignedIn(true)
+          })
+          .catch((e: unknown) => {
+            if (active) setError(e instanceof Error ? e.message : String(e))
+          })
+          .finally(() => {
+            if (active) setLoading(false)
+          })
       })
       .catch((e: unknown) => {
-        if (mounted) setError(e instanceof Error ? e.message : String(e))
+        if (active) {
+          setError(e instanceof Error ? e.message : String(e))
+          setLoading(false)
+        }
       })
-      .finally(() => {
-        if (mounted) setLoading(false)
-      })
-
-    const {
-      data: { subscription },
-    } = supabase.auth.onAuthStateChange((_event, nextSession) => {
-      if (!mounted) return
-      setSession(nextSession)
-      setUser(nextSession?.user ?? null)
-    })
 
     return () => {
-      mounted = false
-      subscription.unsubscribe()
+      active = false
+      subscription?.unsubscribe()
     }
   }, [])
 
   async function signUp(email: string, password: string): Promise<AuthResult> {
-    if (!supabase) return NOT_CONFIGURED
-    const { error: e } = await supabase.auth.signUp({
+    const client = await getSupabase()
+    if (!client) return NOT_CONFIGURED
+    const { error: e } = await client.auth.signUp({
       email,
       password,
       options: { emailRedirectTo: window.location.origin },
@@ -119,20 +138,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function signIn(email: string, password: string): Promise<AuthResult> {
-    if (!supabase) return NOT_CONFIGURED
-    const { error: e } = await supabase.auth.signInWithPassword({ email, password })
+    const client = await getSupabase()
+    if (!client) return NOT_CONFIGURED
+    const { error: e } = await client.auth.signInWithPassword({ email, password })
     return { error: e?.message ?? null }
   }
 
   async function signOut(): Promise<AuthResult> {
-    if (!supabase) return NOT_CONFIGURED
-    const { error: e } = await supabase.auth.signOut()
+    const client = await getSupabase()
+    if (!client) return NOT_CONFIGURED
+    const { error: e } = await client.auth.signOut()
+    if (e) setAuthError(e.message) // surface logout failures in the top-level notice
     return { error: e?.message ?? null }
   }
 
   function clearAuthNotice() {
     setJustSignedIn(false)
     setAuthError(null)
+    setError(null)
   }
 
   const value: AuthContextValue = {

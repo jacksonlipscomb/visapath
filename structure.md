@@ -58,7 +58,7 @@ Verified against [package.json](package.json).
     ├── context/
     │   └── AuthContext.tsx     AuthProvider + useAuth() (Supabase session, sign up/in/out)
     ├── lib/
-    │   └── supabase.ts         Supabase client (nullable when env not configured)
+    │   └── supabase.ts         Lazy Supabase client (code-split SDK; null when env not configured)
     ├── hooks/
     │   └── useTranslatedRoute.ts  Maps a VisaRoute to its translated strings for the active language
     ├── data/

@@ -11,9 +11,10 @@ const Login = lazy(() => import('./pages/Login'))
 const Signup = lazy(() => import('./pages/Signup'))
 
 function AuthNotice() {
-  const { justSignedIn, authError, clearAuthNotice } = useAuth()
-  if (!justSignedIn && !authError) return null
-  const isError = !!authError
+  const { justSignedIn, authError, error, clearAuthNotice } = useAuth()
+  const problem = authError || error
+  if (!justSignedIn && !problem) return null
+  const isError = !!problem
   return (
     <div
       style={{
@@ -27,7 +28,7 @@ function AuthNotice() {
         style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 'var(--space-3)' }}
       >
         <span style={{ fontSize: 'var(--text-sm)', color: isError ? 'var(--warn)' : 'var(--success)' }}>
-          {isError ? authError : 'Email verified — you’re signed in.'}
+          {isError ? problem : 'Email verified — you’re signed in.'}
         </span>
         <button
           onClick={clearAuthNotice}
