@@ -10,7 +10,7 @@ type Props = {
 // avoid month-boundary off-by-one. Module-level so it isn't recreated per render.
 function formatLastUpdated(iso: string): string {
   const [year, month] = iso.split('-').map(Number)
-  if (!year || !month) return iso
+  if (!Number.isInteger(year) || !Number.isInteger(month) || month < 1 || month > 12) return iso
   return new Intl.DateTimeFormat('en-US', {
     month: 'long',
     year: 'numeric',
