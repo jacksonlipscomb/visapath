@@ -40,6 +40,7 @@ export type VisaRoute = {
   stayDuration: string
   estimatedCost: string
   summary: string
+  lastUpdated: string // ISO YYYY-MM, e.g. '2026-03'
   athleteNote?: string
   officialLinks: { label: string; url: string }[]
   steps: VisaStep[]
@@ -368,6 +369,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 1: SE → US Student ──────────────────────────────────────────
   {
     id: 'se-us-student',
+    lastUpdated: '2026-03',
     origin: SE,
     destination: US,
     purpose: 'student',
@@ -393,6 +395,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 2: SE → US Tourist ─────────────────────────────────────────
   {
     id: 'se-us-tourist',
+    lastUpdated: '2026-03',
     origin: SE,
     destination: US,
     purpose: 'tourist',
@@ -512,6 +515,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 4: SE → US Work ─────────────────────────────────────────────
   {
     id: 'se-us-work',
+    lastUpdated: '2026-03',
     origin: SE,
     destination: US,
     purpose: 'work',
@@ -727,6 +731,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 5: US → SE Student ─────────────────────────────────────────
   {
     id: 'us-se-student',
+    lastUpdated: '2026-03',
     origin: US,
     destination: SE,
     purpose: 'student',
@@ -873,6 +878,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 6: US → SE Tourist ─────────────────────────────────────────
   {
     id: 'us-se-tourist',
+    lastUpdated: '2026-03',
     origin: US,
     destination: SE,
     purpose: 'tourist',
@@ -964,6 +970,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 7: UK → US Student ─────────────────────────────────────────
   {
     id: 'uk-us-student',
+    lastUpdated: '2026-03',
     origin: UK,
     destination: US,
     purpose: 'student',
@@ -988,6 +995,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 8: UK → US Tourist ─────────────────────────────────────────
   {
     id: 'uk-us-tourist',
+    lastUpdated: '2026-03',
     origin: UK,
     destination: US,
     purpose: 'tourist',
@@ -1109,6 +1117,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 9: IN → US Student ─────────────────────────────────────────
   {
     id: 'in-us-student',
+    lastUpdated: '2026-03',
     origin: IN,
     destination: US,
     purpose: 'student',
@@ -1399,6 +1408,7 @@ export const VISA_ROUTES: VisaRoute[] = [
   // ── Route 10: IN → US Tourist ────────────────────────────────────────
   {
     id: 'in-us-tourist',
+    lastUpdated: '2026-03',
     origin: IN,
     destination: US,
     purpose: 'tourist',
