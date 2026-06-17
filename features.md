@@ -19,6 +19,7 @@ A basic list of what the app does today, what content it covers, and what's plan
 - Download the checklist as a PDF.
 
 **Cross-cutting**
+- Email/password account creation and login (Supabase Auth), with email verification and a persisted session. Login is optional.
 - English / Swedish language toggle (persisted), with route content translated.
 - "Not Available" page with an email-notify signup for routes that don't exist yet.
 - Bookmarkable route URLs; unknown routes fall back to the Not Available page gracefully.
@@ -34,9 +35,9 @@ A basic list of what the app does today, what content it covers, and what's plan
 
 Planned, not yet built. Each note flags the rough implication.
 
-- **Login with email & password** — user accounts so checklist progress (and eventually saved routes) syncs across devices instead of being `localStorage`-only. Implication: requires a backend with a users store, password hashing, and session/token handling — the app is currently fully client-side with no server.
+- **Sync checklist progress across devices** — tie per-route checklist state (and eventually saved routes) to the user's account instead of `localStorage`, so it follows them across devices. Now unblocked by accounts; implication: a per-user store and migration of the existing `localStorage` checklist logic.
 
-- **Login with OAuth** *(separate effort)* — "Sign in with Google / Apple" etc., layered on top of the email/password auth system as a distinct piece of work. Implication: provider app registrations, OAuth callback/redirect handling, and account-linking with existing email accounts.
+- **Login with OAuth** *(separate effort)* — "Sign in with Google / Apple" etc., layered on top of the existing email/password auth as a distinct piece of work. Implication: provider app registrations, OAuth callback/redirect handling, and account-linking with existing email accounts.
 
 - **More paths** — expand coverage with additional routes, country pairs, and purposes (e.g. work routes for more pairs, more origin/destination countries). Implication: add entries to `VISA_ROUTES` (and `COUNTRIES`/`PURPOSES` as needed) in [src/data/visaRoutes.ts](src/data/visaRoutes.ts) following the existing `VisaRoute` schema, plus matching EN/SV strings in `src/locales/`.
 

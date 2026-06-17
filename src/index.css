@@ -235,6 +235,23 @@ input {
   outline-offset: 2px;
 }
 
+/* ─── Navbar account email ────────────────── */
+
+.nav-email {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .nav-email {
+    display: none;
+  }
+}
+
 /* ─── Phase badge colors ──────────────────── */
 
 .phase-badge {

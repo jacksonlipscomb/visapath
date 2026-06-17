@@ -15,6 +15,7 @@ Verified against [package.json](package.json).
 - `react-router-dom` (6) — used as `HashRouter`
 - `react-i18next`, `i18next`, `i18next-browser-languagedetector` — EN/SV localization
 - `jspdf` — PDF checklist export (pulls in `html2canvas` **transitively**; it is not a direct dependency)
+- `@supabase/supabase-js` — email/password auth (sessions, verification); browser SDK, no server code
 
 **Dev / build**
 - `typescript`
@@ -39,17 +40,25 @@ Verified against [package.json](package.json).
     ├── App.tsx                 Renders <Navbar/>, the <Routes>, and the global <Disclaimer/> footnote
     ├── index.css               Global styles + design tokens (navy/teal palette, spacing & type scale)
     ├── i18n.ts                 i18next setup (EN/SV, language detection + localStorage persistence)
+    ├── vite-env.d.ts           Vite client types + typed VITE_* env vars
     ├── pages/
     │   ├── Landing.tsx         Home: hero + country/purpose selector + visa-type preview
     │   ├── Roadmap.tsx         Core product: step-by-step roadmap for a route (/roadmap/:routeId)
+    │   ├── Login.tsx           Email/password login page (lazy-loaded)
+    │   ├── Signup.tsx          Email/password signup page (lazy-loaded)
     │   └── ComingSoon.tsx      "Not Available" page: calm message + email signup (also the * catch-all)
     ├── components/
-    │   ├── Navbar.tsx          Sticky navbar: VisaPath wordmark + EN/SV toggle
+    │   ├── Navbar.tsx          Sticky navbar: wordmark, EN/SV toggle, login/logout controls
     │   ├── Disclaimer.tsx      Muted, non-sticky legal footnote line
     │   ├── SearchableSelect.tsx  Accessible searchable country dropdown
     │   ├── StepCard.tsx        A single roadmap step (docs checklist, links, interview prep)
     │   ├── Sidebar.tsx         Roadmap support rail (official sources, timeline, start over)
-    │   └── ProgressBar.tsx     Sticky "X of N documents checked" progress bar
+    │   ├── ProgressBar.tsx     Sticky "X of N documents checked" progress bar
+    │   └── AuthForm.tsx        Shared email/password form (login | signup modes)
+    ├── context/
+    │   └── AuthContext.tsx     AuthProvider + useAuth() (Supabase session, sign up/in/out)
+    ├── lib/
+    │   └── supabase.ts         Lazy Supabase client (code-split SDK; null when env not configured)
     ├── hooks/
     │   └── useTranslatedRoute.ts  Maps a VisaRoute to its translated strings for the active language
     ├── data/
@@ -115,6 +124,7 @@ All in [src/data/visaRoutes.ts](src/data/visaRoutes.ts).
 Scripts ([package.json](package.json)): `dev` (vite), `build` (`tsc && vite build`), `preview` (vite preview).
 
 - **Cloudflare (single deploy path):** [wrangler.jsonc](wrangler.jsonc) serves the Vite output `./dist` as static assets with `not_found_handling: "single-page-application"`. Vite `base` is `/` so assets resolve at the site root.
+- **Env vars:** auth needs `VITE_SUPABASE_URL` and `VITE_SUPABASE_PUBLISHABLE_KEY` (see [.env.example](.env.example)). Vite inlines them at build, so set them in the Cloudflare build environment too. Without them the app builds and runs, with auth showing "not configured."
 
 ## Maintenance notes
 
