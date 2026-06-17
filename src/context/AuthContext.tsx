@@ -68,20 +68,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     let active = true
     let subscription: { unsubscribe: () => void } | null = null
 
-    // Capture verification-return state before cleaning the URL.
+    // Capture verification-return state. Do NOT strip it yet: the lazily-created
+    // client must still see `?code=` to exchange it for a session.
     const params = new URL(window.location.href).searchParams
     const returnedError = params.get('error_description') || params.get('error')
     const returnedCode = params.has('code')
-    if (returnedError) {
-      setAuthError(returnedError)
-      cleanAuthParamsFromUrl()
-    } else if (returnedCode) {
-      // Don't claim success yet — only once a real session exists (below).
-      cleanAuthParamsFromUrl()
-    }
 
     getSupabase()
-      .then((client) => {
+      .then(async (client) => {
         if (!active || !client) {
           if (active) setLoading(false)
           return
@@ -96,22 +90,27 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         })
         subscription = sub.data.subscription
 
-        client.auth
-          .getSession()
-          .then(({ data, error: sessErr }) => {
-            if (!active) return
-            if (sessErr) setError(sessErr.message)
-            setSession(data.session)
-            setUser(data.session?.user ?? null)
-            // Covers the race where the code exchange completed before we subscribed.
-            if (returnedCode && data.session) setJustSignedIn(true)
-          })
-          .catch((e: unknown) => {
-            if (active) setError(e instanceof Error ? e.message : String(e))
-          })
-          .finally(() => {
-            if (active) setLoading(false)
-          })
+        try {
+          // getSession() internally awaits the SDK's detectSessionInUrl exchange,
+          // so the `?code=` is consumed here BEFORE we strip it from the URL.
+          const { data, error: sessErr } = await client.auth.getSession()
+          if (!active) return
+          if (sessErr) setError(sessErr.message)
+          setSession(data.session)
+          setUser(data.session?.user ?? null)
+          if (returnedError) setAuthError(returnedError)
+          else if (returnedCode && data.session) setJustSignedIn(true)
+          else if (returnedCode && !data.session)
+            setAuthError('Your verification link is invalid or has expired. Please try logging in or request a new link.')
+        } catch (e: unknown) {
+          if (active) setError(e instanceof Error ? e.message : String(e))
+        } finally {
+          if (active) {
+            // Strip auth params only after the code/error has been processed.
+            if (returnedCode || returnedError) cleanAuthParamsFromUrl()
+            setLoading(false)
+          }
+        }
       })
       .catch((e: unknown) => {
         if (active) {

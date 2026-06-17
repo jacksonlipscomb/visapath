@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../context/AuthContext'
@@ -5,6 +6,13 @@ import { useAuth } from '../context/AuthContext'
 export default function Navbar() {
   const { i18n } = useTranslation()
   const { user, loading, isConfigured, signOut } = useAuth()
+  const [signingOut, setSigningOut] = useState(false)
+
+  async function handleSignOut() {
+    setSigningOut(true)
+    await signOut()
+    setSigningOut(false)
+  }
 
   const langButton = (lang: 'en' | 'sv', label: string) => {
     const active = i18n.language === lang
@@ -61,8 +69,8 @@ export default function Navbar() {
                   <span className="nav-email" title={user.email}>
                     {user.email}
                   </span>
-                  <button className="lang-btn" onClick={() => void signOut()}>
-                    Log out
+                  <button className="lang-btn" onClick={handleSignOut} disabled={signingOut}>
+                    {signingOut ? 'Logging out…' : 'Log out'}
                   </button>
                 </>
               ) : (
