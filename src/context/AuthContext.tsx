@@ -103,10 +103,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           // so the `?code=` is consumed here BEFORE we strip it from the URL.
           const { data, error: sessErr } = await client.auth.getSession()
           if (!active) return
-          if (sessErr) setError(sessErr.message)
           setSession(data.session)
           setUser(data.session?.user ?? null)
-          if (returnedError) setAuthError(returnedError)
+          // Single classification: a session error is terminal and excludes the
+          // other (success / invalid-link) outcomes.
+          if (sessErr) setError(sessErr.message)
+          else if (returnedError) setAuthError(returnedError)
           else if (isRecovery && data.session) setRecoveryActive(true)
           else if (returnedCode && data.session) setJustSignedIn(true)
           else if (returnedCode && !data.session)
