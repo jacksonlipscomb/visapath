@@ -12,10 +12,14 @@ type AuthContextValue = {
   isConfigured: boolean
   justSignedIn: boolean // returned from a verification link AND a session was established
   authError: string | null // verification-return or sign-out error
+  recoveryActive: boolean // returned via a password-recovery link; show the set-new-password flow
   signUp: (email: string, password: string) => Promise<AuthResult>
   signIn: (email: string, password: string) => Promise<AuthResult>
   signOut: () => Promise<AuthResult>
+  resetPassword: (email: string) => Promise<AuthResult>
+  updatePassword: (password: string) => Promise<AuthResult>
   clearAuthNotice: () => void
+  clearRecovery: () => void
 }
 
 const NOT_CONFIGURED: AuthResult = { error: 'Auth is not configured' }
@@ -27,6 +31,7 @@ function cleanAuthParamsFromUrl() {
   const url = new URL(window.location.href)
   const authParams = [
     'code',
+    'recovery',
     'error',
     'error_code',
     'error_description',
@@ -59,6 +64,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [error, setError] = useState<string | null>(null)
   const [justSignedIn, setJustSignedIn] = useState(false)
   const [authError, setAuthError] = useState<string | null>(null)
+  const [recoveryActive, setRecoveryActive] = useState(false)
 
   useEffect(() => {
     if (!isSupabaseConfigured) {
@@ -68,11 +74,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     let active = true
     let subscription: { unsubscribe: () => void } | null = null
 
-    // Capture verification-return state. Do NOT strip it yet: the lazily-created
-    // client must still see `?code=` to exchange it for a session.
+    // Capture verification/recovery-return state. Do NOT strip it yet: the
+    // lazily-created client must still see `?code=` to exchange it for a session.
     const params = new URL(window.location.href).searchParams
     const returnedError = params.get('error_description') || params.get('error')
     const returnedCode = params.has('code')
+    const isRecovery = params.get('recovery') === '1'
 
     getSupabase()
       .then(async (client) => {
@@ -85,8 +92,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           if (!active) return
           setSession(nextSession)
           setUser(nextSession?.user ?? null)
-          // Success notice only on a genuine sign-in following a verification code.
-          if (event === 'SIGNED_IN' && returnedCode) setJustSignedIn(true)
+          if (event === 'PASSWORD_RECOVERY') setRecoveryActive(true)
+          // Success notice only on a genuine, non-recovery sign-in following a verification code.
+          else if (event === 'SIGNED_IN' && returnedCode && !isRecovery) setJustSignedIn(true)
         })
         subscription = sub.data.subscription
 
@@ -99,15 +107,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           setSession(data.session)
           setUser(data.session?.user ?? null)
           if (returnedError) setAuthError(returnedError)
+          else if (isRecovery && data.session) setRecoveryActive(true)
           else if (returnedCode && data.session) setJustSignedIn(true)
           else if (returnedCode && !data.session)
-            setAuthError('Your verification link is invalid or has expired. Please try logging in or request a new link.')
+            setAuthError('Your link is invalid or has expired. Please try logging in or request a new link.')
         } catch (e: unknown) {
           if (active) setError(e instanceof Error ? e.message : String(e))
         } finally {
           if (active) {
             // Strip auth params only after the code/error has been processed.
-            if (returnedCode || returnedError) cleanAuthParamsFromUrl()
+            if (returnedCode || returnedError || isRecovery) cleanAuthParamsFromUrl()
             setLoading(false)
           }
         }
@@ -151,10 +160,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { error: e?.message ?? null }
   }
 
+  async function resetPassword(email: string): Promise<AuthResult> {
+    const client = await getSupabase()
+    if (!client) return NOT_CONFIGURED
+    const { error: e } = await client.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/?recovery=1`,
+    })
+    return { error: e?.message ?? null }
+  }
+
+  async function updatePassword(password: string): Promise<AuthResult> {
+    const client = await getSupabase()
+    if (!client) return NOT_CONFIGURED
+    const { error: e } = await client.auth.updateUser({ password })
+    if (!e) setRecoveryActive(false)
+    return { error: e?.message ?? null }
+  }
+
   function clearAuthNotice() {
     setJustSignedIn(false)
     setAuthError(null)
     setError(null)
+  }
+
+  function clearRecovery() {
+    setRecoveryActive(false)
   }
 
   const value: AuthContextValue = {
@@ -165,10 +195,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     isConfigured: isSupabaseConfigured,
     justSignedIn,
     authError,
+    recoveryActive,
     signUp,
     signIn,
     signOut,
+    resetPassword,
+    updatePassword,
     clearAuthNotice,
+    clearRecovery,
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

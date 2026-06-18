@@ -1,5 +1,5 @@
-import { lazy, Suspense } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { lazy, Suspense, useEffect } from 'react'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Disclaimer from './components/Disclaimer'
 import Landing from './pages/Landing'
@@ -9,6 +9,21 @@ import { useAuth } from './context/AuthContext'
 
 const Login = lazy(() => import('./pages/Login'))
 const Signup = lazy(() => import('./pages/Signup'))
+const ForgotPassword = lazy(() => import('./pages/ForgotPassword'))
+const UpdatePassword = lazy(() => import('./pages/UpdatePassword'))
+
+// Send users who arrive via a password-recovery link to the set-new-password page.
+function RecoveryGate() {
+  const { recoveryActive, loading } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
+  useEffect(() => {
+    if (!loading && recoveryActive && location.pathname !== '/update-password') {
+      navigate('/update-password', { replace: true })
+    }
+  }, [recoveryActive, loading, location.pathname, navigate])
+  return null
+}
 
 function AuthNotice() {
   const { justSignedIn, authError, error, clearAuthNotice } = useAuth()
@@ -47,12 +62,15 @@ export default function App() {
     <>
       <Navbar />
       <AuthNotice />
+      <RecoveryGate />
       <Suspense fallback={<div className="container" style={{ padding: 'var(--space-7) 16px' }} />}>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/roadmap/:routeId" element={<Roadmap />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/update-password" element={<UpdatePassword />} />
           <Route path="*" element={<ComingSoon />} />
         </Routes>
       </Suspense>
