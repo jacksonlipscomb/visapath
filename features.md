@@ -19,7 +19,7 @@ A basic list of what the app does today, what content it covers, and what's plan
 - Download the checklist as a PDF.
 
 **Cross-cutting**
-- Email/password account creation and login (Supabase Auth), with email verification and a persisted session. Login is optional.
+- Email/password account creation and login (Supabase Auth), with email verification, password reset, and a persisted session. Login is optional.
 - English / Swedish language toggle (persisted), with route content translated.
 - "Not Available" page with an email-notify signup for routes that don't exist yet.
 - Bookmarkable route URLs; unknown routes fall back to the Not Available page gracefully.

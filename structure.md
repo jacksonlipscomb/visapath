@@ -46,6 +46,8 @@ Verified against [package.json](package.json).
     │   ├── Roadmap.tsx         Core product: step-by-step roadmap for a route (/roadmap/:routeId)
     │   ├── Login.tsx           Email/password login page (lazy-loaded)
     │   ├── Signup.tsx          Email/password signup page (lazy-loaded)
+    │   ├── ForgotPassword.tsx  Request a password-reset email (lazy-loaded)
+    │   ├── UpdatePassword.tsx  Set a new password after the recovery link (lazy-loaded)
     │   └── ComingSoon.tsx      "Not Available" page: calm message + email signup (also the * catch-all)
     ├── components/
     │   ├── Navbar.tsx          Sticky navbar: wordmark, EN/SV toggle, login/logout controls
@@ -56,7 +58,7 @@ Verified against [package.json](package.json).
     │   ├── ProgressBar.tsx     Sticky "X of N documents checked" progress bar
     │   └── AuthForm.tsx        Shared email/password form (login | signup modes)
     ├── context/
-    │   └── AuthContext.tsx     AuthProvider + useAuth() (Supabase session, sign up/in/out)
+    │   └── AuthContext.tsx     AuthProvider + useAuth() (session, sign up/in/out, password reset, recovery)
     ├── lib/
     │   └── supabase.ts         Lazy Supabase client (code-split SDK; null when env not configured)
     ├── hooks/

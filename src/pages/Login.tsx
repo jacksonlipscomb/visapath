@@ -46,6 +46,9 @@ export default function Login() {
           <>
             <AuthForm mode="login" />
             <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', textAlign: 'center' }}>
+              <Link to="/forgot-password">Forgot password?</Link>
+            </p>
+            <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', textAlign: 'center' }}>
               Don't have an account? <Link to="/signup">Sign up</Link>
             </p>
           </>
